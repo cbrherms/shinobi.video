@@ -502,7 +502,7 @@ select {
   font-weight: 400 !important;
   color: #3aa7aa;
 }
-.question .body-green {
+.body-green .question {
   color: #63b971;
 }
 .body-blue .question {

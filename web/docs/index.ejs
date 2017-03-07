@@ -7,9 +7,12 @@
             <div class="container">
                 <% include blocks/branding.ejs %>
                 <div class="tagline">
-                    <p>Welcome to <b>Shinobi</b>Docs.<br>Here you will learn how to Install and Use Shinobi.</p>
+                    <p>Here you will learn about Shinobi.</p>
                     <div style="margin:20px;" class="clearfix"></div>
-                    <a class="btn btn-danger btn-cta" href="<%=config.downloadLink%>" target="_blank"><i class="fa fa-cloud-download"></i> Download Now</a>
+                    <div class="btn-group">
+                    <a class="btn btn-default btn-cta" href="/"><i class="fa fa-cloud"></i> Home</a>
+                    <a class="btn btn-orange btn-cta" href="<%=config.downloadLink%>"><i class="fa fa-cloud-download"></i> Download Now</a>
+                    </div>
                 </div><!--//tagline-->
 
             </div><!--//container-->
@@ -26,6 +29,26 @@
                             <h3 class="title">Get Started</h3>
                             <p class="intro">Installing Shinobi is easier than you might think.</p>
                             <a class="link" href="start"><span></span></a>
+                        </div><!--//item-inner-->
+                    </div><!--//item-->
+                    <div class="item item-purple col-md-4 col-sm-6 col-xs-6">
+                        <div class="item-inner">
+                            <div class="icon-holder">
+                                <span aria-hidden="true" class="icon icon_lifesaver"></span>
+                            </div><!--//icon-holder-->
+                            <h3 class="title">FAQs</h3>
+                            <p class="intro">So many questions,<br> so little code.</p>
+                            <a class="link" href="faqs"><span></span></a>
+                        </div><!--//item-inner-->
+                    </div><!--//item-->
+                    <div class="item item-orange col-md-4 col-sm-6 col-xs-6">
+                        <div class="item-inner">
+                            <div class="icon-holder">
+                                <span aria-hidden="true" class="icon icon_gift"></span>
+                            </div><!--//icon-holder-->
+                            <h3 class="title">License &amp; Credits</h3>
+                            <p class="intro">Honorable Mentions</p>
+                            <a class="link" href="license"><span></span></a>
                         </div><!--//item-inner-->
                     </div><!--//item-->
                     <div class="item item-pink item-2 col-md-4 col-sm-6 col-xs-6">
@@ -48,16 +71,6 @@
                             <a class="link" href="charts"><span></span></a>
                         </div><!--//item-inner-->
                     </div><!--//item-->
-                    <div class="item item-purple col-md-4 col-sm-6 col-xs-6">
-                        <div class="item-inner">
-                            <div class="icon-holder">
-                                <span aria-hidden="true" class="icon icon_lifesaver"></span>
-                            </div><!--//icon-holder-->
-                            <h3 class="title">FAQs</h3>
-                            <p class="intro">Layout for FAQ page. Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-                            <a class="link" href="faqs"><span></span></a>
-                        </div><!--//item-inner-->
-                    </div><!--//item-->
                     <div class="item item-primary col-md-4 col-sm-6 col-xs-6">
                         <div class="item-inner">
                             <div class="icon-holder">
@@ -68,18 +81,7 @@
                             <a class="link" href="showcase"><span></span></a>
                         </div><!--//item-inner-->
                     </div><!--//item-->
-                    <div class="item item-orange col-md-4 col-sm-6 col-xs-6">
-                        <div class="item-inner">
-                            <div class="icon-holder">
-                                <span aria-hidden="true" class="icon icon_gift"></span>
-                            </div><!--//icon-holder-->
-                            <h3 class="title">License &amp; Credits</h3>
-                            <p class="intro">Layout for license &amp; credits page. Consectetuer adipiscing elit.</p>
-                            <a class="link" href="license"><span></span></a>
-                        </div><!--//item-inner-->
-                    </div><!--//item-->
                 </div><!--//cards-->
-                
             </div><!--//container-->
         </section><!--//cards-section-->
     </div><!--//page-wrapper-->

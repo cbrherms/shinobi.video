@@ -56,5 +56,8 @@ pre {
 .body-dark .btn-orange,.body-dark .label-warning{
     color:#191919!important
 }
+.body-dark .btn-default,.body-dark .label-default{
+    color:#333!important
+}
 
 .body-dark .answer{color:#fff}

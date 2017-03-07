@@ -21,11 +21,11 @@ pre {
     border:1px solid #eee;
 }
 
-.body-dark .doc-wrapper{
+ .doc-wrapper{
     background:#333;
     color:#eee;
 }
-
+.body-dark .doc-section .section-title{border-color:#525252;}
 .body-dark .doc-menu > li > a,.doc-sub-menu > li > a{color:#fff}
 
 .body-dark pre,.body-dark code{
@@ -34,3 +34,15 @@ pre {
     border: 1px solid #1f1f1f;
 }
 .body-dark code>code,.body-dark pre>code{border:0}
+.body-dark .table-striped > tbody > tr:nth-of-type(odd){
+    background-color: #232323;
+}
+.body-dark .table>tbody>tr>td,.body-dark .table>tbody>tr>th{
+    border-color:#333
+}
+
+.body-dark .btn-orange,.body-dark .label-warning{
+    color:#191919!important
+}
+
+.body-dark .answer{color:#fff}

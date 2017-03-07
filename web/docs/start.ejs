@@ -1,21 +1,17 @@
+<% var Title='Get Started'; %>
 <% include blocks/header.ejs %>
-
 <body class="body-orange body-dark">
     <div class="page-wrapper">
         <!-- ******Header****** -->
         <header id="header" class="header">
             <div class="container">
                 <% include blocks/branding.ejs %>
-                <ol class="breadcrumb">
-                    <li><a href="index.html">Home</a></li>
-                    <li class="active">Get Started</li>
-                </ol>
             </div><!--//container-->
         </header><!--//header-->
         <div class="doc-wrapper">
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
-                    <h1 class="doc-title"><i class="icon fa fa-bolt"></i> Get Started</h1>
+                    <h1 class="doc-title"><i class="icon fa fa-bolt"></i> <%= Title %></h1>
                 </div><!--//doc-header-->
                 <div class="doc-body">
                     <div class="doc-content">
@@ -25,7 +21,7 @@
                                 <div class="section-block">
                                     <p><b>Warning :</b> Shinobi is not for the faint of heart. Currently it is still in heavy development. This project started in November 2016, it should be expected to have bugs and the need for further refinement. If you are unable to get through the installation process please skip Shinobi and try Blue Iris.
                                     </p>
-                                    <a href="<%=config.downloadLink%>" class="btn btn-blue" target="_blank"><i class="fa fa-download"></i> Download Shinobi</a>
+                                    <a href="<%=config.downloadLink%>" class="btn btn-orange" target="_blank"><i class="fa fa-download"></i> Download Shinobi</a>
                                 </div>
                             </section><!--//doc-section-->
                             <section id="requirement-section" class="doc-section">
@@ -95,6 +91,7 @@
                                     </ul><!--//nav-->
                                 </li>
                                 <li><a class="scrollto" href="#trouble-section">Troubleshooting</a></li>
+                                <li><a href="/docs/faqs" title="Frequently Asked Questions">FAQs</a></li>
                             </ul><!--//doc-menu-->
                         </nav>
                     </div><!--//doc-sidebar-->

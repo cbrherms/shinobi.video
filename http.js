@@ -7,6 +7,7 @@ process.on('uncaughtException', function (err) {
 var fs = require('fs');
 var express = require('express')
 var app = express()
+var config = require('./conf.json')
 s={};
 s.dir={
     web:__dirname+'/web',
@@ -17,23 +18,24 @@ app.use('/', express.static(process.cwd() + '/web'));
 app.set('views', __dirname + '/web');
 app.set('view engine', 'ejs');
 
-    app.get(['/docs','/docs/:file'], function(req, res) {
-        if(req.params.file){
-            req.file=req.params.file
-        }else{
-            req.file='index';
-        }
-        res.render('docs/'+req.file);
-    });
-    app.get(['/','/:file'], function(req, res) {
-        if(req.params.file){
-            req.file=req.params.file
-        }else{
-            req.file='index';
-        }
-        res.render('pages/'+req.file);
-    });
+app.get(['/docs','/docs/:file'], function(req, res) {
+    if(req.params.file){
+        req.file=req.params.file
+    }else{
+        req.file='index';
+    }
+    res.render('docs/'+req.file);
+});
+
+app.get(['/','/:file'], function(req, res) {
+    if(req.params.file){
+        req.file=req.params.file
+    }else{
+        req.file='index';
+    }
+    res.render('pages/'+req.file);
+});
 //start server
-app.listen(81, function () {
+app.listen(config.port,config.ip,function () {
   console.log('Website Loaded')
 });

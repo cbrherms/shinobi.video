@@ -24,7 +24,7 @@ app.get(['/docs','/docs/:file'], function(req, res) {
     }else{
         req.file='index';
     }
-    res.render('docs/'+req.file);
+    res.render('docs/'+req.file,{config:config});
 });
 
 app.get(['/','/:file'], function(req, res) {
@@ -33,7 +33,7 @@ app.get(['/','/:file'], function(req, res) {
     }else{
         req.file='index';
     }
-    res.render('pages/'+req.file);
+    res.render('pages/'+req.file,{config:config});
 });
 //start server
 app.listen(config.port,config.ip,function () {

@@ -1,5 +1,8 @@
 {
     "port":81,
     "ip":null,
-    "downloadLink":"https://github.com/moeiscool/Shinobi"
+    "codePage":"https://github.com/moeiscool/Shinobi",
+    "issuesPage":"https://github.com/moeiscool/Shinobi/issues",
+    "slackInvite":"https://shinobicctv.herokuapp.com/",
+    "downloadLink":"https://github.com/moeiscool/Shinobi/zipball/master"
 }

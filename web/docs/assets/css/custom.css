@@ -1,3 +1,6 @@
+*{
+    transition: 0.2s
+}
 .section-block li+li {
     margin-top: 5px;
 }
@@ -21,9 +24,18 @@ pre {
     border:1px solid #eee;
 }
 
- .doc-wrapper{
+.body-dark .doc-wrapper,.body-dark .cards-section{
     background:#333;
     color:#eee;
+}
+.body-dark .cards-section .intro{
+    color:#eee;
+}
+.body-dark .cards-section .item-inner{
+    background:#212121;
+    border-left-color:#1f1f1f;
+    border-right-color:#1f1f1f;
+    border-bottom-color:#1f1f1f;
 }
 .body-dark .doc-section .section-title{border-color:#525252;}
 .body-dark .doc-menu > li > a,.doc-sub-menu > li > a{color:#fff}

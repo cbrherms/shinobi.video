@@ -107,23 +107,14 @@
 </div>
 <div class="section-block">
     <h3 class="block-title question"><a id="user-content-set-mode-of-camera-record-watch-or-stop-from-http" class="anchor" href="#set-mode-of-camera-record-watch-or-stop-from-http"></a>Set mode of camera (Record, Watch, or Stop) from HTTP</h3>
-
     <p>or set to a mode for a period of time before automatically stops.</p>
-
     <pre><code>http://xxx.xxx.xxx.xxx/[API KEY]/monitor/[GROUP KEY]/[MONITOR ID]/[MODE]/[TIME]/[TIME INTERVAL]</code></pre>
-
     <p>Here is an example of setting the mode to <strong>record</strong> on a camera with ID <strong>bunny</strong> under group key <strong>2Df5hBE</strong>. It will stay in this mode until changed.</p>
-
     <pre><code>http://xxx.xxx.xxx.xxx/XXXXXXXXXXXXXXXXX/monitor/2Df5hBE/bunny/record</code></pre>
-
     <p>Setting the mode to <strong>record</strong> on a camera with ID <strong>bunny</strong> for <strong>10 minutes</strong> under group key <strong>2Df5hBE</strong>. It will automatically return to <strong>Disabled</strong> itself after <strong>10 minutes</strong>.</p>
-
     <pre><code>http://xxx.xxx.xxx.xxx/XXXXXXXXXXXXXXXXX/monitor/2Df5hBE/bunny/record/10/min</code></pre>
-
     <p><strong>[MODE]</strong> can be one of the following. </p>
-
     <pre><code>stop, start, record</code></pre>
-
     <pre><code>stop = Disabled
 start = Watch-Only
 record = Record</code></pre>

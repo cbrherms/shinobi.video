@@ -63,4 +63,18 @@ pre {
 .body-dark .answer{color:#fff}
 .body-dark .jumbotron{background:#232323}
 
+.body-dark.body-default .question {
+  color: #53d4d8;
+}
+.body-dark.body-green .question {
+  color: #63b971;
+}
+.body-dark.body-blue .question {
+  color: #41b2ec;
+}
+.body-dark.body-purple .question {
+  color: #bc20f9;
+}
+
 #doc-menu{width: 230px;}
+#noobvertisement{background: #222!important}

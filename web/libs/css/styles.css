@@ -251,6 +251,12 @@ header ._shade {
     height:100%;
     z-index:5;
 }
+
+@media (max-width: 768px){
+    header ._shade {
+        position: relative;
+    }
+}
 header .header-content {
     position: relative;
     width: 100%;

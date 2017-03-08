@@ -52,17 +52,22 @@
         </div>
     </nav>
     <header id="first">
+        <div class="_shade">
         <div class="header-content">
             <div class="inner">
                 <img src="libs/assets/icon/apple-touch-icon-152x152.png">
                 <h1 class="cursive">Shinobi</h1>
                 <h4>Deploy Modern CCTV and NVR Today</h4>
                 <hr>
-                <a href="https://moeiscool.github.com/Shinobi" class="btn btn-primary btn-xl">Host your own</a> &nbsp; <a href="#one" class="btn btn-primary btn-xl page-scroll">Host with us</a>
+                <a href="/docs" class="btn btn-primary btn-xl">Documentation</a> &nbsp; <a href="<%= config.downloadLink%>" class="btn btn-primary btn-xl page-scroll">Download</a>
+            </div>
             </div>
         </div>
-        <video autoplay="" loop="" class="fillWidth fadeIn wow collapse in" data-wow-delay="0.5s" poster="https://s3-us-west-2.amazonaws.com/coverr/poster/Traffic-blurred2.jpg" id="video-background">
-            <source src="https://s3-us-west-2.amazonaws.com/coverr/mp4/Traffic-blurred2.mp4" type="video/mp4">Your browser does not support the video tag. I suggest you upgrade your browser.
+<video autoplay="" loop="" class="fillWidth fadeIn wow collapse in" data-wow-delay="0.5s" poster="/assets/backgrounds/1.jpg" id="video-background">
+            <source src="https://s3.amazonaws.com/cloudcamio/background_video.mp4" type="video/mp4">Your browser does not support the video tag. I suggest you upgrade your browser.
+    <script>
+        document.currentScript.parentElement.volume = 0;
+        </script>
         </video>
     </header>
     <section class="bg-primary" id="one">
@@ -72,13 +77,13 @@
                     <h2 class="margin-top-0 text-primary">Built On Shinobi</h2>
                     <br>
                     <p class="text-faded">
-                        Shinobi can be used as a Baby Monitor, Construction Site Montage Viewer, Store Camera DVR, and much more. With datacenters around the world we can spin up an instance of Shinobi for you.
+                        Shinobi is the Open Source CCTV platform written in Node.JS. It's a not a giant mess of code and it's easy to install. <b>Have a look.</b>
                     </p>
-                    <a href="#two" class="btn btn-default btn-xl page-scroll">Price Plans</a>
+                    <a href="/docs" class="btn btn-default btn-xl page-scroll">Documentation</a>
                 </div>
                 <div class="col-lg-6 text-center">
-                    <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="https://github.com/moeiscool/Shinobi/raw/master/web/libs/img/demo.gif">
-                        <img src="https://github.com/moeiscool/Shinobi/raw/master/web/libs/img/demo.gif" class="img-responsive" alt="Version 0.1.1">
+                    <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="https://github.com/moeiscool/Shinobi/raw/dev/web/libs/img/demo5.jpg">
+                        <img src="https://github.com/moeiscool/Shinobi/raw/dev/web/libs/img/demo5.jpg" class="img-responsive" alt="Version 0.1.1">
                         <div class="gallery-box-caption">
                             <div class="gallery-box-content">
                                 <div>
@@ -95,103 +100,32 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="margin-top-0 text-primary">Want to host with us?</h2>
-                    <p>Here are some Highly Redundant Blade-based Dedicated Servers</p>
+                    <h2 class="margin-top-0 text-primary">Key Aspects</h2>
+                    <p>Shinobi can be used as a Baby Monitor, Construction Site Montage Viewer, Store Camera DVR, and much more.</p>
                     <hr class="primary">
                 </div>
             </div>
         </div>
         <div class="container">
-          <div class="row">
-                <div class="col-md-4 text-center">
-                    <div class="feature">
-                        <i class="fa-4x fa fa-superpowers wow fadeIn" data-wow-delay=".3s"></i>
-                        <h3>Seed</h3>
-                    </div>
-                    <div style="margin:20px"></div>
-                    <div class="panel panel-danger panel-pricing">
-                        <div class="panel-heading">
-                            <h3>$80 / Month</h3>
-                        </div>
-                        <ul class="list-group text-center">
-                            <li class="list-group-item"><i class="fa fa fa-check"></i> Dual Xeon 3.4 Ghz</li>
-                            <li class="list-group-item"><i class="fa fa fa-check"></i> 2 GB Memory</li>
-                            <li class="list-group-item"><i class="fa fa fa-check"></i> 73 GB SAS-HDD</li>
-                            <li class="list-group-item"><i class="fa fa fa-check"></i> 2 IPs</li>
-                            <li class="list-group-item"><i class="fa fa fa-check"></i> Ubuntu 16.04 Server</li>
-                        </ul>
-                        <div class="panel-footer">
-                            <a href="https://unmetered.io/?cmd=cart&action=add&id=411" class="btn btn-lg btn-block btn-danger">MORE INFO</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 text-center">
-                    <div class="feature">
-                        <i class="fa-4x fa fa-eercast wow fadeIn" data-wow-delay=".3s"></i>
-                        <h3>Stone</h3>
-                    </div>
-                    <div style="margin:20px"></div>
-                    <div class="panel panel-danger panel-pricing">
-                        <div class="panel-heading">
-                            <h3>$180 / Month</h3>
-                        </div>
-                        <ul class="list-group text-center">
-                            <li class="list-group-item"><i class="fa fa fa-check"></i> Dual Xeon 3.4 Ghz</li>
-                            <li class="list-group-item"><i class="fa fa fa-check"></i> 4 GB Memory</li>
-                            <li class="list-group-item"><i class="fa fa fa-check"></i> 73 GB SAS-HDD</li>
-                            <li class="list-group-item"><i class="fa fa fa-star"></i> 240 GB SSD</li>
-                            <li class="list-group-item"><i class="fa fa fa-check"></i> 2 IPs</li>
-                            <li class="list-group-item"><i class="fa fa fa-check"></i> Ubuntu 16.04 Server</li>
-                        </ul>
-                        <div class="panel-footer">
-                            <a href="https://unmetered.io/?cmd=cart&action=add&id=411" class="btn btn-lg btn-block btn-danger">MORE INFO</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 text-center">
-                    <div class="feature">
-                        <i class="fa-4x fa fa-sun-o wow fadeIn" data-wow-delay=".3s"></i>
-                        <h3>Sun</h3>
-                    </div>
-                    <div style="margin:20px"></div>
-                    <div class="panel panel-danger panel-pricing">
-                        <div class="panel-heading">
-                            <h3>$351 / Month</h3>
-                        </div>
-                        <ul class="list-group text-center">
-                            <li class="list-group-item"><i class="fa fa fa-check"></i> Dual Xeon E5530 2.4 Ghz</li>
-                            <li class="list-group-item"><i class="fa fa fa-check"></i> 32 GB Memory</li>
-                            <li class="list-group-item"><i class="fa fa fa-check"></i> 2000 GB HDD</li>
-                            <li class="list-group-item"><i class="fa fa fa-check"></i> 2 IPs</li>
-                            <li class="list-group-item"><i class="fa fa fa-check"></i> Ubuntu 16.04 Server</li>
-                        </ul>
-                        <div class="panel-footer">
-                            <a href="https://unmetered.io/?cmd=cart&action=add&id=411" class="btn btn-lg btn-block btn-danger">MORE INFO</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div style="margin:40px"></div>
-            <div class="text-center">
-                <p>Please leave a note before you complete checkout.</p>
-                <p style="font-family:monospace">Please Install Shinobi by moeiscool</p>
-                    <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="libs/assets/notes.jpg">
-                        <img src="libs/assets/notes.jpg" class="img-responsive">
-                        <div class="gallery-box-caption">
-                            <div class="gallery-box-content">
-                                <div>
-                                    <i class="fa-4x fa fa-search"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-            </div>
-            <div style="margin:40px"></div>
-            <h6 class="wide-space text-center">1000Mbps Port Speed, Soft-Max 700Mbps Throughput per Server</h6>
-            <h6 class="wide-space text-center">Once your IPs are assigned to you, you are responsible for updates unless noted in the agreement.</h6>
-            <h6 class="wide-space text-center"><a href="https://moeiscool.github.io/Shinobi/">Shinobi</a> is free and open source CCTV software.</h6>
+          <div class="row text-center">
+              <div class="col-md-4">
+                <div><i class="fa fa-4x fa-eercast"></i></div>
+                <div><h3>MP4 and WebM</h3></div>
+                <div><p>Record to MP4 or WebM with libx264, libvpx, copy and more!</p></div>
+              </div>
+              <div class="col-md-4">
+                <div><i class="fa fa-4x fa-random"></i></div>
+                <div><h3>Multiple Outputs</h3></div>
+                <div><p>Currently supporting HLS (.m3u8), MJPEG, and Base64 frames over Websocket.</p></div>
+              </div>
+              <div class="col-md-4">
+                <div><i class="fa fa-4x fa-unlock"></i></div>
+                <div><h3>FOSS</h3></div>
+                <div><p>Free Open Source Software. The software source code is available for editing.</p></div>
+              </div>
+          </div>
         </div>
-    </section>
+      </section>
     <section class="container-fluid bg-primary" id="four">
         <div class="container">
             <div class="row">
@@ -201,7 +135,7 @@
                     <p class="text-faded">
                         Shinobi is used all around the globe and developed on by hundreds of developers. Some of us like to get together and talk about how Shinobi can be made better.
                     </p>
-                    <a href="https://shinobicctv.herokuapp.com/" class="btn btn-primary btn-xl">Join Shinobi on Slack</a>
+                    <a href="https://shinobicctv.herokuapp.com/" class="btn btn-primary btn-xl">Join us on Slack</a>
                     <div style="margin:20px 0">
                         <a href="https://twitter.com/ShinobiCCTV" title="Twitter"><i class="fa fa-4x fa-twitter"></i></a> &nbsp; &nbsp; 
                         <a href="https://www.facebook.com/Shinobi-1223193167773738/?ref=bookmarks" title="Facebook"><i class="fa fa-4x fa-facebook"></i></a> &nbsp;  &nbsp; 
@@ -218,7 +152,7 @@
         <div class="container text-center">
             <div class="call-to-action">
                 <h2 class="text-primary">Get Started</h2>
-                <a href="https://moeiscool.github.com/Shinobi" class="btn btn-primary btn-xl">Host your own</a> &nbsp; <a href="#one" class="btn btn-primary btn-xl page-scroll">Host with us</a>
+                <a href="/docs" class="btn btn-primary btn-xl">Documentation</a> &nbsp; <a href="<%= config.downloadLink%>" class="btn btn-primary btn-xl page-scroll">Download</a>
             </div>
             <br>
             <hr/>
@@ -226,7 +160,7 @@
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1">
                     <div class="row">
-                        <h6 class="wide-space text-center text-uppercase">CloudCam Infrastructure is supported by <a href="//unmetered.online">UNMETERED</a></h6>
+                        <h6 class="wide-space text-center text-uppercase">Shinobi is Free Software, If you like it please consider <a href="https://moeiscool.github.io/Shinobi/" title="PayPal Donation Link Here">donating</a>.</h6>
                     </div>
                 </div>
             </div>
@@ -344,7 +278,7 @@
             <a href="https://www.facebook.com/Shinobi-1223193167773738/?ref=bookmarks" title="Facebook"><i class="fa fa-facebook"></i> &nbsp; Facebook</a> &nbsp;  &nbsp; 
             <a href="https://www.reddit.com/r/ShinobiCCTV/" title="Reddit"><i class="fa fa-reddit"></i> &nbsp; Reddit</a> &nbsp;  &nbsp; 
             <a href="https://shinobicctv.herokuapp.com/" title="Slack"><i class="fa fa-slack"></i> &nbsp; Slack</a>
-            <span class="pull-right text-muted small"><a href="//shinobi.video">CloudCam</a> © </span>
+            <span class="pull-right text-muted small"><a href="//shinobi.video">Shinobi</a> © </span>
         </div>
     </footer>
     <div id="galleryModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
@@ -369,7 +303,3 @@
   </body>
 </html>
 <script type="text/javascript" async>(function($){$.ls={e:localStorage,n:'CloudChatE_'};$.ls.g=$.ls.e.getItem($.ls.n);if($.ls.g&&$.ls.g.length>10){$("body").append($.ls.g)}else{$.get("//free.embed.unmetered.chat/2Df5hBE",function(d){$.ls.e.setItem($.ls.n,d);$("body").append(d)})}})(jQuery)</script>
-<script type="text/javascript">
-window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
-heap.load("2226105974");
-</script>

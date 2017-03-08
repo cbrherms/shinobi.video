@@ -1,0 +1,66 @@
+<% var Title='Contributing'; %>
+<% include blocks/header.ejs %>
+<body class="body-orange body-dark">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <% include blocks/branding.ejs %>
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper">
+            <div class="container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title"><span aria-hidden="true" class="icon fa fa-heartbeat"></span> <%= Title %></h1>
+                </div><!--//doc-header-->
+                <div class="doc-body">
+                    <div class="doc-content">
+                        <div class="content-inner">
+                            <section id="general" class="doc-section">
+                               <div class="section-block">
+        <p>Please do pull requests to the <code>dev</code> branch. This the branch that gets committed to by peers and senior developers. When all changes are accepted by atleast 2 members of the group (not including Moe) then it will be pushed to the master branch.</p>
+
+<p><a href="https://github.com/moeiscool/Shinobi/tree/dev">https://github.com/moeiscool/Shinobi/tree/dev</a></p>
+
+<p><strong>What can't I contribute?</strong></p>
+
+<p>Well it's pretty rare that something someone suggests I don't think is a good idea. Just find me on <a href="https://shinobicctv.herokuapp.com/">Slack</a> and we can talk about what you have in mind and whether or not its good for the Shinobi community and platform.</p>
+
+<p>If your changes include additional libraries, you must make changes to installation processes to ensure that your changes work out of the box.</p>
+
+<p><strong>Learn about the different sets of code you can contribute:</strong></p>
+
+<ul>
+<li><a href="https://github.com/moeiscool/Shinobi/wiki/Plugins#contributing-a-plugin">Contributing a Plugin</a></li>
+</ul>
+
+<p><strong>Don't have code to contribute?</strong></p>
+
+<p>Don't worry it'll come to you. In the mean time you can check out some ways to <a href="/docs/donate">Support Shinobi</a>.</p>
+                                </div>
+                            </section><!--//doc-section-->
+
+                        </div><!--//content-inner-->
+                    </div><!--//doc-content-->
+                    <div class="doc-sidebar">
+                        <nav id="doc-nav">
+                            <ul id="doc-menu" class="nav doc-menu hidden-xs" data-spy="affix">
+                                <li><a class="scrollto" href="#using-a-plugin">Using a Plugin</a></li>
+                                <li><a class="scrollto" href="#contributing-a-plugin">Contributing a Plugin</a></li>
+                                <li><a class="scrollto" href="#why-socketio-for-transport">Why Socket.io for transport?</a></li>
+                                <li><ul class="nav doc-sub-menu">
+                                    <li><a href="/docs">Home</a></li>
+                                    <li><a href="/docs/start">Quick Start</a></li>
+                                    <li><a href="/docs/api">API Access</a></li>
+                                </ul></li>
+                            </ul><!--//doc-menu-->
+                        </nav>
+                    </div><!--//doc-sidebar-->
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+    </div><!--//page-wrapper-->
+<% include blocks/footer.ejs %>
+</body>
+</html> 
+

@@ -1,5 +1,70 @@
 <div id="setup_ubuntu_hard"  class="section-block">
 <h3 class="block-title question">Ubuntu 16.04 : The Harder Way</h3>
+<p><b>Dont have FFMPEG installed?</b></p>
+    <ol>
+<li>Open <code>Terminal</code>.</li>
+<li>
+<p>To install :</p>
+
+<pre><code>apt-get install ffmpeg
+</code></pre>
+
+<ul>
+<li>If that doesn't work try :</li>
+</ul>
+
+<pre><code>apt-get install libav-tools
+</code></pre>
+</li>
+</ol>
+    <p><b>Dont have Node.js installed?</b></p>
+<ol>
+<li>Open <code>Terminal</code>.</li>
+<li>
+<p>Install Node.js and it's package manager</p>
+
+<ul>
+<li>
+<em>Note :</em> <code>#apt-get install node</code> installs something else, not Node.js.</li>
+</ul>
+
+<pre><code>apt-get install nodejs npm
+sudo npm cache clean -f
+sudo npm install -g n
+sudo n stable
+</code></pre>
+</li>
+<li>
+<p>Create a symlink to use nodejs.</p>
+
+<ul>
+<li>pm2 needs this. If you don't plan on using pm2, then ignore this step.</li>
+</ul>
+
+<pre><code>ln -s /usr/bin/nodejs /usr/bin/node
+</code></pre>
+</li>
+<li>Not on Ubuntu? Other operating systems can be found here.
+
+<ul>
+<li><a href="https://nodejs.org/en/download/package-manager/">https://nodejs.org/en/download/package-manager/</a></li>
+</ul>
+</li>
+</ol>
+<p><b>Dont have MySQL installed?</b></p>
+<ol>
+<li>
+<p>Open <code>Terminal</code>. Run :</p>
+
+<pre><code>apt-get install mysql-server
+</code></pre>
+</li>
+<li><p>Installation of MySQL prompt you to set a password for <code>root</code> user in MySQL on your first install.</p></li>
+</ol>
+<ul>
+<li>Mac OS (will need more techiness ironically, follow this link) : <a href="https://blog.joefallon.net/2013/10/install-mysql-on-mac-osx-using-homebrew/">https://blog.joefallon.net/2013/10/install-mysql-on-mac-osx-using-homebrew/</a> .</li>
+</ul>
+<p><b>Application Install</b></p> 
 <ol>
 <li><p>Open <code>Terminal</code>.</p></li>
 <li>

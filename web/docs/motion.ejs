@@ -16,113 +16,104 @@
                 <div class="doc-body">
                     <div class="doc-content">
                         <div class="content-inner">
-                            <section id="general" class="doc-section">
-                               <div class="section-block">
-<h1><a id="using-a-plugin" class="anchor" href="#using-a-plugin" aria-hidden="true"></a>Using a Plugin</h1>
+                            <section id="stemkoski" class="doc-section">
+<div class="markdown-body">
+        <p>To use a <b>Plugin</b> please refer to the <a href="/docs/plugins">Plugins</a> page</p>
+<h2>
+<a id="user-content-motion-detection-and-object-tracking-plugins" class="anchor" href="#motion-detection-and-object-tracking-plugins" aria-hidden="true"></a>Motion Detection and Object Tracking Plugins</h2>
+<table class="table table-striped">
+  <tbody><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Warnings</th>
+</tr>
+  <tr>
+<td>stemkoski Motion Detector</td>
+<td>Node.js, <b>shinobi-stemkoski.js</b>
+</td>
+<td>This is a method for reading differences in frames with the <a href="https://github.com/Automattic/node-canvas">node-canvas</a>. The method was made by <b>@stemkoski</b> on github, hence the name.</td>
+<td>Region Detector does not seem to work correctly. Full frame detection works.</td>
+</tr>
+  <tr>
+<td>OpenCV Object Tracker</td>
+<td>Node.js, <b>shinobi-opencv.js</b>
+</td>
+<td>This is an object tracker interfaced through a Node.js wrapper.</td>
+<td>Frame input is limited to 1 fps or you will get Segmentation errors causing the plugin to crash.</td>
+</tr>
+  <tr>
+<td>OpenCV Object Tracker</td>
+<td>Python, <b>shinobi-opencv.py</b>
+</td>
+<td>An attempt at copying the node.js version.</td>
+<td><b>Currently does not work. Process will not stay alive for requests.</b></td>
+</tr>
+  <tr>
+<td>CCV.js Object Tracker</td>
+<td>Node.js, <b>shinobi-ccv.js</b>
+</td>
+<td>Currently only a face detector. The current cascade can be replaced.</td>
+<td>Uses a lot of CPU power, like a lot.</td>
+</tr>
+</tbody></table>
+<h2>
+<a id="user-content-why-arent-these-just-integrated" class="anchor" href="#why-arent-these-just-integrated" aria-hidden="true"></a>Why aren’t these just integrated?</h2>
+<p>Not everyone uses motion detection or object tracking and the libraries required can be bothersome to install, based on the OS. For example if I make shinobi-opencv.js a feature then everyone will be required to install OpenCV 2.4 just to use basic features in Shinobi. This also allows us to swap the plugin with a custom one or run it on another machine entirely. Sharing the work between multiple machines can be a great way to optimize performance.</p>
 
-<h3 class="block-title question">
-<a id="we-will-use-shinobi-opencvjs-a-nodejs-plugin-for-the-example" class="anchor" href="#we-will-use-shinobi-opencvjs-a-nodejs-plugin-for-the-example" aria-hidden="true"></a>We will use <code>shinobi-opencv.js</code>, a node.js plugin, for the example.</h3>
+      </div>
+                            </section>
+                            <section id="stemkoski" class="doc-section">
+<h1><a id="user-content-shinobi-stemkoski-motion-detector" class="anchor" href="#shinobi-stemkoski-motion-detector" aria-hidden="true"></a>Shinobi stemkoski Motion Detector</h1>
 
-<ol>
-<li>Locate the plugin and install it's required dependencies.
+<p>Based on <a href="https://stemkoski.github.io/Three.js/Webcam-Motion-Detection.html">stemkoski JS Motion Detection</a></p>
 
-<ul>
-<li>In this case it is <code>OpenCV 2.4.9</code> and the npm called <code>opencv</code>.</li>
-</ul>
-</li>
-<li>
-<p>OpenCV 2.4.9 will be installed with <code>install_opencv_2.4.sh</code>. Run the following to make it executable.</p>
+<div class="row">
+<div class="section-block col-md-6">
+<h3 class="block-title question">Ubuntu and Debian only</h3>
 
-<pre><code>chmod +x install_opencv_2.4.sh
+<pre><code>sudo apt-get install libcairo2-dev libjpeg-dev libpango1.0-dev libgif-dev build-essential g++
 </code></pre>
-</li>
-<li>
-<p>Copy the plugin configuration file.</p>
+</div>
+<div class="section-block col-md-6">
+<h3 class="block-title question">CentOS only</h3>
+
+<pre><code>su -c 'yum install cairo cairo-devel cairomm-devel libjpeg-turbo-devel pango pango-devel pangomm pangomm-devel giflib-devel'
+yum search arial
+yum install liberation-sans-fonts.noarch
+</code></pre>
+</div>
+</div>
+<p>Install the Node.js Canvas engine</p>
+
+<pre><code>sudo npm install canvas
+</code></pre>
+
+<p>Copy the config file.</p>
 
 <pre><code>cp conf.sample.json conf.json
 </code></pre>
-</li>
-<li>
-<p>Edit the configuration file. <code>host</code> should be localhost if it is on the same server. <code>port</code> is the chosen port for Shinobi.</p>
+
+<p>Edit it the new file. Host should be <code>localhost</code> and port should match the <code>listening port for camera.js</code>.</p>
 
 <pre><code>nano conf.json
 </code></pre>
-</li>
-<li>
-<p><strong>Go back to main Shinobi directory.</strong> As regular user run the following to install the npm for opencv.</p>
 
-<pre><code>sudo npm install opencv
+<p>Start the plugin.</p>
+
+<pre><code>node shinobi-stemkoski.js
 </code></pre>
-</li>
-<li>
-<p>Run the plugin from Shinobi directroy after <code>camera.js</code> is running.</p>
 
-<pre><code>pm2 start plugins/opencv/shinobi-opencv.js
+<p>Or to daemonize with PM2.</p>
+
+<pre><code>pm2 start shinobi-stemkoski.js
 </code></pre>
-</li>
-<li><p>In the <strong>Edit or Add Monitor</strong> window you should see <code>OpenCV Connected</code> inside the orange box labelled <strong>Detector</strong>. More options should also have appeared.</p></li>
-</ol>
-</div>
-<div class="section-block">
-<h1>
-<a id="contributing-a-plugin" class="anchor" href="#contributing-a-plugin" aria-hidden="true"></a>Contributing a Plugin</h1>
-<h3 class="block-title question">
-<a id="criteria-for-a-plugin" class="anchor" href="#criteria-for-a-plugin" aria-hidden="true"></a>Criteria for a plugin</h3>
 
-<ul>
-<li>Shinobi must be able to run if the plugin is not present.
+<p>Doing this will reveal options in the monitor configuration. Shinobi does not need to be restarted when a plugin is initiated or stopped.</p>
 
-<ul>
-<li>Exceptions will only be made if the plugin is better off as a feature in which case it shouldn't be classified as a plugin.</li>
-</ul>
-</li>
-<li>Required dependencies must have an installation process included</li>
-<li>Plugin must be a separate process (a daemon)</li>
-<li>Plugin interfaces with <code>camera.js</code> through <code>socket.io-client</code>.
+<p><em>Thanks to Cairo and others for these dependencies. Thanks to stemkoski as the JS image comparing is based on their research. I or Shinobi are not affiliated with stemkoski or Cairo.</em></p>
 
-<ul>
-<li>OpenCV plugin can be reviewed as an <a href="https://github.com/moeiscool/Shinobi/blob/master/plugins/opencv/shinobi-opencv.js">example.</a>
-</li>
-</ul>
-</li>
-<li>Instructions must be provided for simple installation and usage.</li>
-<li>Options for plugin must be hidden unless plugin is connected to <code>camera.js</code>.</li>
-<li>Plugin cannot undermine the overall performance of Shinobi.</li>
-<li>Reviewed, tested, and accepted by peers or a senior developer in the <a href="https://shinobicctv.herokuapp.com/">Slack</a> community chat.</li>
-</ul>
-</div>
-<div class="section-block">
-<h1>
-<a id="why-socketio-for-transport" class="anchor" href="#why-socketio-for-transport" aria-hidden="true"></a>Why Socket.io for transport?</h1>
-
-<ul>
-<li>Well mainly because this allows for a plug and play feel.
-
-<ul>
-<li>Not having to restart the server for a plugin makes sense.</li>
-</ul>
-</li>
-<li>Fast and reliable data transfer.
-
-<ul>
-<li>It was previously attempted that we use UDP ports to achieve the same result but found there was quality loss.</li>
-</ul>
-</li>
-<li>Socket.io is supported by many languages, not just Node.js
-
-<ul>
-<li>Write your plugin in Python, C++, whatever. As long as it communicates with <code>camera.js</code> through socket.io the data exchange remains the same.</li>
-</ul>
-</li>
-<li>Since each plugin is it's own process it can be run on another machine entirely.
-
-<ul>
-<li>You could have one machine do camera.js functions and another do opencv requests.</li>
-</ul>
-</li>
-</ul>
-
-                                </div>
+<p>Shinobi Plugin by : Moe Alam</p>
                             </section><!--//doc-section-->
 
                         </div><!--//content-inner-->
@@ -130,9 +121,9 @@
                     <div class="doc-sidebar">
                         <nav id="doc-nav">
                             <ul id="doc-menu" class="nav doc-menu hidden-xs" data-spy="affix">
-                                <li><a class="scrollto" href="#using-a-plugin">Using a Plugin</a></li>
-                                <li><a class="scrollto" href="#contributing-a-plugin">Contributing a Plugin</a></li>
-                                <li><a class="scrollto" href="#why-socketio-for-transport">Why Socket.io for transport?</a></li>
+                                <li><a class="scrollto" href="#user-content-motion-detection-and-object-tracking-plugins">Motion Detection and Object Tracking Plugins</a></li>
+                                <li><a class="scrollto" href="#user-content-why-arent-these-just-integrated">Why aren’t these just integrated?</a></li>
+                                <li><a class="scrollto" href="#user-content-shinobi-stemkoski-motion-detector">Shinobi stemkoski Motion Detector</a></li>
                                 <li><ul class="nav doc-sub-menu">
                                     <li><a href="/docs">Home</a></li>
                                     <li><a href="/docs/start">Quick Start</a></li>

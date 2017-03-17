@@ -59,6 +59,10 @@
                                 <% include blocks/install/macos.ejs %>
                                 <% include blocks/install/vbox.ejs %>
                             </section><!--//doc-section-->
+                            <section id="daemon-section" class="doc-section">
+                                <h2 class="section-title">Daemonize and Startup</h2>
+                                <% include blocks/install/daemon.ejs %>
+                            </section><!--//doc-section-->
                             <section id="code-section" class="doc-section">
                                 <h2 class="section-title">Configuration</h2>
                                 <% include blocks/install/config.ejs %>
@@ -81,6 +85,13 @@
                                         <li><a class="scrollto" href="#setup_ubuntu_hard">Ubuntu 16.04 : The Harder Way</a></li>
                                         <li><a class="scrollto" href="#setup_macos">Mac OS : Native</a></li>
                                         <li><a class="scrollto" href="#setup_vbox">VirtualBox</a></li>
+                                    </ul><!--//nav-->
+                                </li>
+                                <li>
+                                    <a class="scrollto" href="#daemon-section">Daemonize and Startup</a>
+                                    <ul class="nav doc-sub-menu">
+                                        <li><a class="scrollto" href="#config_login">Default Login</a></li>
+                                        <li><a class="scrollto" href="#config_conf">conf.json</a></li>
                                     </ul><!--//nav-->
                                 </li>
                                 <li>

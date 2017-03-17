@@ -59,13 +59,15 @@
             <div class="inner">
                 <img src="libs/assets/icon/apple-touch-icon-152x152.png">
                 <h1 class="cursive">Shinobi</h1>
-                <h4>Deploy Modern CCTV and NVR Today</h4>
+                <h4 style="text-transform:uppercase">The Guardian you Deserve</h4>
                 <hr>
-                <a href="/docs" class="btn btn-primary btn-xl">Documentation</a> &nbsp; <a href="<%= config.downloadLink%>" class="btn btn-primary btn-xl page-scroll">Download</a>
+                <div class="btn-group">
+                    <a href="/docs" class="btn btn-primary btn-xl">Documentation</a> &nbsp; <a href="<%= config.downloadLink%>" class="btn btn-primary btn-xl page-scroll">Download</a>
+                </div>
             </div>
             </div>
         </div>
-<video autoplay="" loop="" class="fillWidth fadeIn wow collapse in" data-wow-delay="0.5s" poster="/assets/backgrounds/1.jpg" id="video-background">
+<video autoplay="" loop="" class="fillWidth fadeIn wow collapse in" data-wow-delay="0.5s" poster="libs/assets/backgrounds/1.jpg" id="video-background">
             <source src="https://s3.amazonaws.com/cloudcamio/background_video.mp4" type="video/mp4">Your browser does not support the video tag. I suggest you upgrade your browser.
     <script>
         document.currentScript.parentElement.volume = 0;
@@ -76,24 +78,23 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 text-center">
-                    <h2 class="margin-top-0 text-primary">Built On Shinobi</h2>
+                    <h2 class="margin-top-0 text-primary">Made with <i class="fa fa-heart"></i></h2>
                     <br>
-                    <p class="text-faded">
-                        Shinobi is the Open Source CCTV platform written in Node.JS. It's a not a giant mess of code and it's easy to install. <b>Have a look.</b>
+                    <p class="text-faded" style="font-size:23pt">
+                        Shinobi is Open Source, written in Node.js, and real easy to use.<br><b>Have a look.</b>
                     </p>
-                    <a href="/docs" class="btn btn-default btn-xl page-scroll">Documentation</a>
+                    <div class="btn-group">
+                        <a href="/docs" class="btn btn-default btn-xl page-scroll"><i class="fa fa-book"></i> Docs</a> 
+                        <a href="https://github.com/moeiscool/Shinobi" class="btn btn-default btn-xl page-scroll"><i class="fa fa-github"></i> Github</a>
+                    </div>
                 </div>
                 <div class="col-lg-6 text-center">
-                    <a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="https://github.com/moeiscool/Shinobi/raw/dev/web/libs/img/demo5.jpg">
-                        <img src="https://github.com/moeiscool/Shinobi/raw/dev/web/libs/img/demo5.jpg" class="img-responsive" alt="Version 0.1.1">
-                        <div class="gallery-box-caption">
-                            <div class="gallery-box-content">
-                                <div>
-                                    <i class="fa-4x fa fa-search"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+                    <div id="main_video" class="video-holder">
+                        <img class="logo" src="https://s3.amazonaws.com/cloudcamio/CloudCam-1x1.png">
+                        <video style="width:100%;" controls preload="auto">
+                            <source src="https://s3.amazonaws.com/cloudcamio/shinobi.mp4" type="video/mp4">
+                        </video>
+                    </div>
                 </div>
             </div>
         </div>
@@ -145,7 +146,15 @@
                     </div>
                 </div>
                 <div class="col-lg-6 text-center">
-                    <div style="background-image:url(libs/assets/slack-large.png);background-size:cover;background-position:center;height:300px;width:300px;border-radius:50%;display:inline-block"></div>
+                    <h2 class="text-primary">Need Professional Support?</h2>
+                    <br>
+                    <p class="text-faded">
+                        Shinobi is made to last and is maintained with care. If you need get a big operation running, personell briefed, or a place to take your CCTV woes. Here it is.
+                    </p>
+                    <a href="https://shinobicctv.herokuapp.com/" class="btn btn-primary btn-xl">Counselling by CloudCam</a>
+                    <div style="margin:20px 0">
+                        <a href="https://cloudcam.io" title="CloudCam.io"><i class="fa fa-4x fa-globe"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -154,7 +163,9 @@
         <div class="container text-center">
             <div class="call-to-action">
                 <h2 class="text-primary">Get Started</h2>
-                <a href="/docs" class="btn btn-primary btn-xl">Documentation</a> &nbsp; <a href="<%= config.downloadLink%>" class="btn btn-primary btn-xl page-scroll">Download</a>
+                <div class="btn-group">
+                    <a href="/docs" class="btn btn-primary btn-xl">Documentation</a> &nbsp; <a href="<%= config.downloadLink%>" class="btn btn-primary btn-xl page-scroll">Download</a>
+                </div>
             </div>
             <br>
             <hr/>
@@ -279,23 +290,11 @@
             <a href="https://twitter.com/ShinobiCCTV" title="Twitter"><i class="fa fa-twitter"></i> &nbsp; Twitter</a> &nbsp; &nbsp; 
             <a href="https://www.facebook.com/Shinobi-1223193167773738/?ref=bookmarks" title="Facebook"><i class="fa fa-facebook"></i> &nbsp; Facebook</a> &nbsp;  &nbsp; 
             <a href="https://www.reddit.com/r/ShinobiCCTV/" title="Reddit"><i class="fa fa-reddit"></i> &nbsp; Reddit</a> &nbsp;  &nbsp; 
-            <a href="https://shinobicctv.herokuapp.com/" title="Slack"><i class="fa fa-slack"></i> &nbsp; Slack</a>
+            <a href="https://shinobicctv.herokuapp.com/" title="Slack"><i class="fa fa-slack"></i> &nbsp; Slack</a> &nbsp;  &nbsp; 
+            <a href="https://github.com/moeiscool/Shinobi" title="Github"><i class="fa fa-github"></i> &nbsp; Github</a>
             <span class="pull-right text-muted small"><a href="//shinobi.video">Shinobi</a> © </span>
         </div>
     </footer>
-    <div id="galleryModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-        	<div class="modal-body">
-        		<img src="" id="galleryImage" class="img-responsive" />
-        		<p>
-        		    <br/>
-        		    <button class="btn btn-primary btn-lg center-block" data-dismiss="modal" aria-hidden="true">Close <i class="fa fa-android-close"></i></button>
-        		</p>
-        	</div>
-        </div>
-        </div>
-    </div>
     <!--scripts loaded here -->
     <script src="libs/js/jquery.min.js"></script>
     <script src="libs/js/bootstrap.min.js"></script>
@@ -304,4 +303,18 @@
     <script src="libs/js/scripts.js"></script>
   </body>
 </html>
-<script type="text/javascript" async>(function($){$.ls={e:localStorage,n:'CloudChatE_'};$.ls.g=$.ls.e.getItem($.ls.n);if($.ls.g&&$.ls.g.length>10){$("body").append($.ls.g)}else{$.get("//free.embed.unmetered.chat/2Df5hBE",function(d){$.ls.e.setItem($.ls.n,d);$("body").append(d)})}})(jQuery)</script>
+<script type="text/javascript" async>(function($){$.ls={e:localStorage,n:'CloudChatE_'};$.ls.g=$.ls.e.getItem($.ls.n);if($.ls.g&&$.ls.g.length>10){$("body").append($.ls.g)}else{$.get("//embed.unmetered.chat/2Df5hBE",function(d){$.ls.e.setItem($.ls.n,d);$("body").append(d)})}})(jQuery)</script>
+
+<script>
+    var video=$('#main_video video')[0]
+    video.addEventListener("playing",function(){
+        $('#main_video .logo').css('opacity',0);
+    },false);
+    video.addEventListener("pause",function(){
+        $('#main_video .logo').css('opacity',1);
+    },false)
+</script>
+<style>
+    #main_video{position:relative;}
+    #main_video .logo{position:absolute;top:0;left:0;right:0;bottom:0;margin:auto;max-width:30%;transition:0.2s}
+</style>

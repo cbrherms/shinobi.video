@@ -175,4 +175,68 @@ FLUSH PRIVILEGES;
 </code></pre>
 </li>
 </ol>
+    <p><b>Install Libraries</b></p>
+    <ol>
+<li>
+<p>Run <code>npm install</code> while in the main directory. This will install the libraries Shinobi needs.</p>
+
+<pre><code>npm install
+</code></pre>
+
+<ul>
+<li>Can't get <code>npm install</code> to work? Try downloading this, the required node libraries already built. Place the <code>node_modules</code> folder in the same directory as <code>camera.js</code>.
+
+<ul>
+<li><a href="https://mega.nz/#!upRRnRhD!RZSqKMnXYyvpeo_pg5loNpxBz3yFNXqQAo8bvKaqy1Y">https://mega.nz/#!upRRnRhD!RZSqKMnXYyvpeo_pg5loNpxBz3yFNXqQAo8bvKaqy1Y</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+    <p><b>Launch Shinobi</b></p>
+    <ol>
+<li>
+<p>To start :</p>
+
+<pre><code>node camera.js
+</code></pre>
+
+<ul>
+<li>If you did not make the symlink for nodejs then you must run <code>nodejs camera.js</code> instead.</li>
+</ul>
+</li>
+<li>
+<p>Open up <code>http://localhost:8080</code> in your browser.</p>
+
+<ul>
+<li>
+<em>Note :</em> if you are installed on a remote computer open up the IP in your web browser.
+
+<ul>
+<li><code>Username : ccio@m03.ca</code></li>
+<li><code>Password : password</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+    <ul>
+<li>
+<p>To get your IP you can run the following command.</p>
+
+<pre><code>ifconfig
+</code></pre>
+</li>
+        <p><b>PM2  is needed to use UPDATE.sh and to Daeomonize the process</b></p>
+</ul>
+    <pre><code>npm install pm2 -g
+</code></pre>
+    <p>then to start : </p>
+    <pre><code>pm2 start camera.js
+</code></pre>
+    <ul>
+<li>run <code>pm2 logs</code> to see the console for any errors.</li>
+<li>
+<code>forever</code> is another program to daemonize, but i've had more success with <code>pm2</code>.</li>
+</ul>
 </div>

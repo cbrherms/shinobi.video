@@ -24,8 +24,26 @@ pre {
     border:1px solid #eee;
 }
 
+.body-dark #header{
+    background: #222222;
+    border-bottom: 1px solid #444;
+}
 .body-dark .doc-wrapper,.body-dark .cards-section{
+    padding: 0;
+}
+.body-dark .doc-wrapper>.container,.body-dark .cards-section>.container{
     background:#333;
+}
+.body-dark .doc-wrapper>.container:first-child,.body-dark .cards-section>.container:first-child{
+    padding-top:45px;
+}
+.body-dark .doc-wrapper>.container:last-child,.body-dark .cards-section>.container:last-child{
+    padding-bottom:45px;
+}
+
+
+.body-dark .doc-wrapper,.body-dark .cards-section{
+    background:#222;
     color:#eee;
 }
 .body-dark .cards-section .intro{
@@ -76,5 +94,30 @@ pre {
   color: #bc20f9;
 }
 
+.body-dark .table>tbody>tr>td{padding:15px;border-right:1px solid #212121}
+.body-dark .table>tbody>tr>td:first-child{font-weight:bold;}
+
 #doc-menu{width: 230px;}
 #noobvertisement{background: #222!important}
+
+/*From Dash*/
+.form-group-group{padding:0 0 10px 0;overflow:hidden;margin-bottom:15px;border-radius:5px;border:1px solid #ddd;}
+.form-group-group table{margin-bottom:0}
+.form-group-group:last-child,.form-group-group .form-group:last-child{margin-bottom:0}
+.form-group-group h3{margin:0 -10px 15px -10px;padding:15px 25px 15px 25px;background:#ddd;color:#333}
+.form-group-group.red{border-color:#d9534f}
+.form-group-group.red h3{background:#d9534f;color:#fff}
+.form-group-group.blue{border-color:#337ab7}
+.form-group-group.blue h3{background:#337ab7;color:#fff}
+.form-group-group.navy{border-color:#31708f}
+.form-group-group.navy h3{background:#31708f;color:#fff}
+.form-group-group.green{border-color:#449d44}
+.form-group-group.green h3{background:#449d44;color:#fff}
+.form-group-group.forestgreen{border-color:#1e4046}
+.form-group-group.forestgreen h3{background:#1e4046;color:#fff}
+.body-dark .form-group-group.forestgreen{border-color:#2f5258}
+.body-dark .form-group-group.forestgreen h3{background:#2f5258;color:#fff}
+.form-group-group.orange{border-color:#f0ad4e}
+.form-group-group.orange h3{background:#f0ad4e;color:#fff}
+.form-group-group.grey{border-color:#777}
+.form-group-group.grey h3{background:#777;color:#fff}

@@ -256,7 +256,7 @@ var draw=function(v,n){
 
                                 </div><!--//section-block-->
                                 <div class="section-block form-group-group blue">
-<h3><a id="stream" class="anchor" href="#stream" aria-hidden="true"></a>Stream - HLS</h3>
+<h3><a id="stream-hls" class="anchor" href="#stream-hls" aria-hidden="true"></a>Stream - HLS</h3>
 <table class="table table-striped table-inverse">
   <tbody>
 <tr>
@@ -269,7 +269,7 @@ var draw=function(v,n){
           {
               field:'Video Codec',
               description:'This is for the client side only. It will display in the log thread when client side signal checks occur.',
-              default:'No',
+              default:'libx264',
               example:'',
               possible:[
                   {name:'Default',info:'Let Shinobi choose.'},
@@ -283,7 +283,7 @@ var draw=function(v,n){
           },          {
               field:'Audio Codec',
               description:'This is for the client side only. It will display in the log thread when client side signal checks occur.',
-              default:'No',
+              default:'No Audio',
               example:'',
               possible:[
                   {name:'Default',info:'Let Shinobi choose.'},
@@ -685,7 +685,7 @@ var draw=function(v,n){
           },
           {
               field:'Save Log in SQL',
-              description:'I suggested using this with caution as FFMPEG likes to throw up superfluous data at times which can lead to a lot of database rows.',
+              description:'Use this with caution as FFMPEG likes to throw up superfluous data at times which can lead to a lot of database rows.',
               default:'No',
               example:'',
               possible:[
@@ -710,6 +710,7 @@ var draw=function(v,n){
                                     <li><a class="scrollto" href="#identity">Identity</a></li>
                                     <li><a class="scrollto" href="#input">Input</a></li>
                                     <li><a class="scrollto" href="#stream">Stream</a></li>
+                                    <li><a class="scrollto" href="#stream-hls">Stream - HLS</a></li>
                                     <li><a class="scrollto" href="#detector">Detector</a></li>
                                     <li><a class="scrollto" href="#record">Record</a></li>
                                     <li><a class="scrollto" href="#timestamp">Timestamp</a></li>

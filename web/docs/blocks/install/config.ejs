@@ -29,7 +29,14 @@
     "password": "",
     "database": "ccio",
     "port":3306
-  }
+  },
+  "mail":{
+    "service": "gmail",
+    "auth": {
+        "user": "your_email@gmail.com",
+        "pass": "your_password_or_app_specific_password"
+        }
+    }
 }</code></pre>
 
 <h3 class="block-title question">Available Options for conf.json</h3>
@@ -152,6 +159,12 @@
 <td>no</td>
 <td>boolean</td>
 <td>cron will delete files that are over the set maximum storage per account. Default is <b>true</b>.</td>
+</tr>
+  <tr>
+<td>mail</td>
+<td>no</td>
+<td>object</td>
+<td>If your Email account uses 2-Step Authentication, like Gmail, then you will be require to create an Application Password.</td>
 </tr>
 </tbody></table>
 </div>

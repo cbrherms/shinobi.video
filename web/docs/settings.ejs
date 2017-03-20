@@ -268,7 +268,7 @@ var draw=function(v,n){
 <% [
           {
               field:'Video Codec',
-              description:'This is for the client side only. It will display in the log thread when client side signal checks occur.',
+              description:'Video codec for streaming.',
               default:'libx264',
               example:'',
               possible:[
@@ -282,7 +282,7 @@ var draw=function(v,n){
               ],
           },          {
               field:'Audio Codec',
-              description:'This is for the client side only. It will display in the log thread when client side signal checks occur.',
+              description:'Audio codec for streaming.',
               default:'No Audio',
               example:'',
               possible:[
@@ -454,19 +454,19 @@ var draw=function(v,n){
 <% [
           {
               field:'Record File Type',
-              description:'The file type for your .',
-              default:'Base64',
+              description:'The file type for your recorded video file.',
+              default:'MP4',
               example:'',
               possible:[
                   {name:'MP4',info:'This file type is playable is almost all modern web browsers, that includes mobile. The filesize just tends to be gigantic unless you lower the quality.'},
-                  {name:'HLS',info:'This will create a series of .ts (MPEG2) files and rotate through them, while deleting the oldest. It is the method you will find on sites like facebook for live video streams. Includes Audio but has a delay based on settings.'},
-                  {name:'Base64',info:'Sends Base64 encoded frames over Websocket and is then drawn to a canvas element. This defeats many browser stream limits but it requires a powerful client device when many streams are open at one time.'},
+                  {name:'WebM',info:'Small filesize, low client compatibility. Good for uploading to sites like YouTube.'},
+
               ],
           },
           {
               field:'Video Codec',
-              description:'This is for the client side only. It will display in the log thread when client side signal checks occur.',
-              default:'No',
+              description:'Video codec for recording.',
+              default:'libx264',
               example:'',
               possible:[
                   {name:'Default',info:'Let Shinobi choose.'},
@@ -479,8 +479,8 @@ var draw=function(v,n){
               ],
           },          {
               field:'Audio Codec',
-              description:'This is for the client side only. It will display in the log thread when client side signal checks occur.',
-              default:'No',
+              description:'Audio codec for recording.',
+              default:'No Audio',
               example:'',
               possible:[
                   {name:'Default',info:'Let Shinobi choose.'},

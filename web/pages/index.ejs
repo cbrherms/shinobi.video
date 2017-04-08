@@ -1,350 +1,158 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Shinobi - Simple CCTV and NVR Solution</title>
-    <meta name="description" content="Shinobi is the Open Source CCTV software written in Node.JS. Designed with multiple account system, Streams by WebSocket, and Save to WebM and MP4. Shinobi can record IP Cameras and Local Cameras." />
-    <meta name="keyword" content="websockets, webm, mp4, ip-camera, stream, local-cameras, shinobi, hls, camera-recorder, monitor, nodejs, cctv, cctv-cameras, nvr, docker, jpeg, mjpeg, base64, opencv">
-    <meta name="author" content="Moe Alam - moeiscool">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Codeply">
-    <link rel="stylesheet" href="libs/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="libs/css/animate.min.css" />
-    <link rel="stylesheet" href="libs/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="libs/css/styles.css" />
-      <link rel="icon" type="image/png" href="libs/assets/icon/favicon.ico" />
-  </head>
-  <body>
-    <nav id="topNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="fa fa-bar"></span>
-                    <span class="fa fa-bar"></span>
-                    <span class="fa fa-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="#first"><img src="libs/assets/icon/favicon.ico" style="display:inline-block;width:15px;height:15px;margin-right:10px"> <span class="cursive">Shinobi</span></a>
-            </div>
-            <div class="navbar-collapse collapse" id="bs-navbar">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a class="page-scroll" href="#one">Intro</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="/docs">Documentation</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#four">Supported</a>
-                    </li>
-<!--
-                    <li>
-                        <a class="page-scroll" href="#last">Contact</a>
-                    </li>
--->
-                </ul>
-<!--
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="page-scroll" data-toggle="modal" title="A free Bootstrap video landing theme" href="#aboutModal">About</a>
-                    </li>
-                </ul>
--->
+<% include blocks/header.ejs %>
+<header id="first">
+    <div class="_shade">
+    <div class="header-content">
+        <div class="inner">
+            <img src="libs/assets/icon/apple-touch-icon-152x152.png">
+            <h1 class="cursive">Shinobi</h1>
+            <h4 style="text-transform:uppercase">The Guardian you Deserve</h4>
+            <hr>
+            <div class="btn-group">
+                <a href="/docs" class="btn btn-primary btn-xl">Documentation</a> &nbsp; <a href="<%= config.downloadLink%>" class="btn btn-primary btn-xl page-scroll">Download</a>
             </div>
         </div>
-    </nav>
-    <header id="first">
-        <div class="_shade">
-        <div class="header-content">
-            <div class="inner">
-                <img src="libs/assets/icon/apple-touch-icon-152x152.png">
-                <h1 class="cursive">Shinobi</h1>
-                <h4 style="text-transform:uppercase">The Guardian you Deserve</h4>
-                <hr>
-                <div class="btn-group">
-                    <a href="/docs" class="btn btn-primary btn-xl">Documentation</a> &nbsp; <a href="<%= config.downloadLink%>" class="btn btn-primary btn-xl page-scroll">Download</a>
-                </div>
-            </div>
-            </div>
         </div>
+    </div>
 <video autoplay="" loop="" class="fillWidth fadeIn wow collapse in" data-wow-delay="0.5s" poster="libs/assets/backgrounds/1.jpg" id="video-background">
-            <source src="https://s3.amazonaws.com/cloudcamio/background_video.mp4" type="video/mp4">Your browser does not support the video tag. I suggest you upgrade your browser.
-    <script>
-        document.currentScript.parentElement.volume = 0;
-        </script>
-        </video>
-    </header>
-    <section class="bg-primary" id="one">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 text-center">
-                    <h2 class="margin-top-0 text-primary">Made with <i class="fa fa-heart"></i></h2>
-                    <br>
-                    <p class="text-faded" style="font-size:23pt">
-                        Shinobi is Open Source, written in Node.js, and real easy to use.<br><b>Have a look.</b>
-                    </p>
-                    <div class="btn-group">
-                        <a href="/docs" class="btn btn-default btn-xl page-scroll"><i class="fa fa-book"></i> Docs</a> 
-                        <a href="https://github.com/moeiscool/Shinobi" class="btn btn-default btn-xl page-scroll"><i class="fa fa-github"></i> Github</a>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-center">
-                    <div id="main_video" class="video-holder">
-                        <img class="logo" src="https://s3.amazonaws.com/cloudcamio/CloudCam-1x1.png">
-                        <video style="width:100%;" controls preload="auto">
-                            <source src="https://s3.amazonaws.com/cloudcamio/shinobi.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="two">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="margin-top-0 text-primary">Key Aspects</h2>
-                    <p>Shinobi can be used as a Baby Monitor, Construction Site Montage Viewer, Store Camera DVR, and much more.</p>
-                    <hr class="primary">
-                </div>
-            </div>
-        </div>
-        <div class="container">
-          <div class="row text-center">
-              <div class="col-md-4">
-                <div><i class="fa fa-4x fa-eercast"></i></div>
-                <div><h3>MP4 and WebM</h3></div>
-                <div><p>Record to MP4 or WebM with libx264, libvpx, copy and more!</p></div>
-              </div>
-              <div class="col-md-4">
-                <div><i class="fa fa-4x fa-random"></i></div>
-                <div><h3>Multiple Outputs</h3></div>
-                <div><p>Currently supporting HLS (.m3u8), MJPEG, and Base64 frames over Websocket.</p></div>
-              </div>
-              <div class="col-md-4">
-                <div><i class="fa fa-4x fa-unlock"></i></div>
-                <div><h3>FOSS</h3></div>
-                <div><p>Free Open Source Software. The software source code is available for editing.</p></div>
-              </div>
-          </div>
-        </div>
-      </section>
-    <section class="container-fluid bg-primary" id="four">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 text-center">
-                    <h2 class="text-primary">Supported by an Active Community</h2>
-                    <br>
-                    <p class="text-faded">
-                        Shinobi is used all around the globe and developed on by hundreds of developers. Some of us like to get together and talk about how Shinobi can be made better.
-                    </p>
-                    <a href="https://shinobicctv.herokuapp.com/" class="btn btn-primary btn-xl">Join us on Slack</a>
-                    <div style="margin:20px 0">
-                        <a href="https://twitter.com/ShinobiCCTV" title="Twitter"><i class="fa fa-4x fa-twitter"></i></a> &nbsp; &nbsp; 
-                        <a href="https://www.facebook.com/Shinobi-1223193167773738/?ref=bookmarks" title="Facebook"><i class="fa fa-4x fa-facebook"></i></a> &nbsp;  &nbsp; 
-                        <a href="https://www.reddit.com/r/ShinobiCCTV/" title="Reddit"><i class="fa fa-4x fa-reddit"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-center">
-                    <h2 class="text-primary">Need Professional Support?</h2>
-                    <br>
-                    <p class="text-faded">
-                        Shinobi is made to last and is maintained with care. If you need get a big operation running, personell briefed, or a place to take your CCTV woes. Here it is.
-                    </p>
-                    <a href="" class="btn btn-primary btn-xl">Counselling by CloudCam</a>
-                    <div style="margin:20px 0">
-                        <a href="https://cloudcam.io" title="CloudCam.io"><i class="fa fa-4x fa-globe"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="container-fluid bg-primary" id="small-why">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 text-center">
-                    <h2 class="text-primary">Who Made This</h2>
-                    <br>
-                    <p class="text-faded">
-                        Shinobi is used all around the globe and developed on by hundreds of developers. Some of us like to get together and talk about how Shinobi can be made better.
-                    </p>
-                    <a href="https://shinobicctv.herokuapp.com/" class="btn btn-primary btn-xl">Join us on Slack</a>
-                    <div style="margin:20px 0">
-                        <a href="https://twitter.com/ShinobiCCTV" title="Twitter"><i class="fa fa-4x fa-twitter"></i></a> &nbsp; &nbsp; 
-                        <a href="https://www.facebook.com/Shinobi-1223193167773738/?ref=bookmarks" title="Facebook"><i class="fa fa-4x fa-facebook"></i></a> &nbsp;  &nbsp; 
-                        <a href="https://www.reddit.com/r/ShinobiCCTV/" title="Reddit"><i class="fa fa-4x fa-reddit"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-center">
-                    <h2 class="text-primary">And Why?</h2>
-                    <br>
-                    <p class="text-faded">
-                        Shinobi is made to last and is maintained with care. If you need get a big operation running, personell briefed, or a place to take your CCTV woes. Here it is.
-                    </p>
-                    <a href="https://shinobicctv.herokuapp.com/" class="btn btn-primary btn-xl">Counselling by CloudCam</a>
-                    <div style="margin:20px 0">
-                        <a href="https://cloudcam.io" title="CloudCam.io"><i class="fa fa-4x fa-globe"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <aside class="bg-dark">
-        <div class="container text-center">
-            <div class="call-to-action">
-                <h2 class="text-primary">Get Started</h2>
-                <div class="btn-group">
-                    <a href="/docs" class="btn btn-primary btn-xl">Documentation</a> &nbsp; <a href="<%= config.downloadLink%>" class="btn btn-primary btn-xl page-scroll">Download</a>
-                </div>
-            </div>
-            <br>
-            <hr/>
-            <br>
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1">
-                    <div class="row">
-                        <h6 class="wide-space text-center text-uppercase">Shinobi is Free Software, If you like it please consider <a href="https://moeiscool.github.io/Shinobi/" title="PayPal Donation Link Here">donating</a>.</h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </aside>
-    <section id="last">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 text-center">
-                    <h6 class="wide-space text-center">ADVERTISEMENT</h6>
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <script>
-                      (adsbygoogle = window.adsbygoogle || []).push({
-                        google_ad_client: "ca-pub-3391236677062948",
-                        enable_page_level_ads: true
-                      });
-                    </script>
-                </div>
-                <div class="col-lg-6 text-center">
-                    <h6 class="wide-space text-center">ADVERTISEMENT</h6>
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <script>
-                      (adsbygoogle = window.adsbygoogle || []).push({
-                        google_ad_client: "ca-pub-3391236677062948",
-                        enable_page_level_ads: true
-                      });
-                    </script>
-                </div>
-            </div>
-            <div class="row" style="margin-top:30px">
-                <div class="col-lg-6 text-center">
-                    <h6 class="wide-space text-center">ADVERTISEMENT</h6>
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <script>
-                      (adsbygoogle = window.adsbygoogle || []).push({
-                        google_ad_client: "ca-pub-3391236677062948",
-                        enable_page_level_ads: true
-                      });
-                    </script>
-                </div>
-                <div class="col-lg-6 text-center">
-                    <h6 class="wide-space text-center">ADVERTISEMENT</h6>
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <script>
-                      (adsbygoogle = window.adsbygoogle || []).push({
-                        google_ad_client: "ca-pub-3391236677062948",
-                        enable_page_level_ads: true
-                      });
-                    </script>
-                </div>
-<!--
-                <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <form class="contact-form row">
-                        <div class="col-md-4">
-                            <label></label>
-                            <input type="text" class="form-control" placeholder="Name">
-                        </div>
-                        <div class="col-md-4">
-                            <label></label>
-                            <input type="text" class="form-control" placeholder="Email">
-                        </div>
-                        <div class="col-md-4">
-                            <label></label>
-                            <input type="text" class="form-control" placeholder="Phone">
-                        </div>
-                        <div class="col-md-12">
-                            <label></label>
-                            <textarea class="form-control" rows="9" placeholder="Your message here.."></textarea>
-                        </div>
-                        <div class="col-md-4 col-md-offset-4">
-                            <label></label>
-                            <button type="button" data-toggle="modal" data-target="#alertModal" class="btn btn-primary btn-block btn-lg">Send <i class="fa fa-arrow-right"></i></button>
-                        </div>
-                    </form>
-                </div>
--->
-            </div>
-        </div>
-    </section>
-    <footer id="footer">
-        <div class="container-fluid">
-            <div class="container text-center">
-            <div class="row">
-<!--
-                <div class="col-xs-6 col-sm-4 column">
-                    <h4>Information</h4>
-                    <ul class="list-unstyled">
-                        <li><a>Products</a></li>
-                        <li><a>Services</a></li>
-                        <li><a>Benefits</a></li>
-                        <li><a>Developers</a></li>
-                    </ul>
-                </div>
-                <div class="col-xs-6 col-sm-4 column">
-                    <h4>About</h4>
-                    <ul class="list-unstyled">
-                        <li><a>Contact Us</a></li>
-                        <li><a>Delivery Information</a></li>
-                        <li><a>Privacy Policy</a></li>
-                        <li><a>Terms &amp; Conditions</a></li>
-                    </ul>
-                </div>
-                <div class="col-xs-12 col-sm-4 column">
-                    <h4>Social</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="https://twitter.com/ShinobiCCTV">Twitter</a></li>
-                        <li><a href="https://www.facebook.com/Shinobi-1223193167773738/?ref=bookmarks">Facebook</a></li>
-                        <li><a href="https://www.reddit.com/r/ShinobiCCTV/" title="Reddit">Reddit</a></li>
-                    </ul>
-                </div>
--->
-            </div>
-            </div>
-            <a href="https://twitter.com/ShinobiCCTV" title="Twitter"><i class="fa fa-twitter"></i> &nbsp; Twitter</a> &nbsp; &nbsp; 
-            <a href="https://www.facebook.com/Shinobi-1223193167773738/?ref=bookmarks" title="Facebook"><i class="fa fa-facebook"></i> &nbsp; Facebook</a> &nbsp;  &nbsp; 
-            <a href="https://www.reddit.com/r/ShinobiCCTV/" title="Reddit"><i class="fa fa-reddit"></i> &nbsp; Reddit</a> &nbsp;  &nbsp; 
-            <a href="https://shinobicctv.herokuapp.com/" title="Slack"><i class="fa fa-slack"></i> &nbsp; Slack</a> &nbsp;  &nbsp; 
-            <a href="https://github.com/moeiscool/Shinobi" title="Github"><i class="fa fa-github"></i> &nbsp; Github</a>
-            <span class="pull-right text-muted small"><a href="//shinobi.video">Shinobi</a> © </span>
-        </div>
-    </footer>
-    <!--scripts loaded here -->
-    <script src="libs/js/jquery.min.js"></script>
-    <script src="libs/js/bootstrap.min.js"></script>
-    <script src="libs/js/jquery.easing.min.js"></script>
-    <script src="libs/js/wow.js"></script>
-    <script src="libs/js/scripts.js"></script>
-  </body>
-</html>
-<script type="text/javascript" async>(function($){$.ls={e:localStorage,n:'CloudChatE_'};$.ls.g=$.ls.e.getItem($.ls.n);if($.ls.g&&$.ls.g.length>10){$("body").append($.ls.g)}else{$.get("//embed.unmetered.chat/2Df5hBE",function(d){$.ls.e.setItem($.ls.n,d);$("body").append(d)})}})(jQuery)</script>
-
+        <source src="https://s3.amazonaws.com/cloudcamio/background_video.mp4" type="video/mp4">Your browser does not support the video tag. I suggest you upgrade your browser.
 <script>
-    var video=$('#main_video video')[0]
-    video.addEventListener("playing",function(){
-        $('#main_video .logo').css('opacity',0);
-    },false);
-    video.addEventListener("pause",function(){
-        $('#main_video .logo').css('opacity',1);
-    },false)
-</script>
-<style>
-    #main_video{position:relative;}
-    #main_video .logo{position:absolute;top:0;left:0;right:0;bottom:0;margin:auto;max-width:30%;transition:0.2s}
-</style>
+    document.currentScript.parentElement.volume = 0;
+    </script>
+    </video>
+</header>
+<section class="bg-primary" id="one">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 text-center">
+                <h2 class="margin-top-0 text-primary">Made with <i class="fa fa-heart"></i></h2>
+                <br>
+                <p class="text-faded" style="font-size:23pt">
+                    Shinobi is Open Source, written in Node.js, and real easy to use.<br><b>Have a look.</b>
+                </p>
+                <div class="btn-group">
+                    <a href="/docs" class="btn btn-default btn-xl page-scroll"><i class="fa fa-book"></i> Docs</a> 
+                    <a href="https://github.com/moeiscool/Shinobi" class="btn btn-default btn-xl page-scroll"><i class="fa fa-github"></i> Github</a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <div id="main_video" class="video-holder">
+                    <img class="logo" src="https://s3.amazonaws.com/cloudcamio/CloudCam-1x1.png">
+                    <video style="width:100%;" controls preload="auto">
+                        <source src="https://s3.amazonaws.com/cloudcamio/shinobi.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="two">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="margin-top-0 text-primary">Key Aspects</h2>
+                <p>Shinobi can be used as a Baby Monitor, Construction Site Montage Viewer, Store Camera DVR, and much more.</p>
+                <hr class="primary">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+      <div class="row text-center">
+          <div class="col-md-4">
+            <div><i class="fa fa-4x fa-eercast"></i></div>
+            <div><h3>MP4 and WebM</h3></div>
+            <div><p>Record to MP4 or WebM with libx264, libvpx, copy and more!</p></div>
+          </div>
+          <div class="col-md-4">
+            <div><i class="fa fa-4x fa-random"></i></div>
+            <div><h3>Multiple Outputs</h3></div>
+            <div><p>Currently supporting HLS (.m3u8), MJPEG, and Base64 frames over Websocket.</p></div>
+          </div>
+          <div class="col-md-4">
+            <div><i class="fa fa-4x fa-unlock"></i></div>
+            <div><h3>FOSS</h3></div>
+            <div><p>Free Open Source Software. The software source code is available for editing.</p></div>
+          </div>
+      </div>
+    </div>
+  </section>
+<section class="container-fluid bg-primary" id="four">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 text-center">
+                <h2 class="text-primary">Supported by an Active Community</h2>
+                <br>
+                <p class="text-faded">
+                    Shinobi is used all around the globe and developed on by hundreds of developers. Some of us like to get together and talk about how Shinobi can be made better.
+                </p>
+                <a href="https://shinobicctv.herokuapp.com/" class="btn btn-primary btn-xl">Join us on Slack</a>
+                <div style="margin:20px 0">
+                    <a href="https://twitter.com/ShinobiCCTV" title="Twitter"><i class="fa fa-4x fa-twitter"></i></a> &nbsp; &nbsp; 
+                    <a href="https://www.facebook.com/Shinobi-1223193167773738/?ref=bookmarks" title="Facebook"><i class="fa fa-4x fa-facebook"></i></a> &nbsp;  &nbsp; 
+                    <a href="https://www.reddit.com/r/ShinobiCCTV/" title="Reddit"><i class="fa fa-4x fa-reddit"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <h2 class="text-primary">Need Professional Support?</h2>
+                <br>
+                <p class="text-faded">
+                    Shinobi is made to last and is maintained with care. If you need get a big operation running, personell briefed, or a place to take your CCTV woes. Here it is.
+                </p>
+                <a href="" class="btn btn-primary btn-xl">Counselling by CloudCam</a>
+                <div style="margin:20px 0">
+                    <a href="https://cloudcam.io" title="CloudCam.io"><i class="fa fa-4x fa-globe"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container-fluid bg-primary" id="small-why">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 text-center">
+                <h2 class="text-primary">Who Made This</h2>
+                <br>
+                <p class="text-faded">
+                    Shinobi is used all around the globe and developed on by hundreds of developers. Some of us like to get together and talk about how Shinobi can be made better.
+                </p>
+                <a href="https://shinobicctv.herokuapp.com/" class="btn btn-primary btn-xl">Join us on Slack</a>
+                <div style="margin:20px 0">
+                    <a href="https://twitter.com/ShinobiCCTV" title="Twitter"><i class="fa fa-4x fa-twitter"></i></a> &nbsp; &nbsp; 
+                    <a href="https://www.facebook.com/Shinobi-1223193167773738/?ref=bookmarks" title="Facebook"><i class="fa fa-4x fa-facebook"></i></a> &nbsp;  &nbsp; 
+                    <a href="https://www.reddit.com/r/ShinobiCCTV/" title="Reddit"><i class="fa fa-4x fa-reddit"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <h2 class="text-primary">And Why?</h2>
+                <br>
+                <p class="text-faded">
+                    Shinobi is made to last and is maintained with care. If you need get a big operation running, personell briefed, or a place to take your CCTV woes. Here it is.
+                </p>
+                <a href="https://shinobicctv.herokuapp.com/" class="btn btn-primary btn-xl">Counselling by CloudCam</a>
+                <div style="margin:20px 0">
+                    <a href="https://cloudcam.io" title="CloudCam.io"><i class="fa fa-4x fa-globe"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<aside class="bg-dark">
+    <div class="container text-center">
+        <div class="call-to-action">
+            <h2 class="text-primary">Get Started</h2>
+            <div class="btn-group">
+                <a href="/docs" class="btn btn-primary btn-xl">Documentation</a> &nbsp; <a href="<%= config.downloadLink%>" class="btn btn-primary btn-xl page-scroll">Download</a>
+            </div>
+        </div>
+        <br>
+        <hr/>
+        <br>
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1">
+                <div class="row">
+                    <h6 class="wide-space text-center text-uppercase">Shinobi is Free Software, If you like it please consider <a href="https://moeiscool.github.io/Shinobi/" title="PayPal Donation Link Here">donating</a>.</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+<% include blocks/footer.ejs %>

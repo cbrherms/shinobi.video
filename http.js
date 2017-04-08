@@ -37,5 +37,5 @@ app.get(['/','/:file'], function(req, res) {
 });
 //start server
 app.listen(config.port,config.ip,function () {
-  console.log('Website Loaded')
+  console.log('Website Loaded on port '+config.port)
 });

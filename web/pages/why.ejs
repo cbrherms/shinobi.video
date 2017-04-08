@@ -1,18 +1,20 @@
 <% include blocks/header.ejs %>
 <style>
     .table ul li:not(:last-child){margin-bottom:10px}
+    .table td{padding:10px}
+    .table tr td:first-child{width:30%;font-weight:bold}
     code{color:#231f20}
 </style>
 <header id="first">
     <div class="_shade">
     <div class="header-content">
         <div class="inner">
-            <img src="libs/assets/">
-            <h1 class="cursive">Shinobi</h1>
-            <h4 style="text-transform:uppercase">The Guardian you Deserve</h4>
+            <img style="border-radius:50%" src="libs/assets/icon/apple-touch-icon-152x152.png">
+            <h1 class="cursive">Why?</h1>
+            <h4 style="text-transform:uppercase">Why go through the effort?</h4>
             <hr>
             <div class="btn-group">
-                <a href="#learn" class="btn btn-primary btn-xl page-scroll">Scroll Me</a>
+                <a href="#learn" class="btn btn-primary btn-xl page-scroll">Find Out</a>
             </div>
         </div>
         </div>
@@ -82,18 +84,19 @@
                   },
               ].forEach(function(v,n){ %>
               <tr>
-                  <td style="width:30%;font-weight:bold"><%-v.title%></td>
+                  <td><%-v.title%></td>
                   <td><%-v.text%></td>
               </tr>
            <%  }) %>
           </tbody>
       </table>
         <blockquote>
-            <p>As much as ZoneMinder is godly among CCTV applications. It only has this praise because no other solutions existed until Shinobi came along. At first I tried to fix the issues ZoneMinder was having by myself as I was using the <code>video</code> branch which was not updated with the rest of ZoneMinder. I needed MP4 recording.</p>
-            <p>The more I worked on ZoneMinder, the more bitter I became. Issues getting ignored for more than 1 year should have been the hint when I first started. Due to this, and many other reasons not mentioned, ZoneMinder is dying. I am not one with enough skill to clean up such a mess.</p>
+            <img src="libs/assets/moe.png" style="width:350px" class="pull-right">
+            <p>As much as ZoneMinder is godly among CCTV applications. It only has this praise because no other solutions existed. If they did they were a sliver in ZoneMinder's shadow. At first I tried to fix the issues ZoneMinder was having by myself as I was using the <code>video</code> branch which was not updated with the rest of ZoneMinder. I needed MP4 recording.</p>
+            <p>The more I worked on ZoneMinder, the more bitter I became. Issues getting ignored for more than 1 year should have been the hint when I first started. Due to this, and many other reasons not mentioned, I believe ZoneMinder is dying. I don't have enough time to clean up such a mess.</p>
             <p>So I began Shinobi.</p>
+            <p><small>Moe Alam</small></p>
         </blockquote>
-
     </div>
   </section>
 <% include blocks/footer.ejs %>

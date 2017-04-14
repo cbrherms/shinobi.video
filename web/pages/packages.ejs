@@ -1,0 +1,137 @@
+ <% include blocks/header.ejs %>
+<header id="first">
+    <div class="_shade">
+    <div class="header-content">
+        <div class="inner">
+            <img style="border-radius:50%" src="libs/assets/icon/apple-touch-icon-152x152.png">
+            <h1 class="cursive">Professional Support</h1>
+            <h4 style="text-transform:uppercase">Excellent Software backed by Excellent Engineers</h4>
+            <hr>
+            <div class="btn-group">
+                <a href="#learn" class="btn btn-primary btn-xl page-scroll">Learn More</a>
+            </div>
+        </div>
+        </div>
+    </div>
+</header>
+<section class="bg-primary" id="one">
+    <div class="container">
+<div class="disply-table" style="margin-top:50px;margin-bottom:30px"><table id="chat_specs" class="super-table">
+    <thead><tr><td style="text-align:center;font-size:1.5em;border-bottom:none">&nbsp;</td><td><a href="/chat/Penguin"><div class="circ-img" style="background-image:url('//media.unmetered.io/internet/animal-penguin.png')"></div><br>Penguin</a></td><td><a href="/chat/Husky"><div class="circ-img" style="background-image:url('//media.unmetered.io/internet/animal-husky.png')"></div><br>Husky</a></td><td><a href="/chat/Falcon"><div class="circ-img" style="background-image:url('//media.unmetered.io/internet/animal-falcon.png')"></div><br>Falcon</a></td></tr></thead>
+    <tbody></tbody>
+    <tfoot><tr><td>&nbsp;</td><td><a class="btn btn-ghost btn-success btn-xs" href="https://unmetered.io/index.php?cmd=module&amp;module=13&amp;cid=126&amp;level=0">Get Started</a></td><td><a class="btn btn-ghost btn-success btn-xs" href="https://unmetered.io/index.php?cmd=module&amp;module=13&amp;cid=126&amp;level=1">Order Form</a></td><td><a class="btn btn-ghost btn-success btn-xs" href="https://unmetered.io/index.php?cmd=module&amp;module=13&amp;cid=126&amp;level=2">Order Form</a></td></tr></tfoot>
+</table>
+<script>
+    var plans=[
+        {"name":""},
+    ]
+    var specs={
+        "Bug Support":["10 days","10 days","10 days","5 days","5 days","72 days","1 hour"],
+        "General Support":["48 hours","48 hours","48 hours","24 hours","24 hours","5 hours","1 hour"],
+        "Email Support":[0,0,0,0,1,1,1],
+        "Remote Desktop Support":[0,0,0,0,1,1,1],
+        "Voice Support":[0,0,0,0,0,0,'FaceTime and Slack'],
+        "Feature Request Priority":["Low","Low","Low","Low","Low","Medium","High"],
+        "Payment Cycle":["One Time, 1 Week","Monthly","Annually","Annually","Monthly","Monthly","Monthly"],
+    }
+    var details={
+        "Bug Support": "Support and Software Update for when you have found a bug that is interferring with how Shinobi is supposed to function and with how you use Shinobi. Support will be expected within the specified time period.",
+        "General Support": "Support on how to use Shinobi. Setting up cameras and tweaking settings for your system and purpose.",
+        "Email Support": "Communication through direct email with the creator of Shinobi or senior developer.",
+        "Remote Support": "Support through Remote Desktop or through your Shinobi installation from a remote address.",
+        "Feature Request Priority": "Priority for feature requests and suggestions.",
+        "Billing Cycle": "How frequent you will be billed for the selected package.",
+    }
+    tmp='';
+    $.each(specs,function(m,b){
+        if((b instanceof Array)===false){b=[b,b,b,b,b,b,b]}
+        tmp+='<tr><td>'+m+'&nbsp; <span class="pull-right tooltipster" title="'+details[m]+'"><i class="fa fa-question-circle name"></i>&nbsp;</span></td>'
+        $.each(b,function(c,x){
+            if(x===1||x===0){
+                if(x===1){x='&nbsp;<i class="fa fa-check text-success"></i>&nbsp;'}else{x='-'}
+            }
+            tmp+='<td>'+x+'</td>'
+        })
+        tmp+='</tr>';
+    })
+$('#chat_specs.super-table tbody').html(tmp);//$('.tooltipster').tooltipster({position:'right',interactive:true});
+</script></div>
+    </div>
+</section>
+<section id="two">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="margin-top-0 text-primary">Key Aspects</h2>
+                <p>Shinobi can be used as a Baby Monitor, Construction Site Montage Viewer, Store Camera DVR, and much more.</p>
+                <hr class="primary">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+      <div class="row text-center">
+          <div class="col-md-4">
+            <div><i class="fa fa-4x fa-eercast"></i></div>
+            <div><h3>MP4 and WebM</h3></div>
+            <div><p>Record to MP4 or WebM with libx264, libvpx, copy and more!</p></div>
+          </div>
+          <div class="col-md-4">
+            <div><i class="fa fa-4x fa-random"></i></div>
+            <div><h3>Multiple Outputs</h3></div>
+            <div><p>Currently supporting HLS (.m3u8), MJPEG, and Base64 frames over Websocket.</p></div>
+          </div>
+          <div class="col-md-4">
+            <div><i class="fa fa-4x fa-unlock"></i></div>
+            <div><h3>FOSS</h3></div>
+            <div><p>Free Open Source Software. The software source code is available for editing.</p></div>
+          </div>
+      </div>
+    </div>
+  </section>
+<section class="container-fluid bg-primary" id="four">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 text-center">
+                <h2 class="text-primary">Supported by an Active Community</h2>
+                <br>
+                <p class="text-faded">
+                    Shinobi is used all around the globe and developed on by hundreds of developers. Some of us like to get together and talk about how Shinobi can be made better.
+                </p>
+                <a href="https://shinobicctv.herokuapp.com/" class="btn btn-primary btn-xl">Join us on Slack</a>
+                <div style="margin:20px 0">
+                    <a href="https://twitter.com/ShinobiCCTV" title="Twitter"><i class="fa fa-4x fa-twitter"></i></a> &nbsp; &nbsp; 
+                    <a href="https://www.facebook.com/Shinobi-1223193167773738/?ref=bookmarks" title="Facebook"><i class="fa fa-4x fa-facebook"></i></a> &nbsp;  &nbsp; 
+                    <a href="https://www.reddit.com/r/ShinobiCCTV/" title="Reddit"><i class="fa fa-4x fa-reddit"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <h2 class="text-primary">Need Professional Support?</h2>
+                <br>
+                <p class="text-faded">
+                    Shinobi is made to last and is maintained with care. If you need to get a big operation running, personell briefed, or a place to take your woes. Here it is.
+                </p>
+                <a href="<%= config.paidSupport%>" class="btn btn-primary btn-xl">Support by CloudChat</a>
+                <div style="margin:20px 0">
+                    <a href="<%= config.paidSupport%>"><i class="fa fa-4x fa-globe"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container-fluid" id="small-why">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="text-primary">Why Make This?<br><small>Other Solutions Already Exist.</small></h2>
+                <br>
+                <p><img style="border-radius:50%" src="/libs/assets/icon/apple-touch-icon-152x152.png"></p>
+                <p class="text-faded">
+                    The creator of Shinobi wanted to make a cloud network video recording solution. One that anyone could easily use. Simply login to your account, add camera details, set options, and away you go. Viewing streams and recordings on your mobile device by simply opening a web page. No installations. This means you could view it on any device with a capable browser.
+                </p>
+                <a href="/why" class="btn btn-primary btn-xl">Why Shinobi</a>
+            </div>
+        </div>
+    </div>
+</section>
+<% include blocks/getstarted.ejs %>
+<% include blocks/footer.ejs %>

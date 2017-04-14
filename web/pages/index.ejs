@@ -38,6 +38,19 @@
                             <source src="https://s3.amazonaws.com/cloudcamio/shinobi.mp4" type="video/mp4">
                         </video>
                     </div>
+                    <script>
+                        var video=$('#main_video video')[0]
+                        video.addEventListener("playing",function(){
+                            $('#main_video .logo').css('opacity',0);
+                        },false);
+                        video.addEventListener("pause",function(){
+                            $('#main_video .logo').css('opacity',1);
+                        },false)
+                    </script>
+                    <style>
+                        #main_video{position:relative;}
+                        #main_video .logo{position:absolute;top:0;left:0;right:0;bottom:0;margin:auto;max-width:30%;transition:0.2s}
+                    </style>
                 </div>
             </div>
         </div>

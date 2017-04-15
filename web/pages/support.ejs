@@ -14,11 +14,14 @@
         </div>
     </div>
 </header>
+<section class="bg-primary" id="support">
+    <% include blocks/table-support.ejs %>
+</section>
 <section id="learn">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 text-center">
-                <h2 class="margin-top-0 text-primary">What is General Support?</h2>
+                <h2 class="margin-top-0 text-primary">General Support</h2>
                 <br>
                 <p>
                     Help in using the application itself. Setting up cameras and tweaking settings for your system and purpose.
@@ -38,7 +41,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 text-center pull-right">
-                <h2 class="margin-top-0 text-primary">What is Bug Support?</h2>
+                <h2 class="margin-top-0 text-primary">Bug Support</h2>
                 <br>
                 <p>
                     Get support and software updates for when you have found a bug that is interferring with how you use Shinobi. Completion for bug reports will be addressed within the specified time based on your selected package.
@@ -46,8 +49,8 @@
                 <p>There are developers already addressing bugs. Due to limited resources support is prioritized.</p>
                 <p>You may communicate with us by creating an Issue on Github, opening a Ticket, or simply a developer on Slack.</p>
                 <div>
-                    <a href="https://shinobicctv.herokuapp.com/" class="btn btn-default"><i class="fa fa-slack"></i> Slack</a> 
-                    <a href="http://cloudchat.online/tickets/new/" class="btn btn-default"><i class="fa fa-ticket"></i> Ticket</a> 
+                    <a href="https://shinobicctv.herokuapp.com/" class="btn btn-default"><i class="fa fa-slack"></i> Slack</a> &nbsp; 
+                    <a href="http://cloudchat.online/tickets/new/" class="btn btn-default"><i class="fa fa-ticket"></i> Ticket</a> &nbsp; 
                     <a href="https://github.com/moeiscool/Shinobi/issues" class="btn btn-default"><i class="fa fa-github"></i> Github</a>
                 </div>
             </div>
@@ -61,13 +64,10 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 text-center">
-                <h2 class="margin-top-0 text-primary">What is Remote Support?</h2>
+                <h2 class="margin-top-0 text-primary">Remote Support</h2>
                 <br>
                 <p>Installation, Monitors, and Settings. Get a developer to configure your system for you or give you pointers as you do it yourself.</p>
                 <p>Support through Remote Desktop, SSH, or through your Shinobi installation from a remote address makes support quick and painless.</p>
-                <div class="btn-group">
-                    <a href="/docs" class="btn btn-default btn-xl page-scroll"><i class="fa fa-book"></i> Docs</a> 
-                </div>
             </div>
             <div class="col-lg-6 text-center">
                 <img src="/libs/assets/computer-program.png">
@@ -75,5 +75,79 @@
         </div>
     </div>
 </section>
-<% include blocks/getstarted.ejs %>
+<section class="bg-primary" id="learn4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 text-center pull-right">
+                <h2 class="margin-top-0 text-primary">Feature Request Priority</h2>
+                <br>
+                <p>Level of priority for a feature or suggestion that will be considered, planned, and implemented.</p>
+                <p>Shinobi is gets better every day. These developers care about the code laid into software that will ultimately run on thousands of machines.</p>
+                <p>Not all requests are implemented to maintain the integrity of Shinobi.</p>
+                <div class="btn-group">
+                    <a href="https://www.reddit.com/r/ShinobiCCTV/" class="btn btn-default btn-xl page-scroll"><i class="fa fa-reddit"></i> Reddit</a> 
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <img style="max-height:400px" src="/libs/assets/iot-web.png">
+            </div>
+        </div>
+    </div>
+</section>
+<section id="learn4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 text-center">
+                <h2 class="margin-top-0 text-primary">Private Feature Integrations</h2>
+                <br>
+                <p>Priority and Enterprise clients have the option of custom features integration in their private instances. Remote access will be required to integrate features in private installations.</p>
+                <p>Not all requests are implemented to maintain application performance.</p>
+                <div class="btn-group">
+                    <a href="http://cloudchat.online/tickets/new/" class="btn btn-xl btn-default"><i class="fa fa-ticket"></i> Ticket</a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <img style="max-height:400px" src="/libs/assets/iot-network.png">
+            </div>
+        </div>
+    </div>
+</section>
+<section id="learn4" class="bg-primary">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 text-center pull-right">
+                <h2 class="margin-top-0 text-primary">Support over the Phone</h2>
+                <br>
+                <p>Don't bother waiting for a forum post or a message. Get a call.</p>
+                <p>Get voice support over FaceTime and Slack. Call when you are in need of assistance and talk to a developer of the platform.</p>
+                <div class="btn-group">
+                    <a href="https://shinobicctv.herokuapp.com/" class="btn btn-default btn-xl page-scroll"><i class="fa fa-slack"></i> Slack</a> 
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <img style="max-height:400px" src="/libs/assets/meeting.png">
+            </div>
+        </div>
+    </div>
+</section>
+<aside class="bg-dark" id="why">
+    <div class="container text-center">
+        <div class="call-to-action">
+            <h2 class="text-primary">Get Started</h2>
+            <div class="btn-group">
+                <a href="/packages#support" class="btn btn-primary btn-xl">Packages</a> &nbsp; <a href="/docs" class="btn btn-primary btn-xl">Documentation</a>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1">
+                <div class="row">
+                    <h6 class="wide-space text-center text-uppercase">Shinobi is Free Software, If you like it please consider <a href="/docs/donate" title="Donation Link Here">donating</a>.</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
 <% include blocks/footer.ejs %>

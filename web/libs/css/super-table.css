@@ -1,0 +1,26 @@
+    .super-table{width:100%}
+    .super-table tr:first-child td:nth-child(2){border-top-left-radius:5px;}
+    .super-table tr:first-child td:last-child{border-top-right-radius:5px;}
+    .super-table tr:last-child td:nth-child(2){border-bottom-left-radius:5px;}
+    .super-table tr:last-child td:last-child{border-bottom-right-radius:5px;}
+    .super-table tr td{text-transform:uppercase;letter-spacing: .2em;font-size: 12px;}
+    .super-table tr td:not(:first-child) i{font-size:15pt}
+    .super-table tr td{border-bottom: 1px solid #dfdfdf;
+    width: 140px;
+    text-align: center;}
+    .super-table tr td:first-child span{margin-right:15px;cursor:pointer}
+    .super-table tr td:first-child{text-align:left;font-weight: 300;
+    font-style: normal;font-size:0.8em;
+    border-bottom: 1px solid #dfdfdf;
+    background: 0 0;
+    padding: 15px 0;}
+    .super-table tr td.section{
+    text-transform: uppercase;
+    letter-spacing: .2em;
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    text-align: left;
+}
+    .super-table tr:last-child td{border:0}
+    .super-table tbody tr:hover td:not(:first-child){background:#444}

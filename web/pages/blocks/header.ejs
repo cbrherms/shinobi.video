@@ -1,27 +1,3 @@
-<%
-var menu=[
-            {
-                href:'https://github.com/moeiscool/Shinobi/zipball/master',
-                text:'Download',
-                class:'hidden-xs'
-            },
-            {
-                href:'/docs',
-                text:'Documentation',
-                class:''
-            },
-            {
-                href:'/docs/donate',
-                text:'Donate',
-                class:''
-            },
-            {
-                href:'/why',
-                text:'Why',
-                class:''
-            }
-        ]
- %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -55,6 +31,7 @@ var menu=[
     <link rel="stylesheet" href="libs/css/bootstrap.min.css" />
     <link rel="stylesheet" href="libs/css/animate.min.css" />
     <link rel="stylesheet" href="libs/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="libs/css/super-table.css" />
     <link rel="stylesheet" href="libs/css/styles.css" />
     <script src="libs/js/jquery.min.js"></script>
     </head>
@@ -72,7 +49,35 @@ var menu=[
             </div>
             <div class="navbar-collapse collapse" id="bs-navbar">
                 <ul class="nav navbar-nav">
-                    <% menu.forEach(function(v,n){ %>
+<%
+            var menu=[
+                        {
+                            href:'https://github.com/moeiscool/Shinobi/zipball/master',
+                            text:'Download',
+                            class:'hidden-xs'
+                        },
+                        {
+                            href:'/docs',
+                            text:'Documentation',
+                            class:''
+                        },
+                        {
+                            href:'/docs/donate',
+                            text:'Donate',
+                            class:''
+                        },
+                        {
+                            href:'/why',
+                            text:'Why',
+                            class:''
+                        },
+                        {
+                            href:'/packages',
+                            text:'Packages',
+                            class:''
+                        }
+                    ]
+                    menu.forEach(function(v,n){ %>
                         <li>
                             <a class="<%- v.class %>" href="<%- v.href %>"><%- v.text %></a>
                         </li>

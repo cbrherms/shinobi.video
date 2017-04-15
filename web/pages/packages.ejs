@@ -4,8 +4,8 @@
     <div class="header-content">
         <div class="inner">
             <img style="border-radius:50%" src="libs/assets/icon/apple-touch-icon-152x152.png">
-            <h1 class="cursive">Professional Support</h1>
-            <h4 style="text-transform:uppercase">Excellent Software backed by Excellent Engineers</h4>
+            <h1 class="cursive">Metal and Maintenance</h1>
+            <h4 style="text-transform:uppercase">Professional Support and Dedicated Servers</h4>
             <hr>
             <div class="btn-group">
                 <a href="#learn" class="btn btn-primary btn-xl page-scroll">Learn More</a>
@@ -14,22 +14,35 @@
         </div>
     </div>
 </header>
-<section class="bg-primary" id="one">
+<section class="bg-primary" id="learn">
     <div class="container">
-<div class="disply-table" style="margin-top:50px;margin-bottom:30px"><table id="chat_specs" class="super-table">
-    <thead><tr><td style="text-align:center;font-size:1.5em;border-bottom:none">&nbsp;</td><td><a href="/chat/Penguin"><div class="circ-img" style="background-image:url('//media.unmetered.io/internet/animal-penguin.png')"></div><br>Penguin</a></td><td><a href="/chat/Husky"><div class="circ-img" style="background-image:url('//media.unmetered.io/internet/animal-husky.png')"></div><br>Husky</a></td><td><a href="/chat/Falcon"><div class="circ-img" style="background-image:url('//media.unmetered.io/internet/animal-falcon.png')"></div><br>Falcon</a></td></tr></thead>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="margin-top-0 text-primary">Support Packages</h2>
+                <p>Shinobi is free software. Ordering a support package supports the engineers.</p>
+                <hr class="primary">
+            </div>
+        </div>
+<div class="disply-table" style="margin-top:50px;margin-bottom:30px"><table id="packages" class="super-table">
+    <thead><tr><td style="text-align:center;font-size:1.5em;border-bottom:none">&nbsp;</td></tr></thead>
     <tbody></tbody>
-    <tfoot><tr><td>&nbsp;</td><td><a class="btn btn-ghost btn-success btn-xs" href="https://unmetered.io/index.php?cmd=module&amp;module=13&amp;cid=126&amp;level=0">Get Started</a></td><td><a class="btn btn-ghost btn-success btn-xs" href="https://unmetered.io/index.php?cmd=module&amp;module=13&amp;cid=126&amp;level=1">Order Form</a></td><td><a class="btn btn-ghost btn-success btn-xs" href="https://unmetered.io/index.php?cmd=module&amp;module=13&amp;cid=126&amp;level=2">Order Form</a></td></tr></tfoot>
+    <tfoot><tr><td>&nbsp;</td></tr></tfoot>
 </table>
 <script>
     var plans=[
-        {"name":""},
+        {"name":"Tiny Once",href:'http://cloudchat.online/cart/shinobi/'},
+        {"name":"Tiny Monthly",href:'http://cloudchat.online/cart/shinobi/'},
+        {"name":"Micro",href:'http://cloudchat.online/cart/shinobi/'},
+        {"name":"Mini",href:'http://cloudchat.online/cart/shinobi/'},
+        {"name":"Individual",href:'http://cloudchat.online/cart/shinobi/'},
+        {"name":"Priority",href:'http://cloudchat.online/cart/shinobi/'},
+        {"name":"Enterprise",href:'http://cloudchat.online/cart/shinobi/'},
     ]
     var specs={
         "Bug Support":["10 days","10 days","10 days","5 days","5 days","72 days","1 hour"],
         "General Support":["48 hours","48 hours","48 hours","24 hours","24 hours","5 hours","1 hour"],
         "Email Support":[0,0,0,0,1,1,1],
-        "Remote Desktop Support":[0,0,0,0,1,1,1],
+        "Remote Support":[0,0,0,0,1,1,1],
         "Voice Support":[0,0,0,0,0,0,'FaceTime and Slack'],
         "Feature Request Priority":["Low","Low","Low","Low","Low","Medium","High"],
         "Payment Cycle":["One Time, 1 Week","Monthly","Annually","Annually","Monthly","Monthly","Monthly"],
@@ -39,22 +52,33 @@
         "General Support": "Support on how to use Shinobi. Setting up cameras and tweaking settings for your system and purpose.",
         "Email Support": "Communication through direct email with the creator of Shinobi or senior developer.",
         "Remote Support": "Support through Remote Desktop or through your Shinobi installation from a remote address.",
+        "Voice Support": "Communication over FaceTime or Slack, just like a regular call.",
         "Feature Request Priority": "Priority for feature requests and suggestions.",
-        "Billing Cycle": "How frequent you will be billed for the selected package.",
+        "Payment Cycle": "How frequent you will be billed for the selected package.",
     }
+    tmp='';
+    $.each(plans,function(n,v){
+        tmp+='<td><a href="'+v.href+'"><div class="circ-img" style="background-image:url('+v.img+')"></div><br>'+v.name+'</a></td>'
+    })
+    $('#packages.super-table thead tr').append(tmp);
+    tmp='';
+    $.each(plans,function(n,v){
+        tmp+='<td><a class="btn btn-ghost btn-warning btn-xs" href="'+v.href+'">Order Form</a></td>'
+    })
+    $('#packages.super-table tfoot tr').append(tmp);
     tmp='';
     $.each(specs,function(m,b){
         if((b instanceof Array)===false){b=[b,b,b,b,b,b,b]}
         tmp+='<tr><td>'+m+'&nbsp; <span class="pull-right tooltipster" title="'+details[m]+'"><i class="fa fa-question-circle name"></i>&nbsp;</span></td>'
         $.each(b,function(c,x){
             if(x===1||x===0){
-                if(x===1){x='&nbsp;<i class="fa fa-check text-success"></i>&nbsp;'}else{x='-'}
+                if(x===1){x='&nbsp;<i class="fa fa-check text-primary"></i>&nbsp;'}else{x='-'}
             }
             tmp+='<td>'+x+'</td>'
         })
         tmp+='</tr>';
     })
-$('#chat_specs.super-table tbody').html(tmp);//$('.tooltipster').tooltipster({position:'right',interactive:true});
+$('#packages.super-table tbody').html(tmp);//$('.tooltipster').tooltipster({position:'right',interactive:true});
 </script></div>
     </div>
 </section>
@@ -62,75 +86,65 @@ $('#chat_specs.super-table tbody').html(tmp);//$('.tooltipster').tooltipster({po
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="margin-top-0 text-primary">Key Aspects</h2>
-                <p>Shinobi can be used as a Baby Monitor, Construction Site Montage Viewer, Store Camera DVR, and much more.</p>
+                <h2 class="margin-top-0 text-primary">Dedicated Servers</h2>
+                <p>Get Shinobi on metal reserved for you. Maintenance of Shinobi will be taken care of by us.</p>
                 <hr class="primary">
             </div>
         </div>
-    </div>
-    <div class="container">
-      <div class="row text-center">
-          <div class="col-md-4">
-            <div><i class="fa fa-4x fa-eercast"></i></div>
-            <div><h3>MP4 and WebM</h3></div>
-            <div><p>Record to MP4 or WebM with libx264, libvpx, copy and more!</p></div>
-          </div>
-          <div class="col-md-4">
-            <div><i class="fa fa-4x fa-random"></i></div>
-            <div><h3>Multiple Outputs</h3></div>
-            <div><p>Currently supporting HLS (.m3u8), MJPEG, and Base64 frames over Websocket.</p></div>
-          </div>
-          <div class="col-md-4">
-            <div><i class="fa fa-4x fa-unlock"></i></div>
-            <div><h3>FOSS</h3></div>
-            <div><p>Free Open Source Software. The software source code is available for editing.</p></div>
-          </div>
-      </div>
-    </div>
-  </section>
-<section class="container-fluid bg-primary" id="four">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 text-center">
-                <h2 class="text-primary">Supported by an Active Community</h2>
-                <br>
-                <p class="text-faded">
-                    Shinobi is used all around the globe and developed on by hundreds of developers. Some of us like to get together and talk about how Shinobi can be made better.
-                </p>
-                <a href="https://shinobicctv.herokuapp.com/" class="btn btn-primary btn-xl">Join us on Slack</a>
-                <div style="margin:20px 0">
-                    <a href="https://twitter.com/ShinobiCCTV" title="Twitter"><i class="fa fa-4x fa-twitter"></i></a> &nbsp; &nbsp; 
-                    <a href="https://www.facebook.com/Shinobi-1223193167773738/?ref=bookmarks" title="Facebook"><i class="fa fa-4x fa-facebook"></i></a> &nbsp;  &nbsp; 
-                    <a href="https://www.reddit.com/r/ShinobiCCTV/" title="Reddit"><i class="fa fa-4x fa-reddit"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-6 text-center">
-                <h2 class="text-primary">Need Professional Support?</h2>
-                <br>
-                <p class="text-faded">
-                    Shinobi is made to last and is maintained with care. If you need to get a big operation running, personell briefed, or a place to take your woes. Here it is.
-                </p>
-                <a href="<%= config.paidSupport%>" class="btn btn-primary btn-xl">Support by CloudChat</a>
-                <div style="margin:20px 0">
-                    <a href="<%= config.paidSupport%>"><i class="fa fa-4x fa-globe"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="container-fluid" id="small-why">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="text-primary">Why Make This?<br><small>Other Solutions Already Exist.</small></h2>
-                <br>
-                <p><img style="border-radius:50%" src="/libs/assets/icon/apple-touch-icon-152x152.png"></p>
-                <p class="text-faded">
-                    The creator of Shinobi wanted to make a cloud network video recording solution. One that anyone could easily use. Simply login to your account, add camera details, set options, and away you go. Viewing streams and recordings on your mobile device by simply opening a web page. No installations. This means you could view it on any device with a capable browser.
-                </p>
-                <a href="/why" class="btn btn-primary btn-xl">Why Shinobi</a>
-            </div>
-        </div>
+<div class="disply-table" style="margin-top:50px;margin-bottom:30px"><table id="metal" class="super-table">
+    <thead><tr><td style="text-align:center;font-size:1.5em;border-bottom:none">&nbsp;</td></tr></thead>
+    <tbody></tbody>
+    <tfoot><tr><td>&nbsp;</td></tr></tfoot>
+</table>
+<script>
+    var plans=[
+        {"name":"Residential",href:'http://cloudchat.online/cart/cloudcam-nvr-hosting/'},
+        {"name":"Small Business",href:'http://cloudchat.online/cart/cloudcam-nvr-hosting/'},
+        {"name":"Corporate",href:'http://cloudchat.online/cart/cloudcam-nvr-hosting/'},
+        {"name":"Big Business",href:'http://cloudchat.online/cart/cloudcam-nvr-hosting/'},
+        {"name":"Enterprise",href:'http://cloudchat.online/cart/cloudcam-nvr-hosting/'},
+    ]
+    var specs={
+        "Cameras":["5","8","20","30","64+"],
+        "Support Package":["Tiny","Micro","Priority","Enterprise","Enterprise"],
+        "Public IPv4 Address":1,
+        "x86 64bit Cores":["2","4","8","10","12"],
+        "Memory (RAM)":["2GB","4GB","30GB","60GB","120GB"],
+        "SSD Space":["50GB","100GB","300GB","700GB","1000GB"],
+        "Unmetered Bandwidth":["200Mbit/s","200Mbit/s","1000Mbit/s","1000Mbit/s","1000Mbit/s"],
+        "Locations":"Paris, Amsterdam",
+    }
+    var details={
+        "Cameras":"Number of recommended maximum",
+        "Support Package":"The included support package to maintain your Shinobi install.",
+        "Public IPv4 Address":"The public address that will be used to access your Shinobi instance.",
+        "Bandwidth":"The amount of data you can use per month.",
+        "Locations":"Where your server will be located. Closer it is, to where your cameras are, the better",
+    }
+    tmp='';
+    $.each(plans,function(n,v){
+        tmp+='<td><a href="'+v.href+'"><div class="circ-img" style="background-image:url('+v.img+')"></div><br>'+v.name+'</a></td>'
+    })
+    $('#metal.super-table thead tr').append(tmp);
+    tmp='';
+    $.each(plans,function(n,v){
+        tmp+='<td><a class="btn btn-ghost btn-warning btn-xs" href="'+v.href+'">Order Form</a></td>'
+    })
+    $('#metal.super-table tfoot tr').append(tmp);
+    tmp='';
+    $.each(specs,function(m,b){
+        if((b instanceof Array)===false){b=[b,b,b,b,b]}
+        tmp+='<tr><td>'+m+'&nbsp; <span class="pull-right tooltipster" title="'+details[m]+'"><i class="fa fa-question-circle name"></i>&nbsp;</span></td>'
+        $.each(b,function(c,x){
+            if(x===1||x===0){
+                if(x===1){x='&nbsp;<i class="fa fa-check text-primary"></i>&nbsp;'}else{x='-'}
+            }
+            tmp+='<td>'+x+'</td>'
+        })
+        tmp+='</tr>';
+    })
+$('#metal.super-table tbody').html(tmp);//$('.tooltipster').tooltipster({position:'right',interactive:true});
+</script></div>
     </div>
 </section>
 <% include blocks/getstarted.ejs %>

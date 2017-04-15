@@ -46,6 +46,7 @@
         "Voice Support":[0,0,0,0,0,0,'FaceTime and Slack'],
         "Feature Request Priority":["Low","Low","Low","Low","Low","Medium","High"],
         "Payment Cycle":["One Time, 1 Week","Monthly","Annually","Annually","Monthly","Monthly","Monthly"],
+        "Price":["10","10","90","300","50","300","1000"],
     }
     var details={
         "Bug Support": "Support and Software Update for when you have found a bug that is interferring with how Shinobi is supposed to function and with how you use Shinobi. Support will be expected within the specified time period.",
@@ -71,6 +72,9 @@
         if((b instanceof Array)===false){b=[b,b,b,b,b,b,b]}
         tmp+='<tr><td>'+m+'&nbsp; <span class="pull-right tooltipster" title="'+details[m]+'"><i class="fa fa-question-circle name"></i>&nbsp;</span></td>'
         $.each(b,function(c,x){
+            if(m==='Price'){
+                x='<b class="currency">$'+x+'</b>'
+            }
             if(x===1||x===0){
                 if(x===1){x='&nbsp;<i class="fa fa-check text-primary"></i>&nbsp;'}else{x='-'}
             }
@@ -98,11 +102,11 @@ $('#packages.super-table tbody').html(tmp);//$('.tooltipster').tooltipster({posi
 </table>
 <script>
     var plans=[
-        {"name":"Residential",href:'http://cloudchat.online/cart/cloudcam-nvr-hosting/'},
-        {"name":"Small Business",href:'http://cloudchat.online/cart/cloudcam-nvr-hosting/'},
-        {"name":"Corporate",href:'http://cloudchat.online/cart/cloudcam-nvr-hosting/'},
-        {"name":"Big Business",href:'http://cloudchat.online/cart/cloudcam-nvr-hosting/'},
-        {"name":"Enterprise",href:'http://cloudchat.online/cart/cloudcam-nvr-hosting/'},
+        {"name":"Residential",href:'http://cloudchat.online/cart/cloudcam-nvr-hosting/',price:""},
+        {"name":"Small Business",href:'http://cloudchat.online/cart/cloudcam-nvr-hosting/',price:""},
+        {"name":"Corporate",href:'http://cloudchat.online/cart/cloudcam-nvr-hosting/',price:""},
+        {"name":"Big Business",href:'http://cloudchat.online/cart/cloudcam-nvr-hosting/',price:""},
+        {"name":"Enterprise",href:'http://cloudchat.online/cart/cloudcam-nvr-hosting/',price:""},
     ]
     var specs={
         "Cameras":["5","8","20","30","64+"],
@@ -113,6 +117,8 @@ $('#packages.super-table tbody').html(tmp);//$('.tooltipster').tooltipster({posi
         "SSD Space":["50GB","100GB","300GB","700GB","1000GB"],
         "Unmetered Bandwidth":["200Mbit/s","200Mbit/s","1000Mbit/s","1000Mbit/s","1000Mbit/s"],
         "Locations":"Paris, Amsterdam",
+        "Payment Cycle":"Monthly",
+        "Price":["30","60","300","600","720"],
     }
     var details={
         "Cameras":"Number of recommended maximum",
@@ -136,6 +142,9 @@ $('#packages.super-table tbody').html(tmp);//$('.tooltipster').tooltipster({posi
         if((b instanceof Array)===false){b=[b,b,b,b,b]}
         tmp+='<tr><td>'+m+'&nbsp; <span class="pull-right tooltipster" title="'+details[m]+'"><i class="fa fa-question-circle name"></i>&nbsp;</span></td>'
         $.each(b,function(c,x){
+            if(m==='Price'){
+                x='<b class="currency">$'+x+'</b>'
+            }
             if(x===1||x===0){
                 if(x===1){x='&nbsp;<i class="fa fa-check text-primary"></i>&nbsp;'}else{x='-'}
             }

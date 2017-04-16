@@ -20,13 +20,11 @@
         <p>Your <code>[API KEY]</code> can be found in <code>API</code> in the dashboard menu. Responses to HTTP Requests return as <code>JSON</code> strings. <em>Group key for the default user is</em> <code>2Df5hBE</code>.</p>
 
 <p><code>[API KEY]</code> <em>Can also be your logged in auth_token as well as the API Access key.</em></p>
-
-<h3 class="block-title question"><a id="user-content-update-shinobi-from-this-repository" class="anchor" href="#update-shinobi-from-this-repository"></a>Update Shinobi with built in script.</h3>
-
-<p>This overwrites <strong>camera.js</strong>, <strong>web</strong>, and <strong>UPDATE.sh</strong> </p>
-
-<pre><code>http://xxx.xxx.xxx.xxx/[API KEY]/update/[UPDATE KEY]
-</code></pre>
+<div class="section-block">
+    <h3 class="block-title question"><a id="user-content-jpeg-snapshot" class="anchor" href="#get-all-monitors"></a>Get JPEG Snapshot</h3>
+    <p>Snapshot must be enabled in Monitor Settings.</p>
+    <pre><code>http://xxx.xxx.xxx.xxx/[API KEY]/jpeg/[GROUP KEY]/[MONITOR ID]</code></pre>
+</div>
 <div class="section-block">
     <h3 class="block-title question"><a id="user-content-embedding-streams" class="anchor" href="#embedding-streams"></a>Embedding Streams</h3>
 
@@ -123,6 +121,14 @@ record = Record</code></pre>
 
     <pre><code>min, minute, minutes, hr, hour, hours, day, or days</code></pre>
 </div>
+<div class="section-block">
+<h3 class="block-title question"><a id="user-content-update-shinobi-from-this-repository" class="anchor" href="#update-shinobi-from-this-repository"></a>Update Shinobi with built in script.</h3>
+
+<p>This overwrites <strong>camera.js</strong>, <strong>web</strong>, and <strong>UPDATE.sh</strong> </p>
+
+<pre><code>http://xxx.xxx.xxx.xxx/[API KEY]/update/[UPDATE KEY]
+</code></pre>
+</div>
                             </section><!--//doc-section-->
 
                         </div><!--//content-inner-->
@@ -130,9 +136,7 @@ record = Record</code></pre>
                     <div class="doc-sidebar">
                         <nav id="doc-nav">
                             <ul id="doc-menu" class="nav doc-menu hidden-xs" data-spy="affix">
-                                <li>
-                                    <a class="scrollto" href="#user-content-update-shinobi-from-this-repository">Update Shinobi with built in script.</a>
-                                </li>
+                                <li><a class="scrollto" href="#user-content-jpeg-snapshot">Get JPEG Snapshot</a></li>
                                 <li><a class="scrollto" href="#user-content-embedding-streams">Embedding Streams</a></li>
                                 <li><a class="scrollto" href="#user-content-get-all-monitors">Get all monitors</a></li>
                                 <li><a class="scrollto" href="#user-content-get-all-started-monitors">Get all started monitors</a></li>
@@ -141,6 +145,9 @@ record = Record</code></pre>
                                 <li><a class="scrollto" href="#user-content-get-videos-for-monitor-id">Get videos for monitor ID</a></li>
                                 <li><a class="scrollto" href="#user-content-get-video-file">Get video file</a></li>
                                 <li><a class="scrollto" href="#user-content-set-mode-of-camera-record-watch-or-stop-from-http">Set mode of camera (Record, Watch, or Stop) from HTTP</a></li>
+                                <li>
+                                    <a class="scrollto" href="#user-content-update-shinobi-from-this-repository">Update Shinobi with built in script.</a>
+                                </li>
                                 <li>
                                     <ul class="nav doc-sub-menu">
                                     <li><a href="/docs">Home</a></li>

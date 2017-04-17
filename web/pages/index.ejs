@@ -9,7 +9,7 @@
                 <h4 style="text-transform:uppercase">The Open Source CCTV Solution</h4>
                 <hr>
                 <div class="btn-group">
-                    <a href="/docs" class="btn btn-primary btn-xl">Documentation</a>
+                    <a href="#one" class="btn btn-primary btn-xl page-scroll">Learn More</a>
                 </div>
                 <div style="font-size:20pt;margin-top:30px">
                     <a href="https://shinobicctv.herokuapp.com/"><i class="fa fa-slack"></i></a> &nbsp; <a href="https://www.reddit.com/r/ShinobiCCTV/"><i class="fa fa-reddit"></i></a> &nbsp; <a href="https://www.youtube.com/user/MrMoea92"><i class="fa fa-youtube"></i></a> &nbsp; <a href="https://twitter.com/ShinobiCCTV"><i class="fa fa-twitter"></i></a> &nbsp; <a href="https://www.facebook.com/Shinobi-1223193167773738/?ref=bookmarks"><i class="fa fa-facebook"></i></a> &nbsp; <a href="https://github.com/moeiscool/Shinobi"><i class="fa fa-github"></i></a>
@@ -24,8 +24,8 @@
                 <div class="col-lg-6 text-center">
                     <h2 class="margin-top-0 text-primary">Made with <i class="fa fa-heart"></i></h2>
                     <br>
-                    <p class="text-faded" style="font-size:23pt">
-                        Shinobi is Open Source, written in Node.js, and real easy to use.<br><b>Have a look.</b>
+                    <p class="large">
+                        Shinobi is Open Source, written in Node.js, and real easy to use. It is the future of CCTV and NVR for developers and end-users alike. It is catered to by professionals and most importantly by the one who created it.
                     </p>
                     <div class="btn-group">
                         <a href="/docs" class="btn btn-default btn-xl page-scroll"><i class="fa fa-book"></i> Docs</a> 
@@ -86,7 +86,42 @@
           </div>
         </div>
       </section>
-    <section class="container-fluid bg-primary" id="four">
+    <section class="bg-primary" id="three">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="margin-top-0 text-primary">Licenses</h2>
+                    <p>Shinobi is free for personal and educational purposes.</p>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="container text-center">
+                <% [
+                    {name:"Personal",price:"0",text:"Personal and Educational use does not require any payment.",linkText:"Download",href:"https://github.com/moeiscool/Shinobi/zipball/master"},
+                    {name:"Educational",price:"0",text:"Shinobi is free for all schools and all educational related purposes.",subText:["This does not include any circumstances where profit is made"],linkText:"Download",href:"https://github.com/moeiscool/Shinobi/zipball/master"},
+                    {name:"Business License",price:"30",text:"Allows creation of accounts for commercial purposes.",linkText:"Order",subText:["Required only if you choose to bill your users for the use of Shinobi.","Also covers creation of multiple installations.","This License is in effect for all versions passed March 2017","License active upon successful payment. Receipt will be emailed."],href:"http://cloudchat.online/cart/licenses/"},
+                ].forEach(function(v,n){ %>
+                <div class="grid-1-5">
+                    <div class="_shade"></div>
+                    <h2><%= v.name %></h2>
+                    <h3><span class="uppercase"><span class="currency"><sup>$</sup><%= v.price %></span>/mo</span></h3>
+                    <p><%= v.text %></p>
+                    <% if(v.subText){ %>
+                        <ul>
+                            <% v.subText.forEach(function(b,m){ %>
+                            <li><%= b %></li>
+                            <% }) %>
+                        </ul>
+                    <% } %>
+                    <a href="<%= v.href %>" class="button"><%= v.linkText %></a>
+                </div>
+             <% }) %>
+            </div>
+        </div>
+      </section>
+    <section class="container-fluid" id="four">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 text-center">
@@ -116,7 +151,7 @@
             </div>
         </div>
     </section>
-    <section class="container-fluid" id="small-why">
+    <section class="container-fluid bg-primary" id="small-why">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">

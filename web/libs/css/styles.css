@@ -34,7 +34,7 @@ hr.light {
 }
 
 a {
-    color: #ff7d00;
+    color: #c49a6c;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -43,7 +43,7 @@ a {
 
 a:hover,
 a:focus {
-    color: #ec7501;
+    color: #ab865e;
     outline: 0;
     text-decoration:none
 }
@@ -92,7 +92,7 @@ p.large{
 }
 
 .text-primary {
-    color: #ff7d00;
+    color: #c49a6c;
 }
 
 .modal-content {
@@ -126,7 +126,7 @@ footer {
 
 .navbar-header > .navbar-brand {
     font-family: 'Questrial','Helvetica Neue',Arial,sans-serif;
-    color: #ff7d00;
+    color: #c49a6c;
     padding: 15px;
     -webkit-transition: padding .2s ease-in;
     -moz-transition: padding .2s ease-in;
@@ -135,7 +135,7 @@ footer {
 
 .navbar-header > .navbar-brand:hover,
 .navbar-header > .navbar-brand:focus {
-    color: #ff7d00;
+    color: #c49a6c;
 }
 
 .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
@@ -155,12 +155,12 @@ footer {
 
 .navbar-default .nav > li>a:hover,
 .navbar-default .nav>li>a:focus:hover {
-    color: #ff7d00;
+    color: #c49a6c;
 }
 
 .navbar-default .nav > li.active>a,
 .navbar-default .nav>li.active>a:focus {
-    color: #ff7d00 !important;
+    color: #c49a6c !important;
     background-color: transparent;
 }
 
@@ -208,14 +208,14 @@ footer {
 
     .navbar-default.affix .navbar-header .navbar-brand {
         font-size: 15px;
-        color: #ff7d00;
+        color: #c49a6c;
         padding: 20px;
         letter-spacing: 1px;
     }
 
     .navbar-default.affix .navbar-header .navbar-brand:hover,
     .navbar-default.affix .navbar-header .navbar-brand:focus {
-        color: #ff7d00;
+        color: #c49a6c;
     }
 
     .navbar-default.affix .nav > li>a,
@@ -226,7 +226,7 @@ footer {
 
     .navbar-default.affix .nav > li>a:hover,
     .navbar-default.affix .nav>li>a:focus:hover {
-        color: #ff7d00;
+        color: #c49a6c;
     }
 }
 

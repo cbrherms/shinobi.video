@@ -1,3 +1,4 @@
+<% config.Title='Home'; %>
 <% include blocks/header.ejs %>
     <header id="first">
         <div class="_shade">
@@ -86,7 +87,7 @@
           </div>
         </div>
       </section>
-    <section class="bg-primary" id="three">
+    <section class="bg-primary" id="licenses">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -99,23 +100,25 @@
         <div class="container">
             <div class="container text-center">
                 <% [
-                    {name:"Personal",price:"0",text:"Personal and Educational use does not require any payment.",linkText:"Download",href:"https://github.com/moeiscool/Shinobi/zipball/master"},
-                    {name:"Educational",price:"0",text:"Shinobi is free for all schools and all educational related purposes.",subText:["Cannot re-sell account usage."],linkText:"Download",href:"https://github.com/moeiscool/Shinobi/zipball/master"},
-                    {name:"Re-Seller License",price:"75",text:"Allows creation of accounts for commercial purposes.",linkText:"Order",subText:["Required only if you choose to bill your users for the use of Shinobi.","Also covers creation of multiple installations.","This License is in effect for all versions passed March 2017","License active upon successful payment. Receipt will be emailed."],href:"http://cloudchat.online/cart/licenses/"},
+                    {name:"Personal",price:"0",text:"Personal and Educational use does not require any license.",subText:["Cannot sell Shinobi usage."],linkText:"Download",href:"https://github.com/moeiscool/Shinobi/zipball/master",img:"/libs/assets/backgrounds/5.jpg"},
+                    {name:"Educational",price:"0",text:"Shinobi is free for all schools and educational related purposes.",subText:["Cannot sell Shinobi usage."],linkText:"Download",href:"https://github.com/moeiscool/Shinobi/zipball/master",img:"/libs/assets/backgrounds/3.jpg"},
+                    {name:"Seller License",price:"75",text:"Allows creation of accounts for commercial purposes.",linkText:"Order",subText:["Required only if you choose to bill your users for the use of Shinobi.","Also covers creation of multiple installations.","License active upon successful payment. Receipt will be emailed."],href:"http://cloudchat.online/cart/licenses/",img:"/libs/assets/backgrounds/2.jpg"},
                 ].forEach(function(v,n){ %>
-                <div class="grid-1-5">
+                <div class="grid-1-5" style="background-image:url(<%= v.img %>)">
                     <div class="_shade"></div>
-                    <h2><%= v.name %></h2>
-                    <h3><span class="uppercase"><span class="currency"><sup>$</sup><%= v.price %></span>/mo</span></h3>
-                    <p><%= v.text %></p>
-                    <% if(v.subText){ %>
-                        <ul>
-                            <% v.subText.forEach(function(b,m){ %>
-                            <li><%= b %></li>
-                            <% }) %>
-                        </ul>
-                    <% } %>
-                    <a href="<%= v.href %>" class="button"><%= v.linkText %></a>
+                    <div class="_content">
+                        <h2><%= v.name %></h2>
+                        <h3><span class="uppercase"><span class="currency"><sup>$</sup><%= v.price %></span>/mo</span></h3>
+                        <p><%= v.text %></p>
+                        <% if(v.subText){ %>
+                            <ul>
+                                <% v.subText.forEach(function(b,m){ %>
+                                <li><%= b %></li>
+                                <% }) %>
+                            </ul>
+                        <% } %>
+                        <a href="<%= v.href %>" class="button"><%= v.linkText %></a>
+                    </div>
                 </div>
              <% }) %>
             </div>

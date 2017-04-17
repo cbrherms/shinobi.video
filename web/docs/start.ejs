@@ -19,8 +19,7 @@
                             <section id="download-section" class="doc-section">
                                 <h2 class="section-title">Download</h2>
                                 <div class="section-block">
-                                    <p>Shinobi began in November 2016 and is still maturing. If you have questions about the documentation please post on Reddit or Slack.</p>
-                                    <a href="<%=config.downloadLink%>" class="btn btn-orange" target="_blank"><i class="fa fa-download"></i> Download Shinobi</a>
+                                    <p>Shinobi began in November 2016 and is still maturing. If you have questions please post on Reddit or Slack.</p>
                                 </div>
                             </section><!--//doc-section-->
                             <section id="requirement-section" class="doc-section">
@@ -127,6 +126,42 @@
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+                            </section><!--//doc-section-->
+                            <section>
+    <div class="text-center" id="licenses">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="margin-top-0 question">Licenses</h2>
+                <p>Shinobi is free for personal and educational purposes.<br><small class="text-faded">All support packages already include a Business License.</small></p>
+            </div>
+        </div>
+        <style>
+        @media screen and (min-width: 1120px) {
+              .grid-1-5 {
+                width: 24%;
+              }
+            }
+        </style>
+        <% include ../pages/blocks/licenses.ejs %>
+        <div class="clearfix" style="margin:30px"></div>
+    </div>
+    <div id="support">
+        <div class="row">
+            <div class="col-lg-6 text-center">
+                <h2 class="margin-top-0 question">Support Packages</h2>
+                <br>
+                    <p class="large">We will answer your questions about how Shinobi works, the different ways you can use it, and it's documentation. We will keep your installation maintained with the latest stable build.</p>
+                    <p class="large">Ordering a support package also supports the developers.</p>
+                    <p class="large">All support packages already include a <b>Business License</b>.</p>
+                <div class="btn-group">
+                    <a href="/packages" class="btn btn-default btn-lg page-scroll">More Details</a> 
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <img src="/libs/assets/hero.png">
+            </div>
+        </div>
+    </div>
                             </section><!--//doc-section-->                            
                         </div><!--//content-inner-->
                     </div><!--//doc-content-->
@@ -163,6 +198,11 @@
                                     <li><a href="/docs">Home</a></li>
                                     <li><a href="/docs/faqs" title="Frequently Asked Questions">FAQs</a></li>
                                     <li><a href="/docs/api">API Access</a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="scrollto" href="#licenses">Licenses</a>
+                                    <ul class="nav doc-sub-menu">
+                                    <li><a class="scrollto" href="#support">Support Packages</a></li>
                                     </ul>
                                 </li>
                             </ul><!--//doc-menu-->

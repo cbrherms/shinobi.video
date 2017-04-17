@@ -88,45 +88,21 @@
         </div>
       </section>
     <section class="bg-primary" id="licenses">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="margin-top-0 text-primary">Licenses</h2>
-                    <p>Shinobi is free for personal and educational purposes.<br><small class="text-faded">All support packages already include a Business License.</small></p>
-                    <hr class="primary">
-                </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="margin-top-0 text-primary">Licenses</h2>
+                <p>Shinobi is free for personal and educational purposes.<br><small class="text-faded">All support packages already include a Business License.</small></p>
+                <hr class="primary">
             </div>
         </div>
-        <div class="container">
-            <div class="container text-center">
-                <% [
-                    {name:"Personal",price:"0",text:"Personal and Educational use does not require any license.",subText:["Cannot sell Shinobi usage."],linkText:"Download",href:"https://github.com/moeiscool/Shinobi/zipball/master",img:"/libs/assets/backgrounds/1.jpg"},
-                    {name:"Educational",price:"0",text:"Shinobi is free for all schools and educational related purposes.",subText:["Cannot sell Shinobi usage."],linkText:"Download",href:"https://github.com/moeiscool/Shinobi/zipball/master",img:"/libs/assets/backgrounds/5.jpg"},
-                    {name:"Business License",price:"10",text:"Businesses that use Shinobi for their locations.",subText:["This is optional for businesses  with gross income less than 10000.","(not selling accounts)"],linkText:"Order",href:"http://cloudchat.online/cart/licenses/",img:"/libs/assets/backgrounds/3.jpg"},
-                    {name:"Seller License",price:"75",text:"Allows creation of accounts for commercial purposes.",linkText:"Order",subText:["Required only if you choose to bill your users for the use of Shinobi.","Also covers creation of multiple installations.","License active upon successful payment. Receipt will be emailed."],href:"http://cloudchat.online/cart/licenses/",img:"/libs/assets/backgrounds/2.jpg"},
-                ].forEach(function(v,n){ %>
-                <div class="grid-1-5" style="background-image:url(<%= v.img %>)">
-                    <div class="_shade"></div>
-                    <div class="_content">
-                        <h2><%= v.name %></h2>
-                        <h3><span class="uppercase"><span class="currency"><sup>$</sup><%= v.price %></span>/mo</span></h3>
-                        <p><%= v.text %></p>
-                        <% if(v.subText){ %>
-                            <ul>
-                                <% v.subText.forEach(function(b,m){ %>
-                                <li><%= b %></li>
-                                <% }) %>
-                            </ul>
-                        <% } %>
-                        <a href="<%= v.href %>" class="button"><%= v.linkText %></a>
-                    </div>
-                </div>
-             <% }) %>
-                <div class="clearfix" style="margin:30px"></div>
-                <a href="/support#support" class="btn btn-primary btn-xl">Support Packages</a>
-            </div>
-        </div>
-      </section>
+    </div>
+    <div class="container text-center">
+        <% include blocks/licenses.ejs %>
+        <div class="clearfix" style="margin:30px"></div>
+        <a href="/support#support" class="btn btn-primary btn-xl">Support Packages</a>
+    </div>
+  </section>
     <section class="container-fluid" id="four">
         <div class="container">
             <div class="row">
@@ -165,7 +141,7 @@
                     <br>
                     <p><img style="border-radius:50%" src="/libs/assets/icon/apple-touch-icon-152x152.png"></p>
                     <p class="text-faded">
-                        The creator of Shinobi wanted to make a cloud network video recording solution. One that anyone could easily use. Simply login to your account, add camera details, set options, and away you go. Viewing streams and recordings on your mobile device by simply opening a web page. No installations. This means you could view it on any device with a capable browser.
+                        The creator of Shinobi wanted to make a cloud video recording solution. One that anyone could easily use. Simply login to your account, add camera details, set options, and away you go. Viewing streams and recordings on your mobile device by simply opening a web page. No installations. This means you could view it on any device with a capable browser.
                     </p>
                     <a href="/why" class="btn btn-primary btn-xl">Why Shinobi</a>
                 </div>

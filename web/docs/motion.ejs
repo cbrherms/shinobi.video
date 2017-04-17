@@ -32,7 +32,7 @@
 <th>Warnings</th>
 </tr>
   <tr>
-<td>stemkoski Motion Detector</td>
+<td>Motion Detector</td>
 <td>Node.js, <b>shinobi-motion.js</b>
 </td>
 <td>This is a method for reading differences in frames with the <a href="https://github.com/Automattic/node-canvas">node-canvas</a>. This method includes region detection similar to ZoneMinder's zone detection.</td>
@@ -67,9 +67,9 @@
       </div>
                             </section>
                             <section id="stemkoski" class="doc-section">
-<h1><a id="user-content-shinobi-stemkoski-motion-detector" class="anchor" href="#shinobi-stemkoski-motion-detector" aria-hidden="true"></a>Shinobi stemkoski Motion Detector</h1>
+<h1><a id="user-content-shinobi-stemkoski-motion-detector" class="anchor" href="#shinobi-stemkoski-motion-detector" aria-hidden="true"></a>Shinobi Motion Detector</h1>
 
-<p>Installing Motion Detection plugin for Shinobi. Method used is based on <a href="https://stemkoski.github.io/Three.js/Webcam-Motion-Detection.html">stemkoski JS Motion Detection</a>.</p>
+<p>Installing Motion Detection plugin for Shinobi. Method used is based on <a href="https://stemkoski.github.io/Three.js/Webcam-Motion-Detection.html">JS Motion Detection</a>.</p>
 
 <div class="row">
 <div class="section-block col-md-6">
@@ -92,9 +92,9 @@ yum install liberation-sans-fonts.noarch
 <pre><code>sudo npm install canvas
 </code></pre>
 
-<p>Navigate to directory for the stemoski plugin.</p>
+<p>Navigate to directory for the motion plugin.</p>
 
-<pre><code>cd plugins/stemkoski
+<pre><code>cd plugins/motion
 </code></pre>
                                 
 <p>Copy the config file.</p>
@@ -109,17 +109,17 @@ yum install liberation-sans-fonts.noarch
 
 <p>Start the plugin.</p>
 
-<pre><code>node shinobi-stemkoski.js
+<pre><code>node shinobi-motion.js
 </code></pre>
 
 <p>Or to daemonize with PM2.</p>
 
-<pre><code>pm2 start shinobi-stemkoski.js
+<pre><code>pm2 start shinobi-motion.js
 </code></pre>
 
 <p>Doing this will reveal options in the monitor configuration. Shinobi does not need to be restarted when a plugin is initiated or stopped.</p>
 
-<p><em>Thanks to Cairo and others for these dependencies. Thanks to stemkoski as the JS image comparing is based on their research. I or Shinobi are not affiliated with stemkoski or Cairo.</em></p>
+<p><em>Thanks to Cairo and others for these dependencies. Thanks to stemkoski as the JS image comparing is based on their research. Shinobi is not affiliated with stemkoski or Cairo.</em></p>
 
 <p>Shinobi Plugin by : Moe Alam</p>
                             </section><!--//doc-section-->
@@ -131,7 +131,7 @@ yum install liberation-sans-fonts.noarch
                             <ul id="doc-menu" class="nav doc-menu hidden-xs" data-spy="affix">
                                 <li><a class="scrollto" href="#user-content-motion-detection-and-object-tracking-plugins">Motion Detection and Object Tracking Plugins</a></li>
                                 <li><a class="scrollto" href="#user-content-why-arent-these-just-integrated">Why aren’t these just integrated?</a></li>
-                                <li><a class="scrollto" href="#user-content-shinobi-stemkoski-motion-detector">Shinobi stemkoski Motion Detector</a></li>
+                                <li><a class="scrollto" href="#user-content-shinobi-stemkoski-motion-detector">Shinobi Motion Detector</a></li>
                                 <li><ul class="nav doc-sub-menu">
                                     <li><a href="/docs">Home</a></li>
                                     <li><a href="/docs/start">Quick Start</a></li>

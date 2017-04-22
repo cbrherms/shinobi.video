@@ -2,7 +2,6 @@
 process.on('uncaughtException', function (err) {
     console.error('uncaughtException',err);
 });
-
 //variables
 var fs = require('fs');
 var express = require('express')
@@ -17,7 +16,6 @@ s.dir={
 app.use('/', express.static(process.cwd() + '/web'));
 app.set('views', __dirname + '/web');
 app.set('view engine', 'ejs');
-
 app.get(['/docs','/docs/:file'], function(req, res) {
     if(req.params.file){
         req.file=req.params.file
@@ -35,6 +33,7 @@ app.get(['/','/:file'], function(req, res) {
     }
     res.render('pages/'+req.file,{config:config});
 });
+
 //start server
 app.listen(config.port,config.ip,function () {
   console.log('Website Loaded on port '+config.port)

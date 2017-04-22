@@ -93,6 +93,14 @@
 </script>
                                 <% include blocks/install/vbox.ejs %>
                             </section><!--//doc-section-->
+                            <section id="clean-section" class="doc-section">
+                                <h2 class="section-title">Clean up</h2>
+                                <% include blocks/install/cron.ejs %>
+                            </section><!--//doc-section-->
+                            <section id="account-section" class="doc-section">
+                                <h2 class="section-title">Account Management</h2>
+                                <% include blocks/install/account.ejs %>
+                            </section><!--//doc-section-->
                             <section id="update-section" class="doc-section">
                                 <h2 class="section-title">Updating Shinobi</h2>
                                 <% include blocks/install/update.ejs %>
@@ -162,6 +170,12 @@
                                         <li><a class="scrollto" href="#setup_macos">Mac OS : Native</a></li>
                                         <li><a class="scrollto" href="#setup_vbox">VirtualBox</a></li>
                                     </ul><!--//nav-->
+                                </li>
+                                <li>
+                                    <a class="scrollto" href="#clean-section">Clean up</a>
+                                </li>
+                                <li>
+                                    <a class="scrollto" href="#account-section">Account Management</a>
                                 </li>
                                 <li>
                                     <a class="scrollto" href="#update-section">Updating Shinobi</a>

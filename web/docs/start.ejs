@@ -19,7 +19,8 @@
                             <section id="download-section" class="doc-section">
                                 <h2 class="section-title">Download</h2>
                                 <div class="section-block">
-                                    <p>Shinobi began in November 2016 and is still maturing. If you have questions please post on Reddit or Discord.</p>
+                                    <p>If you have questions please post on Reddit or Discord.</p>
+                                    <a class="btn btn-primary" href="<%= config.downloadLink %>">Download</a>
                                 </div>
                             </section><!--//doc-section-->
                             <section id="requirement-section" class="doc-section">
@@ -147,18 +148,12 @@
                                     </ul><!--//nav-->
                                 </li>
                                 <li><a class="scrollto" href="#trouble-section">Troubleshooting</a></li>
-                                <li>
-                                    <ul class="nav doc-sub-menu">
-                                    <li><a href="/docs">Home</a></li>
-                                    <li><a href="/docs/faqs" title="Frequently Asked Questions">FAQs</a></li>
-                                    <li><a href="/docs/api">API Access</a></li>
-                                    </ul>
-                                </li>
                                 <li><a class="scrollto" href="#licenses">Licenses</a>
                                     <ul class="nav doc-sub-menu">
                                     <li><a class="scrollto" href="#support">Support Packages</a></li>
                                     </ul>
                                 </li>
+                                <% include blocks/menu-options.ejs %>
                             </ul><!--//doc-menu-->
                         </nav>
                     </div><!--//doc-sidebar-->

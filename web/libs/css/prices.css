@@ -5,6 +5,7 @@
   vertical-align: top;
   float: none!important;
   border: 2px solid #c49a6c;
+  min-width: 200px;
   min-height: 400px;
   position: relative;
   text-align: center;

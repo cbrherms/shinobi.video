@@ -22,6 +22,7 @@
     var specs={
         "Cameras":["5","8","20","30","64+"],
         "Support Package":["Tiny","Micro","Priority","Enterprise","Enterprise"],
+        "License Included":["Business","Business","Seller","Seller","Seller"],
         "Public IPv4 Address":1,
         "x86 64bit Cores":["2","4","8","10","12"],
         "Memory (RAM)":["2GB","4GB","30GB","60GB","120GB"],
@@ -51,7 +52,7 @@
     tmp='';
     $.each(specs,function(m,b){
         if((b instanceof Array)===false){b=[b,b,b,b,b]}
-        tmp+='<tr><td>'+m+'&nbsp; <span class="pull-right tooltipster" title="'+details[m]+'"><i class="fa fa-question-circle name"></i>&nbsp;</span></td>'
+        tmp+='<tr><td>'+m+'</td>'
         $.each(b,function(c,x){
             if(m==='Price'){
                 x='<b class="currency">$'+x+'</b>'

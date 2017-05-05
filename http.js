@@ -4,8 +4,8 @@ process.on('uncaughtException', function (err) {
 });
 //variables
 var fs = require('fs');
+var http = require('https')
 var express = require('express')
-var request = require('request')
 var app = express()
 var config = require('./conf.json')
 s={};
@@ -17,6 +17,15 @@ s.dir={
 app.use('/', express.static(process.cwd() + '/web'));
 app.set('views', __dirname + '/web');
 app.set('view engine', 'ejs');
+//ad blocker defeater
+app.get('/bannerpicture/:id/:size', function(req, res) {
+    req.url='https://ad.a-ads.com/'+req.params.id+'?size='+req.params.size;
+    http.request(req.url, function(response) {
+        response.pipe(res);
+    }).on('error', function(e) {
+        res.sendStatus(500);
+    }).end();
+});
 app.get('/donations.json', function(req, res) {
     req.orders=[];
     this.engine=function(){}
@@ -42,7 +51,6 @@ app.get(['/docs','/docs/:file'], function(req, res) {
     }
     res.render('docs/'+req.file,{config:config});
 });
-
 app.get(['/','/:file'], function(req, res) {
     if(req.params.file){
         req.file=req.params.file

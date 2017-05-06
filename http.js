@@ -18,13 +18,6 @@ app.use('/', express.static(process.cwd() + '/web'));
 app.set('views', __dirname + '/web');
 app.set('view engine', 'ejs');
 //ad blocker defeater
-app.get('/bannerpicturelibrary', function(req, res) {
-    http.request('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', function(response) {
-        response.pipe(res);
-    }).on('error', function(e) {
-        res.sendStatus(500);
-    }).end();
-})
 app.get('/bannerpicture/:id/:size', function(req, res) {
     http.request('https://ad.a-ads.com/'+req.params.id+'?size='+req.params.size, function(response) {
         response.pipe(res);
@@ -58,6 +51,10 @@ app.get(['/docs','/docs/:file'], function(req, res) {
     res.render('docs/'+req.file,{config:config});
 });
 app.get(['/','/:file'], function(req, res) {
+    if(req.params.file==='maValidation.txt'){
+        fs.createReadStream(__dirname+'/web/maValidation.txt').pipe(res).end()
+        return;
+    }
     if(req.params.file){
         req.file=req.params.file
     }else{

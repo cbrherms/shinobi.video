@@ -3,7 +3,7 @@
         setTimeout(function(){
             $('[data-aa],[scrolling="no"]').each(function(n,v){
                 v=$(this)
-                v.wrap( "<div class='parent-hold text-center' style='background:#fff;width:"+v.width()+"px;height:"+v.height()+"px;overflow:hidden;display:inline-block'></div>" );
+                v.wrap( "<div class='parent-hold text-center' style='width:"+v.width()+"px;height:"+(v.height()+40)+"px;overflow:hidden;display:inline-block'></div>" );
                 if(v.width()>500){
                     $('<h6 class="wide-space text-center" title="Please turn off your ad blocker to support the developers :)">ADVERTISEMENT</h6>').insertBefore(v)
                 }

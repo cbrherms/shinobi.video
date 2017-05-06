@@ -18,9 +18,15 @@ app.use('/', express.static(process.cwd() + '/web'));
 app.set('views', __dirname + '/web');
 app.set('view engine', 'ejs');
 //ad blocker defeater
+app.get('/bannerpicturelibrary', function(req, res) {
+    http.request('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', function(response) {
+        response.pipe(res);
+    }).on('error', function(e) {
+        res.sendStatus(500);
+    }).end();
+})
 app.get('/bannerpicture/:id/:size', function(req, res) {
-    req.url='https://ad.a-ads.com/'+req.params.id+'?size='+req.params.size;
-    http.request(req.url, function(response) {
+    http.request('https://ad.a-ads.com/'+req.params.id+'?size='+req.params.size, function(response) {
         response.pipe(res);
     }).on('error', function(e) {
         res.sendStatus(500);

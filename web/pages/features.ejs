@@ -22,7 +22,7 @@
             <h4 style="text-transform:uppercase">Special, Yet Familiar</h4>
             <hr>
             <div class="btn-group">
-                <a href="#learn" class="btn btn-primary btn-xl page-scroll">Find Out</a>
+                <a href="#learn" class="btn btn-primary btn-xl page-scroll">Find Out How</a>
             </div>
         </div>
         </div>
@@ -38,8 +38,6 @@
                 <hr class="primary">
             </div>
         </div>
-    </div>
-    <div class="container">
       <table class="super-table" style="font-size:15pt">
           <thead>
               <tr>
@@ -54,176 +52,217 @@
                       label:'Started In',
                       feature:'2016',
                       compare1:'2003',
+                      description:'The year the platform started.',
                   },
                   {
                       label:'Written in',
                       feature:'JavaScript',
                       compare1:'C++, Perl and PHP',
+                      description:'The main server language used to manage operations.',
+                  },
+                  {
+                      label:'Maintained by Author',
+                      feature:1,
+                      compare1:0,
+                      description:'Whether or not the platform is being developed by a third party or the original Author(s).',
                   },
                   {
                       label:'Runs On',
                       feature:'Linux, macOS',
                       compare1:'Linux',
+                      description:'The operating system that the platform will run on.',
                   },
                   {
                       label:'MJPEG Streams',
                       feature:1,
                       compare1:1,
+                      description:'Motion JPEG, It\'s like a socket that stays open only for serving JPEG images.',
                   },
                   {
                       label:'JPEG Streams',
                       feature:1,
                       compare1:1,
+                      description:'JPEG still images saved to RAM. They can be accessed by URL. Streams refresh this image on a timer.',
                   },
                   {
                       label:'HLS Streams (m3u8)',
                       feature:1,
                       compare1:0,
+                      description:'Similar to facebook live videos. Chunks of MPEG-4 files are created and given to the client as a continuous stream. This method supports audio.',
                   },
                   {
                       label:'Websocket Streams (Base64)',
                       feature:1,
                       compare1:0,
+                      description:'Frames are base64 encoded then pushed to the client over websocket. Then drawn to a canvas element with javascript.',
                   },
                   {
                       label:'Recording Method',
                       feature:'Video Files',
                       compare1:'Each frame as a File',
+                      description:'Actual video files for recordings. Like MP4 and WebM.',
                   },
                   {
                       label:'MP4 Recording <small>(Modern)</small>',
                       feature:1,
                       compare1:0,
+                      description:'MP4 is short for MPEG-4 and is a modern video format. This format runs on modern mobile devies natively.',
                   },
                   {
                       label:'WebM Recording <small>(Modern)</small>',
                       feature:1,
                       compare1:0,
+                      description:'WebM is special because the files are super compressed. The drawback is how much CPU is used to created them and is not playable on all modern mobile devices without third-party programs, like VLC.',
                   },
                   {
                       label:'JPEG Recording <small>(Old Method)</small>',
                       feature:0,
                       compare1:1,
+                      description:'Individual JPEG frames being saved to storage. This method can shorten hardware life.',
                   },
                   {
                       label:'Records Audio',
                       feature:1,
                       compare1:0,
+                      description:'Recording audio is illegal in some countries. Please ensure you do not have it enabled where such laws apply.',
                   },
                   {
                       label:'Websocket Video Recording',
                       feature:1,
                       compare1:0,
+                      description:'Record frames that are pushed to the server over websocket. This can be useful for mobile devices setup as dashcams or mobile cloud recording units.',
                   },
                   {
                       label:'Stream Limit',
                       feature:'None with Base64 and JPEG Mode',
                       compare1:'~6, Depends on method used to view',
+                      description:'This limitation is more due to browser capabilities. With Shinobi we can trick the browser into letting us do it anyway. Be aware the limitation is to avoid performance drops. We should be allowed to deal with it at our discretion in a global manner. Not all browsers allow disabling the limit.',
                   },
                   {
                       label:'Region Motion Detection',
                       feature:1,
                       compare1:1,
+                      description:'Choose an area between coordinates on your video stream for motion detection to occur.',
                   },
                   {
                       label:'"No Motion" Detection',
                       feature:1,
                       compare1:0,
+                      description:'A notification if motion is not detected after a certain amount of time. This is useful for those monitoring experiments or equipment.',
                   },
                   {
                       label:'Isolated Accounts',
                       feature:1,
                       compare1:0,
+                      description:'An "Admin" account for creating cameras and sub accounts. This account will be have it\'s own Group Key.',
                   },
                   {
                       label:'Sub Accounts',
                       feature:1,
                       compare1:1,
+                      description:'Sub Accounts can be made for multiple users who wish to monitor the same cameras and data associated with or without permissions.',
                   },
                   {
                       label:'Filters',
                       feature:1,
                       compare1:1,
+                      description:'Filters are run with the cron job, by default every 1 hour. You can delete certain files, run commands, or get data about events.',
                   },
                   {
                       label:'Monitor Groups',
                       feature:1,
                       compare1:1,
+                      description:'Groupings for monitors to quickly display certain streams and data.',
                   },
                   {
                       label:'RESTful API Access',
                       feature:1,
                       compare1:1,
+                      description:'Integrate Shinobi into your app or control it remotely.',
                   },
                   {
                       label:'Embeddable Streams (Natively)',
                       feature:1,
                       compare1:0,
+                      description:'',
                   },
                   {
                       label:'Stream Analyzer built-in',
                       feature:1,
                       compare1:0,
+                      description:'',
                   },
                   {
                       label:'Camera Scanner',
                       feature:1,
                       compare1:1,
+                      description:'',
                   },
                   {
                       label:'Event Notification',
                       feature:1,
                       compare1:1,
+                      description:'',
                   },
                   {
                       label:'Push Events via Websocket',
                       feature:1,
                       compare1:0,
+                      description:'',
                   },
                   {
                       label:'Video Compiler',
                       feature:'Not Needed',
                       compare1:1,
+                      description:'',
                   },
                   {
                       label:'Processes per Camera',
                       feature:'1',
                       compare1:'2 - 3 Minimum',
+                      description:'',
                   },
                   {
                       label:'Manual Snapshot from Stream',
                       feature:1,
                       compare1:0,
+                      description:'',
                   },
                   {
                       label:'External Triggering',
                       feature:1,
                       compare1:1,
+                      description:'',
                   },
                   {
                       label:'PTZ Support',
                       feature:1,
                       compare1:1,
+                      description:'',
                   },
                   {
                       label:'Automatic Uploading',
                       feature:1,
                       compare1:1,
+                      description:'',
                   },
                   {
                       label:'Web Interface',
                       feature:1,
                       compare1:1,
+                      description:'',
                   },
                   {
                       label:'Mobile Ready',
                       feature:1,
                       compare1:0,
+                      description:'',
                   },
                   {
                       label:'Database',
                       feature:'MySQL / MariaDB',
                       compare1:'MySQL / MariaDB',
+                      description:'',
                   },
               ].forEach(function(v,n){
                   ['feature','compare1'].forEach(function(b){
@@ -231,7 +270,7 @@
                       if(v[b]===0){v[b]='<i class="fa fa-times text-danger"></i>'}
                   })
                   %>
-              <tr>
+              <tr title="<%-v.description%>">
                   <td><%-v.label%></td>
                   <td><%-v.feature%></td>
                   <td><%-v.compare1%></td>
@@ -248,9 +287,8 @@
       </table>
         <blockquote style="margin-top:20px;">
             <img src="libs/assets/moe.png" style="width:350px" class="pull-right">
-            <p>The alternative is a decent platform but claims to be "full-featured" and "state-of-the-art". This can't actually be true as the platform can't even record audio or anaylze a stream's configuration.</p>
-            <p>We make no claim that Shinobi is anything more than what it is.</p>
-            <p>Just like our work, our words matter.</p>
+            <p>This is just one of many solutions in the CCTV and NVR sector. Originally the intent was to use the alternative for our purposes but found it wasn't up to date.</p>
+            <p>Thus Shinobi had to be born.</p>
             <p><small>Moe Alam</small></p>
         </blockquote>
         <p><small>More Information about why Shinobi had to be made can be found <a href="/why">here</a>.</small></p>

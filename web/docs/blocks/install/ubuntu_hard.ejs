@@ -1,22 +1,44 @@
 <div id="setup_ubuntu_hard"  class="section-block">
 <h3 class="block-title question">Ubuntu 16.04 : The Harder Way</h3>
-<p><b>Dont have FFMPEG installed?</b></p>
-    <p>If you cannot get FFMPEG 2.8 or <a href="https://s3.amazonaws.com/cloudcamio/ffmpeg-release-64bit-static.tar.xz">FFMPEG 3.2.4</a> please download the static build and install it manually.</p>
+<p id="static-ffmpeg"><b>Dont have FFMPEG installed?</b></p>
+<ul>
+    <li><a href="https://s3.amazonaws.com/cloudcamio/ffmpeg-release-32bit-static.tar.xz">Version 3.3 - 32bit</a> - <code>https://s3.amazonaws.com/cloudcamio/ffmpeg-release-32bit-static.tar.xz</code></li>
+    <li><a href="https://s3.amazonaws.com/cloudcamio/ffmpeg-release-64bit-static.tar.xz">Version 3.3 - 64bit</a> - <code>https://s3.amazonaws.com/cloudcamio/ffmpeg-release-64bit-static.tar.xz</code></li>
+    <li><a href="https://s3.amazonaws.com/cloudcamio/ffmpeg-release-armel-32bit-static.tar.xz">Version 3.3 - ARMel</a> - <code>https://s3.amazonaws.com/cloudcamio/ffmpeg-release-armel-32bit-static.tar.xz</code></li>
+    <li><a href="https://s3.amazonaws.com/cloudcamio/ffmpeg-release-armhf-32bit-static.tar.xz">Version 3.3 - ARMhf</a> - <code>https://s3.amazonaws.com/cloudcamio/ffmpeg-release-armhf-32bit-static.tar.xz</code></li>
+</ul>
     <ol>
 <li>Open <code>Terminal</code>.</li>
 <li>
-<p>To install :</p>
+<p>Install wget <i>or use curl if you want</i></p>
 
-<pre><code>apt-get install ffmpeg
+<pre><code>apt update
+apt install wget
 </code></pre>
+        </li>
+<li>
+<p>Download FFMPEG through terminal. You may replace the URL with any of the ones above.</p>
 
-<ul>
-<li>If that doesn't work try :</li>
-</ul>
-
-<pre><code>apt-get install libav-tools
+<pre><code>wget <i>https://s3.amazonaws.com/cloudcamio/ffmpeg-release-64bit-static.tar.xz</i>
+</code></pre>
+        </li>
+<li><p>Then navigate into the directory that you just extracted. Directory name varies based on the version of ffmpeg you download.</p>
+<pre><code>cd <i>ffmpeg-3.3-64bit-static</i>
+mv ./ffmpeg /usr/bin/ffmpeg
+mv ./ffmpeg-10bit /usr/bin/ffmpeg-10bit
+mv ./ffprobe /usr/bin/ffprobe
+mv ./ffserver /usr/bin/ffserver
 </code></pre>
 </li>
+<li><p>Then make them executable</p>
+    <pre><code>chmod +x /usr/bin/ffmpeg
+chmod +x /usr/bin/ffmpeg-10bit
+chmod +x /usr/bin/ffprobe
+chmod +x /usr/bin/ffserver
+</code></pre></li>
+        <li><p>Now run ffmpeg once to see that it works.</p>
+        <pre><code>ffmpeg</code></pre>
+        </li>
 </ol>
     <p><b>Dont have Node.js installed?</b></p>
 <ol>
@@ -29,7 +51,8 @@
 <em>Note :</em> <code>#apt-get install node</code> installs something else, not Node.js.</li>
 </ul>
 
-<pre><code>apt-get install nodejs npm
+<pre><code>apt update
+apt install nodejs npm
 sudo npm cache clean -f
 sudo npm install -g n
 sudo n stable
@@ -57,14 +80,11 @@ sudo n stable
 <li>
 <p>Open <code>Terminal</code>. Run :</p>
 
-<pre><code>apt-get install mysql-server
+<pre><code>apt install mariadb-server mariadb-client -y
 </code></pre>
 </li>
 <li><p>Installation of MySQL prompt you to set a password for <code>root</code> user in MySQL on your first install.</p></li>
 </ol>
-<ul>
-<li>Mac OS (will need more techiness ironically, follow this link) : <a href="https://blog.joefallon.net/2013/10/install-mysql-on-mac-osx-using-homebrew/">https://blog.joefallon.net/2013/10/install-mysql-on-mac-osx-using-homebrew/</a> .</li>
-</ul>
 <p><b>Application Install</b></p> 
 <ol>
 <li><p>Open <code>Terminal</code>.</p></li>
@@ -85,9 +105,10 @@ sudo n stable
 </code></pre>
 </li>
 <li>
-<p>Rename the directory for easier access. The extracted folder name will be different. <code>moeiscool-Shinobi-XXXXXXX</code> is only an example.</p>
+<p>Rename the directory for easier access. The extracted folder name will be different. <code>moeiscool-Shinobi-XXXXXXX</code> is only an example. Find the real folder name by doing `ls`.</p>
 
-<pre><code>mv moeiscool-Shinobi-XXXXXXX shinobi
+<pre><code>ls
+mv moeiscool-Shinobi-XXXXXXX shinobi
 </code></pre>
 </li>
 <li>
@@ -142,7 +163,7 @@ FLUSH PRIVILEGES;
 </code></pre>
 </li>
 <li>
-<p><em>OPTIONAL :</em> <code>default_data.sql</code> contains a demo user and a demo <code>rtsp to mp4</code> monitor.</p>
+<p><em>OPTIONAL :</em> <code>default_data.sql</code> contains a demo user and a demo <code>jpeg input</code> monitor.</p>
 
 <pre><code>source ./default_data.sql
 </code></pre>
@@ -175,6 +196,15 @@ FLUSH PRIVILEGES;
 <pre><code>"utcOffset":"-0800"
 </code></pre>
 </li>
+<li>
+<p>Copy <code>super.sample.json</code> as another file named <code>super.json</code>. This is the login to create isolated accounts. To use this you would enable `Superuser` at login.</p>
+<ul>
+<li><code>Username : admin@shinobi.video</code></li>
+<li><code>Password <small>md5</small> : admin</code></li>
+</ul>
+<pre><code>cp super.sample.json super.json
+</code></pre>
+</li>
 </ol>
     <p><b>Install Libraries</b></p>
     <ol>
@@ -183,15 +213,11 @@ FLUSH PRIVILEGES;
 
 <pre><code>npm install
 </code></pre>
-
-<ul>
-<li>Can't get <code>npm install</code> to work? Try downloading this, the required node libraries already built. Place the <code>node_modules</code> folder in the same directory as <code>camera.js</code>.
-
-<ul>
-<li><a href="https://mega.nz/#!upRRnRhD!RZSqKMnXYyvpeo_pg5loNpxBz3yFNXqQAo8bvKaqy1Y">https://mega.nz/#!upRRnRhD!RZSqKMnXYyvpeo_pg5loNpxBz3yFNXqQAo8bvKaqy1Y</a></li>
-</ul>
 </li>
-</ul>
+<li>
+<p><b>PM2  is needed to use UPDATE.sh and to Daeomonize the process</b></p>
+<pre><code>npm install pm2 -g
+</code></pre>
 </li>
 </ol>
     <p><b>Launch Shinobi</b></p>
@@ -207,31 +233,12 @@ FLUSH PRIVILEGES;
 </ul>
 </li>
 <li>
-<p>Open up <code>http://localhost:8080</code> in your browser.</p>
-
-<ul>
-<li>
-<em>Note :</em> if you are installed on a remote computer open up the IP in your web browser.
-
-<ul>
-<li><code>Username : ccio@m03.ca</code></li>
-<li><code>Password : password</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-    <ul>
-<li>
 <p>To get your IP you can run the following command.</p>
 
 <pre><code>ifconfig
 </code></pre>
 </li>
-        <p><b>PM2  is needed to use UPDATE.sh and to Daeomonize the process</b></p>
-</ul>
-    <pre><code>npm install pm2 -g
-</code></pre>
+<li>
     <p>then to start : </p>
     <pre><code>pm2 start camera.js
 </code></pre>
@@ -240,4 +247,14 @@ FLUSH PRIVILEGES;
 <li>
 <code>forever</code> is another program to daemonize, but i've had more success with <code>pm2</code>.</li>
 </ul>
+</li>
+<li>
+<p>Open up <code>http://YOUR_IP:8080</code> in your browser. The <b>Default Login</b> was originally set by adding <code>default_data.sql</code>.</p>    
+<ul>
+<li><code>Username : ccio@m03.ca</code></li>
+<li><code>Password : password</code></li>
+</ul>
+</li>
+        <li>Enjoy!</li>
+</ol>
 </div>

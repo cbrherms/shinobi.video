@@ -223,22 +223,6 @@ FLUSH PRIVILEGES;
     <p><b>Launch Shinobi</b></p>
     <ol>
 <li>
-<p>To start :</p>
-
-<pre><code>node camera.js
-</code></pre>
-
-<ul>
-<li>If you did not make the symlink for nodejs then you must run <code>nodejs camera.js</code> instead.</li>
-</ul>
-</li>
-<li>
-<p>To get your IP you can run the following command.</p>
-
-<pre><code>ifconfig
-</code></pre>
-</li>
-<li>
     <p>then to start : </p>
     <pre><code>pm2 start camera.js
 </code></pre>
@@ -247,6 +231,12 @@ FLUSH PRIVILEGES;
 <li>
 <code>forever</code> is another program to daemonize, but i've had more success with <code>pm2</code>.</li>
 </ul>
+</li>
+<li>
+<p>To get your IP you can run the following command.</p>
+
+<pre><code>ifconfig
+</code></pre>
 </li>
 <li>
 <p>Open up <code>http://YOUR_IP:8080</code> in your browser. The <b>Default Login</b> was originally set by adding <code>default_data.sql</code>.</p>    

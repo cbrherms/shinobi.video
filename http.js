@@ -3,17 +3,26 @@ process.on('uncaughtException', function (err) {
     console.error('uncaughtException',err);
 });
 //variables
+var https = require('https');
+var proxy = require('express-http-proxy');
+var express = require('express');
+var bodyParser = require('body-parser');
 var fs = require('fs');
-var http = require('https')
-var express = require('express')
 var app = express()
 var config = require('./conf.json')
+
 s={};
 s.dir={
     web:__dirname+'/web',
     web_pages:__dirname+'/web/pages/',
     doc_pages:__dirname+'/web/docs/'
 }
+//forum
+app.all('/forum',proxy('192.168.88.52:4567', {
+  proxyReqPathResolver: function(req) {
+    return require('url').parse(req.url).path;
+  }
+}));
 app.use('/', express.static(process.cwd() + '/web'));
 app.set('views', __dirname + '/web');
 app.set('view engine', 'ejs');
@@ -51,8 +60,8 @@ app.get(['/docs','/docs/:file'], function(req, res) {
     res.render('docs/'+req.file,{config:config});
 });
 app.get(['/','/:file'], function(req, res) {
-    if(req.params.file==='maValidation.txt'){
-        fs.createReadStream(__dirname+'/web/maValidation.txt').pipe(res).end()
+    if(req.params.file==='coinzilla-verification.txt'){
+        fs.createReadStream(__dirname+'/web/coinzilla-verification.txt').pipe(res).end()
         return;
     }
     if(req.params.file){

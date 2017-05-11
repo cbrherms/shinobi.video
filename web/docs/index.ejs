@@ -1,10 +1,10 @@
 <% var Title='Home'; %>
 <% include blocks/header.ejs %>
-<body class="landing-page body-orange body-dark">   
+<body class="body-orange body-dark">   
     <div class="page-wrapper">
         
         <!-- ******Header****** -->
-        <header class="header text-center">
+        <header id="header" class="header text-center">
             <div class="container">
                 <% include blocks/branding.ejs %>
             </div><!--//container-->
@@ -12,8 +12,6 @@
         
         <section class="cards-section text-center">
             <div class="container">
-                <% include ../pages/blocks/donations.ejs %>
-                <div class="clearfix" style="margin:30px"></div>
                 <div id="cards-wrapper" class="cards-wrapper row">
                     <div class="item item-orange col-md-4 col-sm-6 col-xs-6">
                         <div class="item-inner">

@@ -315,6 +315,9 @@ select {
 .header a {
   color: #fff;
 }
+.branding a{
+    text-decoration:none;
+}
 .branding {
   text-transform: uppercase;
   margin-bottom: 10px;

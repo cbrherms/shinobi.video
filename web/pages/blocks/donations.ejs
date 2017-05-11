@@ -1,0 +1,35 @@
+<div class="text-center">
+    <a href="/docs/donate" style="text-decoration:none">
+    <h3>Donations this Month<br><small>Contributions through Paid Support are added to this calculation.</small></h3>
+    <div class="progress donations">
+      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0"
+      aria-valuemin="0" aria-valuemax="100" style="width:0%">
+        0%
+      </div>
+    </div>
+    </a>
+</div>
+<style>
+.donations {max-width:400px;width:100%;background:#333;border: 1px solid #c3996b;display:inline-block}
+.donations .progress-bar{background:#c3996b;}
+</style>
+<script>
+$(document).ready(function(){
+    if(!window.donations==true){
+        window.donations=true;
+        $.getJSON('/donations.json',function(d){
+            var x={};
+            x.total=0;
+            x.firstDay = new Date;
+            x.firstDay = new Date(x.firstDay.getFullYear(), x.firstDay.getMonth(), 1);
+            $.each(d,function(n,v){
+                if(moment(x.firstDay).diff(moment(v.date_created)) >= 0){
+                    x.total+=parseFloat(v.total);
+                }
+            })
+            x.percent=x.total/600*100
+            $('.donations .progress-bar').css('width',x.percent+'px').text('$'+x.total)
+        })
+    }
+})
+</script>

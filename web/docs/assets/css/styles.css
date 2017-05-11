@@ -319,6 +319,8 @@ select {
   text-transform: uppercase;
   margin-bottom: 10px;
 }
+.branding table{width:100%}
+.branding table td{vertical-align:middle}
 .branding .logo {
   font-size: 28px;
   margin-top: 0;

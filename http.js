@@ -4,9 +4,7 @@ process.on('uncaughtException', function (err) {
 });
 //variables
 var https = require('https');
-var proxy = require('express-http-proxy');
 var express = require('express');
-var bodyParser = require('body-parser');
 var fs = require('fs');
 var app = express()
 var config = require('./conf.json')
@@ -17,61 +15,77 @@ s.dir={
     web_pages:__dirname+'/web/pages/',
     doc_pages:__dirname+'/web/docs/'
 }
-//forum
-app.all('/forum',proxy('192.168.88.52:4567', {
-  proxyReqPathResolver: function(req) {
-    return require('url').parse(req.url).path;
-  }
-}));
 app.use('/', express.static(process.cwd() + '/web'));
 app.set('views', __dirname + '/web');
 app.set('view engine', 'ejs');
-//ad blocker defeater
-app.get('/bannerpicture/:id/:size', function(req, res) {
-    http.request('https://ad.a-ads.com/'+req.params.id+'?size='+req.params.size, function(response) {
-        response.pipe(res);
-    }).on('error', function(e) {
-        res.sendStatus(500);
-    }).end();
-});
+///donations
 app.get('/donations.json', function(req, res) {
     req.orders=[];
-    this.engine=function(){}
     req.run=function(x){
-        request('http://cloudchat.online/admin/api.php?api_id='+config.hostbill.id+'&api_key='+config.hostbill.key+'&call=getOrders&list=active',function (error, response, data) {
-            data=JSON.parse(data);
-            req.orders=req.orders.concat(data.orders)
-            if(data.sorter.totalpages>=data.sorter.sorterpage){
-                res.send(JSON.stringify(req.orders))
-//                res.end();
-            }else{
-                req.run(data.sorter.sorterpage+1)
-            }
-        });
+        https.request('https://cloudchat.online/admin/api.php?api_id='+config.hostbill.id+'&api_key='+config.hostbill.key+'&call=getOrders&list=active', function(data) {
+              data.setEncoding('utf8');
+              req.chunks='';
+              data.on('data', (chunk) => {
+                  req.chunks+=chunk;
+              });
+              data.on('end', () => {
+                try{req.chunks=JSON.parse(req.chunks);}catch(er){}
+                req.orders=req.orders.concat(req.chunks.orders)
+                if(req.chunks.sorter.totalpages>=req.chunks.sorter.sorterpage){
+                    res.send(JSON.stringify(req.orders))
+    //                res.end();
+                }else{
+                    req.run(req.chunks.sorter.sorterpage+1)
+                }
+              });
+
+        }).on('error', function(e) {
+            res.sendStatus(500);
+        }).end();
     }
     req.run(1)
+})
+app.get('/data/:file', function(req, res) {
+    req.file='data/'+req.params.file;
+    fs.exists(req.file,function(exists){
+        if(exists){
+            fs.createReadStream(req.file).pipe(res).end()
+        }else{
+            res.send(JSON.stringify({ok:false,msg:'no file found'}));
+            res.end();
+        }
+    })
+    
 });
 app.get(['/docs','/docs/:file'], function(req, res) {
+    req.pageDataFile='web/data/'+req.params.file+'.json';
+    if(req.params.file&&fs.existsSync(req.pageDataFile)){
+       try{req.pageData=JSON.parse(fs.readFileSync(req.pageDataFile,'utf8'));}catch(err){console.log(err)}
+    }
     if(req.params.file){
         req.file=req.params.file
     }else{
         req.file='index';
     }
-    res.render('docs/'+req.file,{config:config});
+    res.render('docs/'+req.file,{config:config,pageData:req.pageData});
 });
 app.get(['/','/:file'], function(req, res) {
-    if(req.params.file==='coinzilla-verification.txt'){
-        fs.createReadStream(__dirname+'/web/coinzilla-verification.txt').pipe(res).end()
-        return;
+    req.pageDataFile='web/data/'+req.params.file+'.json';
+    if(req.params.file&&fs.existsSync(req.pageDataFile)){
+       try{req.pageData=JSON.parse(fs.readFileSync(req.pageDataFile,'utf8'));}catch(err){console.log(err)}
     }
     if(req.params.file){
         req.file=req.params.file
     }else{
         req.file='index';
     }
-    res.render('pages/'+req.file,{config:config});
+    res.render('pages/'+req.file,{config:config,pageData:req.pageData});
 });
 //start server
 app.listen(config.port,config.ip,function () {
   console.log('Website Loaded on port '+config.port)
 });
+exec('pm2 flush')
+setTimeout(function(){
+    exec('pm2 flush')
+},60000*60*2)

@@ -422,18 +422,35 @@ var draw=function(v,n){
           },
           {
               field:'Full Frame Detection',
-              description:'This will read the entire frame for differences. Keep it set as "Yes" until region Editor works correctly.',
+              description:'This will read the entire frame for pixel differences.',
               default:'Yes',
-              example:'1',
+              example:'',
               possible:[
                   {name:'No',info:'Makes motion detector do nothing if regions are not specified.'},
                   {name:'Yes',info:'Read entire frame.'},
               ],
           },{
               field:'Indifference',
-              description:'The opposite of sensitivity. A lower number means it will trigger sooner. The value ranges up to 15(+) decimal places.',
+              description:'How much it doesn\'t care before doing something. The opposite of sensitivity. A lower number means it will trigger sooner. The value ranges up to 15(+) decimal places.',
               default:'0.5',
               example:'25',
+              possible:'Any number.',
+          },
+          {
+              field:'Detector Command',
+              description:'You may use this to trigger a script on command.',
+              default:'No',
+              example:'',
+              possible:[
+                  {name:'No',info:'No script will run.'},
+                  {name:'Yes',info:'Trigger the script that is set in the <b>Command</b> option. <b>Command</b> is only visible when selecting this option.'},
+              ],
+          },
+          {
+              field:'Allow Next Command',
+              description:'This value is a timer to allow the next running of your script. This value is in minutes.',
+              default:'10',
+              example:'0.1',
               possible:'Any number.',
           },
       ].forEach(draw) %>

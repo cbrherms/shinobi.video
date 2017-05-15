@@ -22,10 +22,14 @@
         },
         {
             "Q": "Where can I make feature requests?",
-            "A": "In the <code>#suggestions</code> channel on <a href=\"http://discordapp.com/invite/mdhmvuH/\">Discord</a>"
+            "A": "In the <code>#suggestions</code> channel on <a href=\"http://discordapp.com/invite/mdhmvuH/\">Discord</a>. If you are on a paid support package you may open a ticket in the client area. Either method will work, ticket made in the client area ensures priority for requests."
         }
     ],
     "Technical":[
+        {
+            "Q": "Can I run this on HTTPS instead of HTTP?",
+            "A": "Yes. You can have it going through a proxy or through cloudflare with a domain, quick and painless. Websocket works excellent through cloudflare."
+        },
         {
             "Q": "Would it work for a raspberry pi streaming RTSP h264 video?",
             "A": "If you can open the stream in VLC Media Player then ffmpeg should be able to get it too. ffmpeg is what Shinobi uses for encoding."

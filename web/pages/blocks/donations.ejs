@@ -1,13 +1,14 @@
 <div class="text-center">
     <a href="/docs/donate" style="text-decoration:none">
-    <h3 class="donationTag">Donations this Month<br><small>Contributions through Paid Support are added to this calculation.</small></h3>
+    <h3 class="donationTag">Contributions this Month<br><small>Please consider ordering a support package to contribute. <i class="fa fa-smile-o"></i></small></h3>
     <div class="progress donations">
       <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0"
       aria-valuemin="0" aria-valuemax="100" style="width:0%">
         0%
       </div>
     </div>
-    </a>
+    </a><br>
+    <a href="/docs/donate" class="btn btn-sm btn-white btn-ghost">Donate</a>
 </div>
 <style>
 .donations {max-width:400px;width:100%;background:#333;border: 1px solid #c3996b;display:inline-block}
@@ -24,7 +25,7 @@ $(document).ready(function(){
             x.firstDay = new Date;
             x.firstDay = new Date(x.firstDay.getFullYear(), x.firstDay.getMonth(), 1);
             $.each(d,function(n,v){
-                if(moment(x.firstDay).diff(moment(v.date_created)) >= 0){
+                if(moment(v.date_created).diff(moment(x.firstDay)) >= 0){
                     x.total+=parseFloat(v.total);
                 }
             })

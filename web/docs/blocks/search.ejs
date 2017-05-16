@@ -1,0 +1,13 @@
+
+<div style="padding:10px 0">
+    <input class="form-control input-lg" id="page-search" placeholder="Search page..">
+</div>
+<script>
+$('#page-search').keyup(function () {
+    var rex = new RegExp($(this).val(), 'i');
+    $('.doc-content .section-block').hide();
+    $('.doc-content .section-block').filter(function () {
+        return rex.test($(this).text());
+    }).show();
+})
+</script>

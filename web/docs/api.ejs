@@ -16,119 +16,29 @@
                 <div id="showcase" class="doc-body">
                     <div class="doc-content">
                         <div class="content-inner">
-                            <section id="general" class="doc-section">
-        <p>Your <code>[API KEY]</code> can be found in <code>API</code> in the dashboard menu. Responses to HTTP Requests return as <code>JSON</code> strings. <em>Group key for the default user is</em> <code>2Df5hBE</code>.</p>
+                            <section class="doc-section">
+        <p>Your <code>[API KEY]</code> can be found in <code>API</code> in the dashboard menu. Responses to HTTP Requests return as <code>JSON</code> strings. Group Key can be found in the <b>Settings</b> window.
 
 <p><code>[API KEY]</code> <em>Can also be your logged in auth_token as well as the API Access key.</em></p>
+                            <% include blocks/search.ejs %>
+                                <% pageData.forEach(function(v,n){ %>
 <div class="section-block">
-    <h3 class="block-title question"><a id="user-content-jpeg-snapshot" class="anchor" href="#get-all-monitors"></a>Get JPEG Snapshot</h3>
-    <p>Snapshot must be enabled in Monitor Settings.</p>
-    <pre><code>http://xxx.xxx.xxx.xxx/[API KEY]/jpeg/[GROUP KEY]/[MONITOR ID]</code></pre>
-</div>
-<div class="section-block">
-    <h3 class="block-title question"><a id="user-content-embedding-streams" class="anchor" href="#embedding-streams"></a>Embedding Streams</h3>
-
-    <p>Embedding a websocket stream can be done through an iframe or using a GET request. You can even proxy it through another web engine because the embed URL will only start a stream after it gets the websocket library.</p>
-
-    <pre><code>http://xxx.xxx.xxx.xxx/[API KEY]/embed/[GROUP KEY]/[MONITOR ID]
-    </code></pre>
-
-    <p>You can <code>add jQuery</code> with this method.</p>
-
-    <pre><code>http://xxx.xxx.xxx.xxx/[API KEY]/embed/[GROUP KEY]/[MONITOR ID]/jquery</code></pre>
-
-    <p>It's good for :</p>
-
+    <h3 class="block-title question"><a id="content-<%- link_id(v.description) %>" class="text-faded"><i class="fa fa-paperclip"></i></a> &nbsp;<%- v.description %></h3>
+    <% v.blocks.forEach(function(b,m){ %>
+        <p><a class="text-faded" id="content-<%-link_id(b.text)%>" href="#content-<%-link_id(b.text)%>"><i class="fa fa-paperclip"></i></a> &nbsp; <%- b.text %></p>
+        <% if(b.code){ %>
+            <pre><code><%- b.code %></code></pre>
+        <% } %>
+        <% if(b.list){ %>
     <ul>
-    <li>Direct access from a <code>browser tab</code>
-    </li>
-    <li>In an <code>iframe</code>
-    </li>
-    <li>On a page <code>without jQuery</code>
-    </li>
+        <% b.list.forEach(function(c,x){ %>
+            <li><%- c %></li>
+        <%  }) %>
     </ul>
-
-    <p>You can embed with jQuery like this</p>
-
-    <pre><code>$.get('http://xxx.xxx.xxx.xxx/[API KEY]/embed/[GROUP KEY]/[MONITOR ID]',function(data){ $('body').append(data) })</code></pre>
-
-    <p>You can use it in an iframe like this</p>
-
-    <pre><code>&lt;iframe src="http://xxx.xxx.xxx.xxx/[API KEY]/embed/[GROUP KEY]/[MONITOR ID]/jquery|fullscreen"&gt;&lt;/iframe</code></pre>
-
-    <p>You <strong>cannot</strong> use the URL like this</p>
-
-    <pre><code>&lt;img src="http://xxx.xxx.xxx.xxx/[API KEY]/embed/[GROUP KEY]/[MONITOR ID]"&gt;
-    </code></pre>
-
-    <p><strong>Embedding on WordPress?</strong> You may need to set jQuery like this before the embed code for the feature to work.</p>
-
-    <pre><code>$=jQuery
-    </code></pre>
+        <% } %>
+    <%  }) %>
 </div>
-<div class="section-block">
-    <h3 class="block-title question"><a id="user-content-get-all-monitors" class="anchor" href="#get-all-monitors"></a>Get all monitors</h3>
-
-    <pre><code>http://xxx.xxx.xxx.xxx/[API KEY]/monitor/[GROUP KEY]</code></pre>
-</div>
-<div class="section-block">
-    <h3 class="block-title question"><a id="user-content-get-all-started-monitors" class="anchor" href="#get-all-started-monitors"></a>Get all started monitors</h3>
-
-    <pre><code>http://xxx.xxx.xxx.xxx/[API KEY]/smonitor/[GROUP KEY]</code></pre>
-</div>
-<div class="section-block">
-
-    <h3 class="block-title question"><a id="user-content-get-a-single-monitor-by-id" class="anchor" href="#get-a-single-monitor-by-id"></a>Get a single monitor by ID</h3>
-
-    <pre><code>http://xxx.xxx.xxx.xxx/[API KEY]/monitor/[GROUP KEY]/[MONITOR ID]</code></pre>
-</div>
-<div class="section-block">
-
-    <h3 class="block-title question"><a id="user-content-get-videos-for-group-key" class="anchor" href="#get-videos-for-group-key"></a>Get videos for group key</h3>
-
-    <pre><code>http://xxx.xxx.xxx.xxx/[API KEY]/videos/[GROUP KEY]</code></pre>
-</div>
-<div class="section-block">
-
-    <h3 class="block-title question"><a id="user-content-get-videos-for-monitor-id" class="anchor" href="#get-videos-for-monitor-id"></a>Get videos for monitor ID</h3>
-
-    <p>this is how the calendar gets video rows.</p>
-
-    <pre><code>http://xxx.xxx.xxx.xxx/[API KEY]/videos/[GROUP KEY]/[MONITOR ID]</code></pre>
-    </div>
-    <div class="section-block">
-    <h3 class="block-title question"><a id="user-content-get-video-file" class="anchor" href="#get-video-file"></a>Get video file</h3>
-
-    <p>this is how video files are served in the dashboard.</p>
-
-    <pre><code>http://xxx.xxx.xxx.xxx/[API KEY]/videos/[GROUP KEY]/[MONITOR ID]/[FILENAME]</code></pre>
-</div>
-<div class="section-block">
-    <h3 class="block-title question"><a id="user-content-set-mode-of-camera-record-watch-or-stop-from-http" class="anchor" href="#set-mode-of-camera-record-watch-or-stop-from-http"></a>Set mode of camera (Record, Watch, or Stop) from HTTP</h3>
-    <p>or set to a mode for a period of time before automatically stops.</p>
-    <pre><code>http://xxx.xxx.xxx.xxx/[API KEY]/monitor/[GROUP KEY]/[MONITOR ID]/[MODE]/[TIME]/[TIME INTERVAL]</code></pre>
-    <p>Here is an example of setting the mode to <strong>record</strong> on a camera with ID <strong>bunny</strong> under group key <strong>2Df5hBE</strong>. It will stay in this mode until changed.</p>
-    <pre><code>http://xxx.xxx.xxx.xxx/XXXXXXXXXXXXXXXXX/monitor/2Df5hBE/bunny/record</code></pre>
-    <p>Setting the mode to <strong>record</strong> on a camera with ID <strong>bunny</strong> for <strong>10 minutes</strong> under group key <strong>2Df5hBE</strong>. It will automatically return to <strong>Disabled</strong> itself after <strong>10 minutes</strong>.</p>
-    <pre><code>http://xxx.xxx.xxx.xxx/XXXXXXXXXXXXXXXXX/monitor/2Df5hBE/bunny/record/10/min</code></pre>
-    <p><strong>[MODE]</strong> can be one of the following. </p>
-    <pre><code>stop, start, record</code></pre>
-    <pre><code>stop = Disabled
-start = Watch-Only
-record = Record</code></pre>
-
-    <p><strong>[TIME INTERVAL]</strong> can be left blank to use <em>seconds</em> or one of the following.</p>
-
-    <pre><code>min, minute, minutes, hr, hour, hours, day, or days</code></pre>
-</div>
-<div class="section-block">
-<h3 class="block-title question"><a id="user-content-update-shinobi-from-this-repository" class="anchor" href="#update-shinobi-from-this-repository"></a>Update Shinobi with built in script.</h3>
-
-<p>This overwrites <strong>camera.js</strong>, <strong>web</strong>, and <strong>UPDATE.sh</strong> </p>
-
-<pre><code>http://xxx.xxx.xxx.xxx/[API KEY]/update/[UPDATE KEY]
-</code></pre>
-</div>
+                                <%  }) %>
                             </section><!--//doc-section-->
 
                         </div><!--//content-inner-->
@@ -136,18 +46,9 @@ record = Record</code></pre>
                     <div class="doc-sidebar">
                         <nav id="doc-nav">
                             <ul id="doc-menu" class="nav doc-menu hidden-xs" data-spy="affix">
-                                <li><a class="scrollto" href="#user-content-jpeg-snapshot">Get JPEG Snapshot</a></li>
-                                <li><a class="scrollto" href="#user-content-embedding-streams">Embedding Streams</a></li>
-                                <li><a class="scrollto" href="#user-content-get-all-monitors">Get all monitors</a></li>
-                                <li><a class="scrollto" href="#user-content-get-all-started-monitors">Get all started monitors</a></li>
-                                <li><a class="scrollto" href="#user-content-get-a-single-monitor-by-id">Get a single monitor by ID</a></li>
-                                <li><a class="scrollto" href="#user-content-get-videos-for-group-key">Get videos for group key</a></li>
-                                <li><a class="scrollto" href="#user-content-get-videos-for-monitor-id">Get videos for monitor ID</a></li>
-                                <li><a class="scrollto" href="#user-content-get-video-file">Get video file</a></li>
-                                <li><a class="scrollto" href="#user-content-set-mode-of-camera-record-watch-or-stop-from-http">Set mode of camera (Record, Watch, or Stop) from HTTP</a></li>
-                                <li>
-                                    <a class="scrollto" href="#user-content-update-shinobi-from-this-repository">Update Shinobi with built in script.</a>
-                                </li>
+                                <% pageData.forEach(function(v,n){ %>
+                                    <li><a class="scrollto" href="#content-<%- link_id(v.description) %>"><%- v.description %></a></li>
+                                <%  }) %>
                                 <% include blocks/menu-options.ejs %>
                             </ul><!--//doc-menu-->
                         </nav>

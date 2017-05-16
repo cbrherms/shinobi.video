@@ -1,15 +1,27 @@
-{
-    "Get JPEG Snapshot":{
-        "description":"",
+[
+    {
+        "description":"Get Streams",
         "blocks":[
             {
-                "text":"Snapshot must be enabled in Monitor Settings.",
-                "code":"http://xxx.xxx.xxx.xxx/[API KEY]/jpeg/[GROUP KEY]/[MONITOR ID]"
+                "text":"<b>JPEG Snapshot.</b> Snapshot must be enabled in Monitor Settings.",
+                "code":"http://xxx.xxx.xxx.xxx/[API KEY]/jpeg/[GROUP KEY]/[MONITOR ID]/s.jpg"
+            },
+            {
+                "text":"<b>MJPEG Stream.</b> Stream type must be MJPEG.",
+                "code":"http://xxx.xxx.xxx.xxx/[API KEY]/mjpeg/[GROUP KEY]/[MONITOR ID]"
+            },
+            {
+                "text":"<b>MJPEG for iframe.</b>",
+                "code":"http://xxx.xxx.xxx.xxx/[API KEY]/mjpeg/[GROUP KEY]/[MONITOR ID]/full"
+            },
+            {
+                "text":"<b>m3u8 for HLS Stream.</b> Stream type must be HLS.",
+                "code":"http://xxx.xxx.xxx.xxx/[API KEY]/mjpeg/[GROUP KEY]/[MONITOR ID]/s.m3u8"
             }
         ]
     },
-    "Getting Monitors":{
-        "description":"",
+    {
+        "description":"Getting Monitors",
         "blocks":[
             {
                 "text":"Get all saved monitors",
@@ -21,12 +33,12 @@
             },
             {
                 "text":"Get a single monitor by ID",
-                "code":"http://xxx.xxx.xxx.xxx/[API KEY]/smonitor/[GROUP KEY]/[MONITOR ID]"
+                "code":"http://xxx.xxx.xxx.xxx/[API KEY]/monitor/[GROUP KEY]/[MONITOR ID]"
             }
         ]
     },
-    "Getting Videos":{
-        "description":"",
+    {
+        "description":"Getting Videos",
         "blocks":[
             {
                 "text":"Get videos for group key",
@@ -42,9 +54,45 @@
             }
         ]
     },
-    "Controlling Shinobi":{
-        "description":"",
+    {
+        "description":"System Triggers",
         "blocks":[
+            {
+                "text":"Trigger a Motion Event (Pretend to be a Motion Engine)",
+                "code":"http://xxx.xxx.xxx.xxx/[API KEY]/motion/[GROUP KEY]/[MONITOR ID]?data={\"plug\":\"<i>camera1</i>\",\"name\":\"<i>stairs</i>\",\"reason\":\"<i>motion</i>\",\"confidence\":<i>197.4755859375</i>}",
+                "list":[
+                    "<b>plug :</b> The name of the plugin. You can put the name of the camera.",
+                    "<b>name :</b> The name of the region. <small>Example : door</small>",
+                    "<b>reason :</b> The reason for this trigger. <small>Example : motion</small>",
+                    "<b>confidence :</b> A number to signify how much confidence this engine has that there is motion. <small>Example : 197.4755859375</small>"
+                ]
+            },
+            {
+                "text":"Update Shinobi with built in script.",
+                "code":"http://xxx.xxx.xxx.xxx/[API KEY]/update/[UPDATE KEY]"
+            }
+        ]
+    },
+    {
+        "description":"Monitor Triggers",
+        "blocks":[
+            {
+                "text":"Set to a mode for a monitor.",
+                "code":"http://xxx.xxx.xxx.xxx/[API KEY]/monitor/[GROUP KEY]/[MONITOR ID]/[MODE]"
+            },
+            {
+                "text":"[MODE]</strong> can be one of the following.",
+                "list":[
+                    "stop, start, record",
+                    "stop = Disabled",
+                    "start = Watch-Only",
+                    "record = Record"
+                ]
+            },
+            {
+                "text":"Set to a mode for a number of minutes to elapse before automatically stops.",
+                "code":"http://xxx.xxx.xxx.xxx/[API KEY]/monitor/[GROUP KEY]/[MONITOR ID]/[MODE]/[TIME]"
+            },
             {
                 "text":"Set to a mode for a period of time before automatically stops.",
                 "code":"http://xxx.xxx.xxx.xxx/[API KEY]/monitor/[GROUP KEY]/[MONITOR ID]/[MODE]/[TIME]/[TIME INTERVAL]"
@@ -58,26 +106,13 @@
                 "code":"http://xxx.xxx.xxx.xxx/XXXXXXXXXXXXXXXXX/monitor/2Df5hBE/bunny/record/10/min"
             },
             {
-                "text":"[MODE]</strong> can be one of the following.",
-                "list":[
-                    "stop, start, record",
-                    "stop = Disabled",
-                    "start = Watch-Only",
-                    "record = Record"
-                ]
-            },
-            {
-                "text":"[TIME INTERVAL]</strong> can be left blank to use <em>seconds</em> or one of the following.",
+                "text":"[TIME INTERVAL]</strong> can be left blank to use <strong>seconds</strong> or one of the following.",
                 "code":"min, minute, minutes, hr, hour, hours, day, or days"
-            },
-            {
-                "text":"Update Shinobi with built in script.",
-                "code":"http://xxx.xxx.xxx.xxx/[API KEY]/update/[UPDATE KEY]"
             }
         ]
     },
-    "Embedding Streams":{
-        "description":"",
+    {
+        "description":"Embedding Streams",
         "blocks":[
             {
                 "text":"Embedding a websocket stream can be done through an iframe or using a GET request. You can even proxy it through another web engine because the embed URL will only start a stream after it gets the websocket library.",
@@ -113,4 +148,4 @@
             }
         ]
     }
-}
+]

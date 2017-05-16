@@ -31,3 +31,7 @@
     <![endif]-->
     <script type="text/javascript" src="assets/plugins/jquery-1.12.3.min.js"></script>
 </head> 
+    
+    <% link_id=function(x){
+        return x.toLowerCase().replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '').replace(/ /g,'-');
+    } %>

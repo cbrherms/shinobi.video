@@ -1,0 +1,116 @@
+{
+    "Get JPEG Snapshot":{
+        "description":"",
+        "blocks":[
+            {
+                "text":"Snapshot must be enabled in Monitor Settings.",
+                "code":"http://xxx.xxx.xxx.xxx/[API KEY]/jpeg/[GROUP KEY]/[MONITOR ID]"
+            }
+        ]
+    },
+    "Getting Monitors":{
+        "description":"",
+        "blocks":[
+            {
+                "text":"Get all saved monitors",
+                "code":"http://xxx.xxx.xxx.xxx/[API KEY]/monitor/[GROUP KEY]"
+            },
+            {
+                "text":"This method will get all <b>started</b> monitors",
+                "code":"http://xxx.xxx.xxx.xxx/[API KEY]/smonitor/[GROUP KEY]"
+            },
+            {
+                "text":"Get a single monitor by ID",
+                "code":"http://xxx.xxx.xxx.xxx/[API KEY]/smonitor/[GROUP KEY]/[MONITOR ID]"
+            }
+        ]
+    },
+    "Getting Videos":{
+        "description":"",
+        "blocks":[
+            {
+                "text":"Get videos for group key",
+                "code":"http://xxx.xxx.xxx.xxx/[API KEY]/videos/[GROUP KEY]"
+            },
+            {
+                "text":"Get videos for monitor ID",
+                "code":"http://xxx.xxx.xxx.xxx/[API KEY]/videos/[GROUP KEY]/[MONITOR ID]"
+            },
+            {
+                "text":"Get video file",
+                "code":"http://xxx.xxx.xxx.xxx/[API KEY]/videos/[GROUP KEY]/[MONITOR ID]/[FILENAME]"
+            }
+        ]
+    },
+    "Controlling Shinobi":{
+        "description":"",
+        "blocks":[
+            {
+                "text":"Set to a mode for a period of time before automatically stops.",
+                "code":"http://xxx.xxx.xxx.xxx/[API KEY]/monitor/[GROUP KEY]/[MONITOR ID]/[MODE]/[TIME]/[TIME INTERVAL]"
+            },
+            {
+                "text":"Here is an example of setting the mode to <strong>record</strong> on a camera with ID <strong>bunny</strong> under group key <strong>2Df5hBE</strong>. It will stay in this mode until changed.",
+                "code":"http://xxx.xxx.xxx.xxx/XXXXXXXXXXXXXXXXX/monitor/2Df5hBE/bunny/record"
+            },
+            {
+                "text":"Setting the mode to <strong>record</strong> on a camera with ID <strong>bunny</strong> for <strong>10 minutes</strong> under group key <strong>2Df5hBE</strong>. It will automatically return to <strong>Disabled</strong> itself after <strong>10 minutes</strong>.",
+                "code":"http://xxx.xxx.xxx.xxx/XXXXXXXXXXXXXXXXX/monitor/2Df5hBE/bunny/record/10/min"
+            },
+            {
+                "text":"[MODE]</strong> can be one of the following.",
+                "list":[
+                    "stop, start, record",
+                    "stop = Disabled",
+                    "start = Watch-Only",
+                    "record = Record"
+                ]
+            },
+            {
+                "text":"[TIME INTERVAL]</strong> can be left blank to use <em>seconds</em> or one of the following.",
+                "code":"min, minute, minutes, hr, hour, hours, day, or days"
+            },
+            {
+                "text":"Update Shinobi with built in script.",
+                "code":"http://xxx.xxx.xxx.xxx/[API KEY]/update/[UPDATE KEY]"
+            }
+        ]
+    },
+    "Embedding Streams":{
+        "description":"",
+        "blocks":[
+            {
+                "text":"Embedding a websocket stream can be done through an iframe or using a GET request. You can even proxy it through another web engine because the embed URL will only start a stream after it gets the websocket library.",
+                "code":"http://xxx.xxx.xxx.xxx/[API KEY]/embed/[GROUP KEY]/[MONITOR ID]"
+            },
+            {
+                "text":"You can <code>add jQuery</code> with this method.",
+                "code":"http://xxx.xxx.xxx.xxx/[API KEY]/embed/[GROUP KEY]/[MONITOR ID]/jquery"
+            },
+            {
+                "text":"It's good for :",
+                "list":[
+                    "Direct access from a browser tab.",
+                    "In an iframe",
+                    "On a page without jQuery"
+                ]
+            },
+            {
+                "text":"You can embed with jQuery like this",
+                "code":"$.get('http://xxx.xxx.xxx.xxx/[API KEY]/embed/[GROUP KEY]/[MONITOR ID]',function(data){ $('body').append(data) })"
+            },
+            {
+                "text":"You can use it in an iframe like this",
+                "code":"&lt;iframe src=\"http://xxx.xxx.xxx.xxx/[API KEY]/embed/[GROUP KEY]/[MONITOR ID]/jquery|fullscreen\"&gt;&lt;/iframe"
+            },
+            {
+                "text":"You <strong>cannot</strong> use the URL like this",
+                "code":"&lt;img src=\"http://xxx.xxx.xxx.xxx/[API KEY]/embed/[GROUP KEY]/[MONITOR ID]\"&gt;"
+            },
+            {
+                "text":"Embedding on WordPress?</strong> You may need to set jQuery like this before the embed code for the feature to work.",
+                "code":"$=jQuery"
+            }
+        ]
+    }
+}

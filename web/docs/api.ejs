@@ -17,15 +17,15 @@
                     <div class="doc-content">
                         <div class="content-inner">
                             <section class="doc-section">
+                            <% include blocks/search.ejs %>
         <p>Your <code>[API KEY]</code> can be found in <code>API</code> in the dashboard menu. Responses to HTTP Requests return as <code>JSON</code> strings. Group Key can be found in the <b>Settings</b> window.
 
 <p><code>[API KEY]</code> <em>Can also be your logged in auth_token as well as the API Access key.</em></p>
-                            <% include blocks/search.ejs %>
                                 <% pageData.forEach(function(v,n){ %>
 <div class="section-block">
-    <h3 class="block-title question"><a id="content-<%- link_id(v.description) %>" href="#content-<%- link_id(v.description) %>" class="text-faded"><i class="fa fa-paperclip"></i></a> &nbsp;<%- v.description %></h3>
+    <h3 class="block-title question"><a id="content-<%- link_id(v.description) %>" href="#content-<%- link_id(v.description) %>" class="text-faded"><i class="fa fa-paperclip"></i></a>  <%- v.description %></h3>
     <% v.blocks.forEach(function(b,m){ %>
-        <p><a class="text-faded" id="content-<%-link_id(b.text)%>" href="#content-<%-link_id(b.text)%>"><i class="fa fa-paperclip"></i></a> &nbsp; <%- b.text %></p>
+        <p><a class="text-faded" id="content-<%-link_id(b.text)%>" href="#content-<%-link_id(b.text)%>"><i class="fa fa-paperclip"></i></a>   <%- b.text %></p>
         <% if(b.code){ %>
             <pre><code><%- b.code %></code></pre>
         <% } %>

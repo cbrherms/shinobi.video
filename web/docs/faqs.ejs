@@ -24,7 +24,7 @@
                                 <%
                                     v.forEach(function(b,m){ %>
                                <div class="section-block">
-                                    <h3 class="question" id="content-<%-link_id(b.Q)%>"><i class="fa fa-question-circle"></i> <%=b.Q%></h3>
+                                   <h3 class="question" id="content-<%-link_id(b.Q)%>"><a class="text-faded" href="#content-<%-link_id(b.Q)%>"><i class="fa fa-paperclip"></i></a> <%=b.Q%></h3>
                                     <div class="answer"><%-b.A%></div>
                                 </div>
                                   <%  }) %>

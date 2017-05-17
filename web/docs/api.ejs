@@ -23,7 +23,7 @@
                             <% include blocks/search.ejs %>
                                 <% pageData.forEach(function(v,n){ %>
 <div class="section-block">
-    <h3 class="block-title question"><a id="content-<%- link_id(v.description) %>" class="text-faded"><i class="fa fa-paperclip"></i></a> &nbsp;<%- v.description %></h3>
+    <h3 class="block-title question"><a id="content-<%- link_id(v.description) %>" href="#content-<%- link_id(v.description) %>" class="text-faded"><i class="fa fa-paperclip"></i></a> &nbsp;<%- v.description %></h3>
     <% v.blocks.forEach(function(b,m){ %>
         <p><a class="text-faded" id="content-<%-link_id(b.text)%>" href="#content-<%-link_id(b.text)%>"><i class="fa fa-paperclip"></i></a> &nbsp; <%- b.text %></p>
         <% if(b.code){ %>

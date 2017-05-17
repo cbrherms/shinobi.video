@@ -7,6 +7,7 @@
             "color":"",
             "info":[
                {
+                  "name":"mode",
                   "field":"Mode",
                   "description":"This is the primary task of the monitor.",
                   "default":"Disabled",
@@ -27,6 +28,7 @@
                   ]
                },
                {
+                  "name":"mid",
                   "field":"Monitor ID",
                   "description":"This is a non-changeable identifier for the monitor. You can duplicate a monitor by double clicking the Monitor ID and changing it.",
                   "default":"<i>Provided by Server</i>",
@@ -34,6 +36,7 @@
                   "possible":""
                },
                {
+                  "name":"name",
                   "field":"Name",
                   "description":"This is the human-readable display name for the monitor.",
                   "default":"",
@@ -41,6 +44,7 @@
                   "possible":""
                },
                {
+                  "name":"detail=fatal_max",
                   "field":"Retry Connection",
                   "description":"The number of times to retry for network connection between the server and camera before setting the monitor to Disabled. No decimals.",
                   "default":"10",
@@ -54,6 +58,7 @@
             "color":"forestgreen",
             "info":[
                {
+                  "name":"type",
                   "field":"Input Type",
                   "description":"The method that will used to consume the video stream.",
                   "default":"JPEG",
@@ -82,6 +87,7 @@
                   ]
                },
                {
+                  "name":"protocol",
                   "field":"Connection Type",
                   "description":"The protocol that will used to consume the video stream.",
                   "default":"HTTP",
@@ -106,6 +112,7 @@
                   ]
                },
                {
+                  "name":"detail=muser",
                   "field":"Username",
                   "description":"The user login for your camera",
                   "default":"",
@@ -113,6 +120,7 @@
                   "possible":""
                },
                {
+                  "name":"detail=mpass",
                   "field":"Password",
                   "description":"The password for your camera",
                   "default":"",
@@ -120,6 +128,7 @@
                   "possible":""
                },
                {
+                  "name":"host",
                   "field":"Host",
                   "description":"Connection address",
                   "default":"",
@@ -127,6 +136,7 @@
                   "possible":""
                },
                {
+                  "name":"port",
                   "field":"Port",
                   "description":"Port number that your camera is streaming out on.",
                   "default":"80",
@@ -134,6 +144,7 @@
                   "possible":"1-65535"
                },
                {
+                  "name":"path",
                   "field":"Path",
                   "description":"The password for your camera",
                   "default":"",
@@ -148,6 +159,7 @@
                   "possible":""
                },
                {
+                  "name":"detail=rtsp_transport",
                   "field":"RTSP Transport",
                   "description":"The password for your camera",
                   "default":"",
@@ -178,6 +190,7 @@
             "color":"blue",
             "info":[
                {
+                  "name":"detail=stream_type",
                   "field":"Stream  Type",
                   "description":"The method that will used to consume the video stream.",
                   "default":"Base64",
@@ -198,6 +211,7 @@
                   ]
                },
                {
+                  "name":"detail=signal_check",
                   "field":"Check Signal Interval",
                   "description":"How often your client will check each stream to see if it is alive. This is calculated in minutes.",
                   "default":"10",
@@ -205,6 +219,7 @@
                   "possible":""
                },
                {
+                  "name":"detail=signal_check_log",
                   "field":"Log Signal Event",
                   "description":"This is for the client side only. It will display in the log thread when client side signal checks occur.",
                   "default":"No",
@@ -221,6 +236,7 @@
                   ]
                },
                {
+                  "name":"detail=stream_quality",
                   "field":"Quality",
                   "description":"Low number means higher quality. Higher number means less quality.",
                   "default":"15",
@@ -228,6 +244,7 @@
                   "possible":"1-23"
                },
                {
+                  "name":"detail=stream_fps",
                   "field":"Rate (FPS)",
                   "description":"The speed in which frames are displayed to clients. Frames Per Second. Be aware there is no default. This can lead to high bandwidth usage.",
                   "default":"",
@@ -235,6 +252,7 @@
                   "possible":""
                },
                {
+                  "name":"height",
                   "field":"Height",
                   "description":"Height of the stream image.",
                   "default":"640",
@@ -242,6 +260,7 @@
                   "possible":""
                },
                {
+                  "name":"width",
                   "field":"Width",
                   "description":"Height of the stream image.",
                   "default":"480",
@@ -249,6 +268,7 @@
                   "possible":""
                },
                {
+                  "name":"detail=svf",
                   "field":"Video Filter",
                   "description":"Place FFMPEG video filters in this box to affect the streaming portion. No spaces.",
                   "default":"",
@@ -262,6 +282,7 @@
             "color":"blue",
             "info":[
                {
+                  "name":"detail=stream_vcodec",
                   "field":"Video Codec",
                   "description":"Video codec for streaming.",
                   "default":"libx264",
@@ -298,6 +319,7 @@
                   ]
                },
                {
+                  "name":"detail=stream_acodec",
                   "field":"Audio Codec",
                   "description":"Audio codec for streaming.",
                   "default":"No Audio",
@@ -342,6 +364,7 @@
                   ]
                },
                {
+                  "name":"detail=hls_time",
                   "field":"HLS Segment Length",
                   "description":"How long each segment should be. Each segment will be drawn by the client through an m3u8 file. Shorter is better, less space used.",
                   "default":"2",
@@ -349,6 +372,7 @@
                   "possible":"1-23"
                },
                {
+                  "name":"detail=hls_list_size",
                   "field":"HLS List Size",
                   "description":"The number of segments maximum before deleting old segments automatically.",
                   "default":"2",
@@ -356,6 +380,7 @@
                   "possible":""
                },
                {
+                  "name":"detail=preset_stream",
                   "field":"HLS Preset",
                   "description":"Preset flag for certain video encoders. If you find your camera is crashing every few seconds : try leaving it blank.",
                   "default":"",
@@ -363,6 +388,7 @@
                   "possible":""
                },
                {
+                  "name":"detail=stream_scale_x",
                   "field":"Width",
                   "description":"Height of the stream image.",
                   "default":"480",
@@ -370,6 +396,7 @@
                   "possible":""
                },
                {
+                  "name":"detail=stream_scale_y",
                   "field":"Video Filter",
                   "description":"Place FFMPEG video filters in this box to affect the streaming portion. No spaces.",
                   "default":"",
@@ -383,6 +410,7 @@
             "color":"red",
             "info":[
                {
+                  "name":"ext",
                   "field":"Record File Type",
                   "description":"The file type for your recorded video file.",
                   "default":"MP4",
@@ -399,6 +427,7 @@
                   ]
                },
                {
+                  "name":"detail=vcodec",
                   "field":"Video Codec",
                   "description":"Video codec for recording.",
                   "default":"libx264",
@@ -435,6 +464,7 @@
                   ]
                },
                {
+                  "name":"detail=acodec",
                   "field":"Audio Codec",
                   "description":"Audio codec for recording.",
                   "default":"No Audio",
@@ -479,6 +509,7 @@
                   ]
                },
                {
+                  "name":"crf",
                   "field":"Quality",
                   "description":"Low number means higher quality. Higher number means less quality.",
                   "default":"15",
@@ -486,6 +517,7 @@
                   "possible":"1-23"
                },
                {
+                  "name":"preset_record",
                   "field":"Preset",
                   "description":"Preset flag for certain video encoders. If you find your camera is crashing every few seconds : try leaving it blank.",
                   "default":"",
@@ -493,6 +525,7 @@
                   "possible":""
                },
                {
+                  "name":"fps",
                   "field":"Video Record Rate (FPS)",
                   "description":"The speed in which frames are recorded to files. Frames Per Second. Be aware there is no default. This can lead to large files.",
                   "default":"",
@@ -500,6 +533,7 @@
                   "possible":""
                },
                {
+                  "name":"height",
                   "field":"Record Height",
                   "description":"Height of the stream image.",
                   "default":"640",
@@ -507,6 +541,7 @@
                   "possible":""
                },
                {
+                  "name":"width",
                   "field":"Record Width",
                   "description":"Height of the stream image.",
                   "default":"480",
@@ -514,6 +549,7 @@
                   "possible":""
                },
                {
+                  "name":"detail=cutoff",
                   "field":"Recording Segment Interval",
                   "description":"In minutes. When to slice off and start a new video file.",
                   "default":"15",
@@ -521,6 +557,7 @@
                   "possible":""
                },
                {
+                  "name":"detail=dqf",
                   "field":"Double Quote Directory",
                   "description":"Some directories have spaces depending on how you setup your OS.",
                   "default":"No",
@@ -537,6 +574,7 @@
                   ]
                },
                {
+                  "name":"detail=vf",
                   "field":"Record Video Filter",
                   "description":"Place FFMPEG video filters in this box to affect the recording portion. No spaces.",
                   "default":"",
@@ -550,6 +588,7 @@
             "color":"red",
             "info":[
                {
+                  "name":"detail=timestamp_font",
                   "field":"Font Path",
                   "description":"Font File to style your timestamp.",
                   "default":"/usr/share/fonts/truetype/freefont/FreeSans.ttf",
@@ -557,6 +596,7 @@
                   "possible":""
                },
                {
+                  "name":"detail=timestamp_font_size",
                   "field":"Font Size",
                   "description":"Font size in pt.",
                   "default":"10",
@@ -564,6 +604,7 @@
                   "possible":""
                },
                {
+                  "name":"detail=timestamp_color",
                   "field":"Text Color",
                   "description":"Timstamp text color.",
                   "default":"white",
@@ -571,6 +612,7 @@
                   "possible":""
                },
                {
+                  "name":"detail=timestamp_box_color",
                   "field":"Text Box Color",
                   "description":"Timstamp backdrop color.",
                   "default":"0x00000000@1",
@@ -578,6 +620,7 @@
                   "possible":""
                },
                {
+                  "name":"detail=timestamp_x",
                   "field":"Position X",
                   "description":"Horiztonal Position of Timestamp",
                   "default":"(w-tw)/2",
@@ -585,6 +628,7 @@
                   "possible":""
                },
                {
+                  "name":"detail=timestamp_y",
                   "field":"Position Y",
                   "description":"Vertical Position of Timestamp",
                   "default":"0",
@@ -598,6 +642,7 @@
             "color":"orange",
             "info":[
                {
+                  "name":"detail=detector",
                   "field":"Enabled",
                   "description":"This will add another output in the FFMPEG command for the motion detector. A detector plugin must be connected for this to have any effect.",
                   "default":"No",
@@ -605,6 +650,7 @@
                   "possible":""
                },
                {
+                  "name":"detail=detector_trigger",
                   "field":"Trigger Record",
                   "description":"This will order the camera to record if it is set to \"Watch-Only\" when a motion even is detected.",
                   "default":"No",
@@ -612,6 +658,7 @@
                   "possible":""
                },
                {
+                  "name":"detail=detector_timeout",
                   "field":"Recording Timeout",
                   "description":"The length of time \"Trigger Record\" will run for. This is read in minutes.",
                   "default":"10",
@@ -619,6 +666,7 @@
                   "possible":""
                },
                {
+                  "name":"detail=watchdog_reset",
                   "field":"Timeout Reset on Next Motion",
                   "description":"If there is an overlap in trigger record should it reset.",
                   "default":"No",
@@ -635,6 +683,7 @@
                   ]
                },
                {
+                  "name":"detail=detector_save",
                   "field":"Save Events to SQL",
                   "description":"Save Motion Events in SQL (not the image). This will overlay object on top of video recorded during the time motion events occured. (Currently not implemented yet)",
                   "default":"No",
@@ -642,6 +691,7 @@
                   "possible":""
                },
                {
+                  "name":"detail=detector_mail",
                   "field":"Email on Trigger",
                   "description":"Recieve an email of an image during a motion event to the master account for the camera group. You must setup SMTP details in conf.json.",
                   "default":"No",
@@ -658,6 +708,7 @@
                   ]
                },
                {
+                  "name":"detail=detector_mail_timeout",
                   "field":"Allow Next Email",
                   "description":"The amount of time until a trigger is allowed to send another email with motion details and another image.",
                   "default":"10",
@@ -665,6 +716,7 @@
                   "possible":""
                },
                {
+                  "name":"detail=detector_fps",
                   "field":"Detector Rate (FPS)",
                   "description":"How many frames a second to send to the motion detector. 0.5 is the default. 0.5 means it will send a frame every 2 seconds.",
                   "default":"0.5",
@@ -672,6 +724,7 @@
                   "possible":""
                },
                {
+                  "name":"detail=detector_scale_x",
                   "field":"Feed-in Image Width",
                   "description":"Width of the image being detected. Smaller sizes take less CPU.",
                   "default":"",
@@ -679,6 +732,7 @@
                   "possible":""
                },
                {
+                  "name":"detail=detector_scale_y",
                   "field":"Feed-in Image Height",
                   "description":"Height of the image being detected. Smaller sizes take less CPU.",
                   "default":"",
@@ -686,6 +740,7 @@
                   "possible":""
                },
                {
+                  "name":"detail=detector_frame",
                   "field":"Full Frame Detection",
                   "description":"This will read the entire frame for pixel differences.",
                   "default":"Yes",
@@ -702,6 +757,7 @@
                   ]
                },
                {
+                  "name":"detail=detector_sensitivity",
                   "field":"Indifference",
                   "description":"How much it doesn't care before doing something. The opposite of sensitivity. A lower number means it will trigger sooner. The value ranges up to 15(+) decimal places.",
                   "default":"0.5",
@@ -709,6 +765,7 @@
                   "possible":"Any number."
                },
                {
+                  "name":"detail=detector_command_enable",
                   "field":"Detector Command",
                   "description":"You may use this to trigger a script on command.",
                   "default":"No",
@@ -725,6 +782,15 @@
                   ]
                },
                {
+                  "name":"detail=detector_command",
+                  "field":"Command",
+                  "description":"The command that will run. This is the equivalent of running a shell command from terminal.",
+                  "default":"",
+                  "example":"",
+                  "possible":""
+               },
+               {
+                  "name":"detail=detector_command_timeout",
                   "field":"Allow Next Command",
                   "description":"This value is a timer to allow the next running of your script. This value is in minutes.",
                   "default":"10",
@@ -738,6 +804,7 @@
             "color":"navy",
             "info":[
                {
+                  "name":"detail=cust_input",
                   "field":"Input Flags",
                   "description":"Custom Flags that bind to the Input of the FFMPEG process.",
                   "default":"",
@@ -745,6 +812,15 @@
                   "possible":""
                },
                {
+                  "name":"detail=cust_snap",
+                  "field":"Snapshot Flags",
+                  "description":"Custom Flags that bind to the Snapshots.",
+                  "default":"",
+                  "example":"",
+                  "possible":""
+               },
+               {
+                  "name":"detail=cust_detect",
                   "field":"Detector Flags",
                   "description":"Custom Flags that bind to the stream Detector uses for analyzation.",
                   "default":"",
@@ -752,6 +828,7 @@
                   "possible":""
                },
                {
+                  "name":"detail=cust_stream",
                   "field":"Stream Flags",
                   "description":"Custom Flags that bind to the Stream (client side view) of the FFMPEG process.",
                   "default":"",
@@ -759,6 +836,15 @@
                   "possible":""
                },
                {
+                  "name":"detail=cust_record",
+                  "field":"Recording Flags",
+                  "description":"Custom Flags that bind to the recording of the FFMPEG process.",
+                  "default":"",
+                  "example":"",
+                  "possible":""
+               },
+               {
+                  "name":"detail=custom_output",
                   "field":"Output Method",
                   "description":"Add a custom output like JPEG frames or send data straight to another server.",
                   "default":"",
@@ -844,7 +930,7 @@
                   "field":"Max Storage Amount",
                   "description":"The amount max space Shinobi will allow to be consumed before purging. This value is read in megabytes.",
                   "default":"10000",
-                  "example":"600000 <small>(60 GB)</small>",
+                  "example":"600000",
                   "possible":"Up to 95% of your maximum storage space if only one master account exists."
                },
                {

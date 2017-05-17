@@ -2,11 +2,11 @@
     "General":[
         {
             "Q": "Is there an API for it?",
-            "A": "Sure. Head on over to the <a href=\"https://github.com/moeiscool/Shinobi/wiki/API-Access\">API Access</a> page."
+            "A": "Sure. Head on over to the <a href=\"//shinobi.video/docs/api\">API Access</a> page."
         },
         {
             "Q": "How do I update?",
-            "A": "Please have a look a the <a href=\"/docs/start#installation-section\">Install</a> page."
+            "A": "Please have a look a the <a href=\"//shinobi.video/docs/start#installation-section\">Install</a> page."
         },
         {
             "Q": "Does it record continuously?",
@@ -18,7 +18,7 @@
         },
         {
             "Q": "What type of Cameras are supported?",
-            "A": "<a href=\"/docs/supported\">Supported Cameras</a> page is what you want."
+            "A": "<a href=\"//shinobi.video/docs/supported\">Supported Cameras</a> page is what you want."
         },
         {
             "Q": "Where can I make feature requests?",
@@ -44,7 +44,7 @@
         },
         {
             "Q": "Can I set the mode of my camera (Record, Watch, or Stop) from HTTP? (Trigger a Camera)",
-            "A": "Sure. Head on over to the <a href=\"https://github.com/moeiscool/Shinobi/wiki/API-Access\">API Access</a> page."
+            "A": "Sure. Head on over to the <a href=\"//shinobi.video/docs/api\">API Access</a> page."
         },
         {
             "Q": "Why can’t I see anything in my camera window? There are no logs.",

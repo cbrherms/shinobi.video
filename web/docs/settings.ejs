@@ -17,10 +17,10 @@
                 <div class="doc-body">
                     <div class="doc-content">
                         <div class="content-inner">
-                            <section class="doc-section">
                                 <% include blocks/search.ejs %>
                                 <% pageData.forEach(function(v){ %>
-                                <h1 class="block-title"><a id="content-<%-link_id(v.section)%>" class="text-faded" href="#content-<%-link_id(v.section)%>"><i class="fa fa-paperclip"></i></a> &nbsp;<%- v.section %></h1>
+                            <section class="doc-section">
+                                <h2 class="section-title"><a id="content-<%-link_id(v.section)%>" class="text-faded" href="#content-<%-link_id(v.section)%>"><i class="fa fa-paperclip"></i></a> &nbsp;<%- v.section %></h2>
                                 <% v.blocks.forEach(function(b){ %>
                                 <div id="content-<%-link_id(b.name)%>" class="section-block form-group-group <%- b.color %>">
                                     <h3><a class="text-white" href="#content-<%-link_id(b.name)%>"><i class="fa fa-paperclip"></i></a> &nbsp;<%- b.name %></h3>
@@ -53,10 +53,8 @@
                                     </table>
                                 </div>
                                 <% }) %>
-                                <% }) %>
-
-
                            </section>
+                                <% }) %>
                         </div><!--//content-inner-->
                     </div><!--//doc-content-->
                     <div class="doc-sidebar">

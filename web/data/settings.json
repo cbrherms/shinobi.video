@@ -800,6 +800,28 @@
             ]
          },
          {
+            "name":"\"No Motion\" Detector",
+            "color":"orange",
+            "info":[
+               {
+                  "name":"detail=detector_notrigger_mail",
+                  "field":"Email on \"No Motion\"",
+                  "description":"If motion has not been detected after the timeout period you will recieve an email.",
+                  "default":"No",
+                  "example":"",
+                  "possible":""
+               },
+               {
+                  "name":"detail=detector_notrigger_timeout",
+                  "field":"Timeout",
+                  "description":"Timeout is calculated in minutes.",
+                  "default":"No",
+                  "example":"",
+                  "possible":""
+               }
+            ]
+         },
+         {
             "name":"Custom",
             "color":"navy",
             "info":[

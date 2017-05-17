@@ -68,22 +68,24 @@ $('#page-search').keyup(function () {
         e.e.show();
         return;
     }
-    
     e.e.hide();
-    e.e.filter(function () {
-        return new RegExp(e.val, 'i').test($(this).text());
-    }).show();
-    $.each(e.e,function(n,v){
-        var html=$(this).html();
-        var rex = new RegExp('(?![^<]+>)('+e.val+')','gi');
-        var matches = html.match(rex);
-        if(matches){
-        $.each(matches,function(m,b){
-            html=replaceNthMatch(html,rex,m+1,'<span class="highlight">'+matches[m]+'</span>')
+    $.each(e.val.split(' '),function(g,val){
+        if(val.trim()==''){return}
+        e.e.filter(function () {
+            return new RegExp(val, 'i').test($(this).text());
+        }).show();
+        $.each(e.e,function(n,v){
+            var html=$(this).html();
+            var rex = new RegExp('(?![^<]+>)('+val+')','gi');
+            var matches = html.match(rex);
+            if(matches){
+            $.each(matches,function(m,b){
+                html=replaceNthMatch(html,rex,m+1,'<span class="highlight">'+matches[m]+'</span>')
+            })
+        }
+            $(this).html(html)
+
         })
-    }
-        $(this).html(html)
-        
     })
 })
 </script>

@@ -815,7 +815,7 @@
                   "name":"detail=detector_notrigger_timeout",
                   "field":"Timeout",
                   "description":"Timeout is calculated in minutes.",
-                  "default":"No",
+                  "default":"1",
                   "example":"",
                   "possible":""
                }
@@ -880,6 +880,7 @@
             "color":"green",
             "info":[
                {
+                  "name":"detail=loglevel",
                   "field":"Log Level",
                   "description":"The amount of data to provide while doing the job.",
                   "default":"No",
@@ -908,6 +909,7 @@
                   ]
                },
                {
+                  "name":"detail=sqllog",
                   "field":"Save Log in SQL",
                   "description":"Use this with caution as FFMPEG likes to throw up superfluous data at times which can lead to a lot of database rows.",
                   "default":"No",
@@ -935,6 +937,7 @@
             "color":"grey",
             "info":[
                {
+                  "name":"mail",
                   "field":"Email",
                   "description":"The login for accounts. The main account holder's email address will get notifications.",
                   "default":"",
@@ -942,6 +945,7 @@
                   "possible":"Email compliant string."
                },
                {
+                  "name":"pass",
                   "field":"Password",
                   "description":"Leave blank to keep the same password during settings modification.",
                   "default":"",
@@ -949,6 +953,7 @@
                   "possible":""
                },
                {
+                  "name":"detail=size",
                   "field":"Max Storage Amount",
                   "description":"The amount max space Shinobi will allow to be consumed before purging. This value is read in megabytes.",
                   "default":"10000",
@@ -956,6 +961,7 @@
                   "possible":"Up to 95% of your maximum storage space if only one master account exists."
                },
                {
+                  "name":"detail=days",
                   "field":"Number of Days to keep Videos",
                   "description":"The number of days to keep videos before purging.",
                   "default":"5",
@@ -963,6 +969,7 @@
                   "possible":""
                },
                {
+                  "name":"detail=event_days",
                   "field":"Number of Days to keep Events",
                   "description":"The number of days to keep events before purging.",
                   "default":"5",
@@ -970,6 +977,7 @@
                   "possible":""
                },
                {
+                  "name":"detail=log_days",
                   "field":"Number of Days to keep Logs",
                   "description":"The number of days to keep logs before purging.",
                   "default":"5",
@@ -1003,6 +1011,7 @@
             "color":"forestgreen",
             "info":[
                {
+                  "name":"detail=webdav_url",
                   "field":"URL",
                   "description":"The connection URL for your WebDAV server.",
                   "default":"",
@@ -1010,6 +1019,7 @@
                   "possible":""
                },
                {
+                  "name":"detail=webdav_user",
                   "field":"Username",
                   "description":"The username required to access this server.",
                   "default":"",
@@ -1017,6 +1027,7 @@
                   "possible":""
                },
                {
+                  "name":"detail=webdav_pass",
                   "field":"Password",
                   "description":"The password required to access this server.",
                   "default":"",
@@ -1024,6 +1035,7 @@
                   "possible":""
                },
                {
+                  "name":"detail=webdav_save",
                   "field":"Autosave",
                   "description":"Whether or not the server should auto upload videos as they are finished.",
                   "default":"No",
@@ -1031,6 +1043,7 @@
                   "possible":""
                },
                {
+                  "name":"detail=webdav_dir",
                   "field":"Save Directory",
                   "description":"The directory where videos will be saved.",
                   "default":"/",
@@ -1044,6 +1057,7 @@
             "color":"navy",
             "info":[
                {
+                  "name":"detail=css",
                   "field":"CSS",
                   "description":"Add custom colors to your dashboard. This field should only be used by advanced users.",
                   "default":"",

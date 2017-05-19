@@ -8,12 +8,40 @@ var express = require('express');
 var fs = require('fs');
 var app = express()
 var config = require('./conf.json')
-
+var cameraBrands=null;
+if(!config.port){config.port=80}
 s={};
 s.dir={
     web:__dirname+'/web',
     web_pages:__dirname+'/web/pages/',
     doc_pages:__dirname+'/web/docs/'
+}
+s.getCameraData=function(x,success,fail){
+    if(x!=='brands'){
+        x='cameras/'+x
+    }
+    var href='https://raw.githubusercontent.com/ShinobiCCTV/cameraConnectionList/master/'+decodeURIComponent(x)+'.json';
+    https.request(href, function(data) {
+        data.setEncoding('utf8');
+        var chunks='';
+        data.on('data', (chunk) => {
+          chunks+=chunk;
+        });
+        data.on('end', () => {
+          success(chunks)
+        });
+    }).on('error',fail).end();
+    
+    return href;
+}
+s.getBrands=function(){
+    s.getCameraData('brands',function(data){
+        cameraBrands=data
+    },function(er){
+        if(er){
+           s.getBrands()
+        }
+    })
 }
 app.use('/', express.static(process.cwd() + '/web'));
 app.set('views', __dirname + '/web');
@@ -45,6 +73,16 @@ app.get('/donations.json', function(req, res) {
     }
     req.run(1)
 })
+app.get('/data/cameras/:file', function(req, res) {
+    res.set({
+      'Content-Type': 'application/json',
+    })
+    s.getCameraData(req.params.file,function(data){
+        res.end(data)
+    },function(){
+        res.sendStatus(500);
+    })
+});
 app.get('/data/:file', function(req, res) {
     req.file='data/'+req.params.file;
     fs.exists(req.file,function(exists){
@@ -57,6 +95,13 @@ app.get('/data/:file', function(req, res) {
     })
     
 });
+app.get('/docs/cameras/:file', function(req, res) {
+    s.getCameraData(req.params.file,function(data){
+        res.render('docs/cameras',{config:config,pageData:data,cameraBrands:cameraBrands});
+    },function(){
+        res.sendStatus(500);
+    })
+})
 app.get(['/docs','/docs/:file'], function(req, res) {
     req.pageDataFile='web/data/'+req.params.file+'.json';
     if(req.params.file&&fs.existsSync(req.pageDataFile)){
@@ -74,7 +119,7 @@ app.get(['/','/:file'], function(req, res) {
     if(req.params.file&&fs.existsSync(req.pageDataFile)){
        try{req.pageData=JSON.parse(fs.readFileSync(req.pageDataFile,'utf8'));}catch(err){console.log(err)}
     }
-    if(req.params.file){
+    if(req.params.file&&req.params.file!=='cameras'){
         req.file=req.params.file
     }else{
         req.file='index';

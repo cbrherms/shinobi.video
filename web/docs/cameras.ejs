@@ -1,0 +1,54 @@
+<% 
+try{pageData=JSON.parse(pageData);}catch(err){var pageData=''}
+if(pageData){
+    var Title='Connection URLs';
+}else{
+    var Title='IP Cameras';
+}
+%>
+<% include blocks/header.ejs %>
+<body class="body-green body-dark">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <% include blocks/branding.ejs %>
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper">
+            <div class="container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title"><span aria-hidden="true" class="fa fa-camera"></span> <%= Title %></h1>
+                    <small>Cameras Compatible with FFMPEG</small>
+                </div><!--//doc-header-->
+                <div class="doc-body">
+                    <div class="content-inner">
+                        <section class="doc-section">
+                            <% if(pageData){%>
+                                <% include blocks/search.ejs %>
+                                <table class="table">
+                                    <tr>
+                                        <th>Protocol</th>
+                                        <th>Type</th>
+                                        <th>URLs</th>
+                                        <th>Models</th>
+                                    </tr>
+                                    <%- JSON.stringify(pageData) %>
+                                <% Object.keys(pageData).forEach(function(v,n){ %>
+                                    <tr>
+                                        <td><%-JSON.stringify(pageData[v].models)%></td>
+                                        <td><%-JSON.stringify(pageData[v].paths)%></td>
+                                    </tr>
+                                <% }) %>
+                            <% } %>
+                            </table>
+                        </section><!--//content-inner-->
+                    </div><!--//doc-content-->
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+    </div><!--//page-wrapper-->
+<% include blocks/footer.ejs %>
+</body>
+</html> 
+

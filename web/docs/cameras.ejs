@@ -7,6 +7,10 @@ if(pageData){
 }
 %>
 <% include blocks/header.ejs %>
+<style>
+    #cameraTable tr td:first-child{vertical-align:middle}
+    .table .table{background:none}
+</style>
 <body class="body-green body-dark">
     <div class="page-wrapper">
         <!-- ******Header****** -->
@@ -26,22 +30,32 @@ if(pageData){
                         <section class="doc-section">
                             <% if(pageData){%>
                                 <% include blocks/search.ejs %>
-                                <table class="table">
-                                    <tr>
-                                        <th>Protocol</th>
-                                        <th>Type</th>
-                                        <th>URLs</th>
-                                        <th>Models</th>
-                                    </tr>
-                                    <%- JSON.stringify(pageData) %>
-                                <% Object.keys(pageData).forEach(function(v,n){ %>
-                                    <tr>
-                                        <td><%-JSON.stringify(pageData[v].models)%></td>
-                                        <td><%-JSON.stringify(pageData[v].paths)%></td>
-                                    </tr>
+
+                                <% Object.keys(pageData).forEach(function(v,n){
+                                    var callout_color='warning'
+                                    if(v.indexOf('rtsp')>-1){
+                                        callout_color='info'
+                                    }
+                                %>
+                            <% Object.keys(pageData[v].types).forEach(function(b){
+                                    var block_title=b;
+                                    if(b.indexOf('FFMPEG')>-1){
+                                        block_title='H.264'
+                                    }
+                                %>
+                            <div class="section-block bs-callout bs-callout-<%-callout_color%>">
+                                        <h4><%-block_title%> <small><%-v%></small></h4>
+                                <div class="row">
+                                    <div class="col-md-6"><table class="table"><% pageData[v].types[b].forEach(function(m){%><tr><td><%-m%></td></tr><%}) %></table></div>
+                                    <div class="col-md-6">
+                                        <%- pageData[v].models.join(', ') %>
+                                    </div>
+                                </div>
+                                        
+                                </div>
+                                        <%}) %>
                                 <% }) %>
                             <% } %>
-                            </table>
                         </section><!--//content-inner-->
                     </div><!--//doc-content-->
                 </div><!--//doc-body-->              

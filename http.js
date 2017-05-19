@@ -10,33 +10,41 @@ var app = express()
 var config = require('./conf.json')
 var cameraBrands=null;
 if(!config.port){config.port=80}
-s={};
+s={cachedCameras:{}};
 s.dir={
     web:__dirname+'/web',
     web_pages:__dirname+'/web/pages/',
     doc_pages:__dirname+'/web/docs/'
 }
 s.getCameraData=function(x,success,fail){
+    var target;
     if(x!=='brands'){
-        x='cameras/'+x
+        var target='cameras/'+x
+    }else{
+        var target='brands';
     }
-    var href='https://raw.githubusercontent.com/ShinobiCCTV/cameraConnectionList/master/'+decodeURIComponent(x)+'.json';
-    https.request(href, function(data) {
-        data.setEncoding('utf8');
-        var chunks='';
-        data.on('data', (chunk) => {
-          chunks+=chunk;
-        });
-        data.on('end', () => {
-          success(chunks)
-        });
-    }).on('error',fail).end();
+    var href='https://raw.githubusercontent.com/ShinobiCCTV/cameraConnectionList/master/'+decodeURIComponent(target)+'.json';
+    if(!s.cachedCameras[x]){
+        https.request(href, function(data) {
+            data.setEncoding('utf8');
+            var chunks='';
+            data.on('data', (chunk) => {
+              chunks+=chunk;
+            });
+            data.on('end', () => {
+              s.cachedCameras[x]=chunks;
+              success(chunks)
+            });
+        }).on('error',fail).end();
+    }else{
+        success(s.cachedCameras[x])
+    }
     
     return href;
 }
 s.getBrands=function(){
     s.getCameraData('brands',function(data){
-        cameraBrands=data
+        
     },function(er){
         if(er){
            s.getBrands()

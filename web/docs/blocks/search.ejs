@@ -61,8 +61,8 @@
 
   }
 $('#page-search').keyup(function () {
-    e={e:$('.doc-content .section-block'),val:$(this).val()};
-    e.e.find('.highlight').contents().unwrap();
+    e={e:$('.doc-content .section-block,.content-inner .section-block'),val:$(this).val()};
+    e.e.find('.search-highlight').contents().unwrap();
 
     if(e.val===''||e.val.length<2){
         e.e.show();
@@ -80,7 +80,7 @@ $('#page-search').keyup(function () {
             var matches = html.match(rex);
             if(matches){
             $.each(matches,function(m,b){
-                html=replaceNthMatch(html,rex,m+1,'<span class="highlight">'+matches[m]+'</span>')
+                html=replaceNthMatch(html,rex,m+1,'<span class="search-highlight">'+matches[m]+'</span>')
             })
         }
             $(this).html(html)

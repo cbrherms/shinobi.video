@@ -54,7 +54,10 @@ s.getBrands()
 app.use('/', express.static(process.cwd() + '/web'));
 app.set('views', __dirname + '/web');
 app.set('view engine', 'ejs');
-///donations
+app.get('/google8b1d9d3a727f1256.html', function(req, res) {
+    fs.createReadStream('web/verifiers/google8b1d9d3a727f1256.html').pipe(res).end()
+})
+//donations
 app.get('/donations.json', function(req, res) {
     req.orders=[];
     req.run=function(x){

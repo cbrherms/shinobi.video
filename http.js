@@ -84,6 +84,7 @@ app.get('/donations.json', function(req, res) {
 app.get('/data/cameras/:file', function(req, res) {
     res.set({
       'Content-Type': 'application/json',
+      'Cache-Control': 'no-cache'
     })
     s.getCameraData(req.params.file,function(data){
         res.end(data)
@@ -104,6 +105,9 @@ app.get('/data/:file', function(req, res) {
     
 });
 app.get(['/docs/cameras','/docs/cameras/:file'], function(req, res) {
+    res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+    res.header('Expires', '-1');
+    res.header('Pragma', 'no-cache');
     s.getCameraData(req.params.file,function(data){
         res.render('docs/cameras',{config:config,pageData:data,currentBrand:req.params.file,cameraBrands:s.cachedCameras.brands});
     },function(){

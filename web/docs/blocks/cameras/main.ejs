@@ -1,0 +1,21 @@
+<div id="brands">
+    <% var letters={};
+    JSON.parse(cameraBrands).forEach(function(v,n){
+        var first=v.charAt(0).toUpperCase()
+        if(!isNaN(first)){first='#'}
+        if(!letters[first]){letters[first]=[]}
+        letters[first].push(v)
+    }) %>
+    <% Object.keys(letters).forEach(function(v,n){ %>
+    <div>
+        <h4><%-v%></h4>
+        <ul>
+            <% letters[v].forEach(function(b){ %>
+            <li class="section-block more">
+                <a href="/docs/cameras/<%-b%>"><%-b%></a>
+            </li>
+            <% }) %>
+        </ul>
+    </div>
+    <% }) %>
+</div>

@@ -151,8 +151,8 @@ a.btn-blue.hover {
 }
 .btn-orange,
 a.btn-orange {
-  background: #F88C30;
-  border: 1px solid #F88C30;
+  background: #c49a68;
+  border: 1px solid #c49a68;
   color: #fff !important;
 }
 .btn-orange:hover,
@@ -165,9 +165,9 @@ a.btn-orange:active,
 a.btn-orange.active,
 .btn-orange.hover,
 a.btn-orange.hover {
-  background: #f77e17;
+  background: #bd8f5c;
   color: #fff !important;
-  border: 1px solid #f77e17;
+  border: 1px solid #bd8f5c;
 }
 .btn-red,
 a.btn-red {
@@ -342,7 +342,7 @@ select {
   color: #58bbee;
 }
 .body-orange .branding .text-highlight {
-  color: #F88C30;
+  color: #c49a68;
 }
 .body-red .branding .text-highlight {
   color: #f77b6b;
@@ -368,7 +368,7 @@ select {
   color: #58bbee;
 }
 .body-orange .branding .icon {
-  color: #F88C30;
+  color: #c49a68;
 }
 .body-red .branding .icon {
   color: #f77b6b;
@@ -434,7 +434,7 @@ select {
   color: #58bbee;
 }
 .body-orange .doc-header .doc-title {
-  color: #F88C30;
+  color: #c49a68;
 }
 .body-red .doc-header .doc-title {
   color: #f77b6b;
@@ -514,7 +514,7 @@ select {
   color: #41b2ec;
 }
 .body-orange .question {
-  color: #f77e17;
+  color: #bd8f5c;
 }
 .body-pink .question {
   color: #e73c87;
@@ -584,7 +584,7 @@ select {
   color: #fff;
 }
 .callout-warning {
-  background: #F88C30;
+  background: #c49a68;
   color: #fff;
 }
 .callout-danger {
@@ -754,10 +754,10 @@ select {
   color: #2aa8e9;
 }
 .body-orange .header {
-  border-color: #F88C30;
+  border-color: #c49a68;
 }
 .body-orange a {
-  color: #F88C30;
+  color: #c49a68;
 }
 .body-orange a:hover {
   color: #ed7108;
@@ -822,7 +822,7 @@ select {
 }
 .body-orange .doc-menu > li > a:hover,
 .body-orange .doc-menu > li > a:focus {
-  color: #F88C30;
+  color: #c49a68;
 }
 .body-red .doc-menu > li > a:hover,
 .body-red .doc-menu > li > a:focus {
@@ -851,8 +851,8 @@ select {
   border-color: #58bbee;
 }
 .body-orange .doc-menu > li.active > a {
-  color: #F88C30;
-  border-color: #F88C30;
+  color: #c49a68;
+  border-color: #c49a68;
 }
 .body-red .doc-menu > li.active > a {
   color: #f77b6b;
@@ -896,7 +896,7 @@ select {
   color: #58bbee;
 }
 .body-orange .doc-sub-menu > li > a:hover {
-  color: #F88C30;
+  color: #c49a68;
 }
 .body-red .doc-sub-menu > li > a:hover {
   color: #f77b6b;
@@ -921,7 +921,7 @@ select {
   color: #58bbee;
 }
 .body-orange .doc-sub-menu > li.active > a {
-  color: #F88C30;
+  color: #c49a68;
 }
 .body-red .doc-sub-menu > li.active > a {
   color: #f77b6b;
@@ -957,7 +957,7 @@ select {
   background: #41b2ec;
 }
 .body-orange .promo-block {
-  background: #f77e17;
+  background: #bd8f5c;
 }
 .body-pink .promo-block {
   background: #e73c87;
@@ -1226,13 +1226,13 @@ select {
   color: #58bbee;
 }
 .cards-section .item-orange .item-inner {
-  border-top: 3px solid #F88C30;
+  border-top: 3px solid #c49a68;
 }
 .cards-section .item-orange .item-inner:hover .title {
   color: #d46607;
 }
 .cards-section .item-orange .icon {
-  color: #F88C30;
+  color: #c49a68;
 }
 .cards-section .item-red .item-inner {
   border-top: 3px solid #f77b6b;

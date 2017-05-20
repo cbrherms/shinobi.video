@@ -44,13 +44,13 @@ s.getCameraData=function(x,success,fail){
 }
 s.getBrands=function(){
     s.getCameraData('brands',function(data){
-        
     },function(er){
         if(er){
            s.getBrands()
         }
     })
 }
+s.getBrands()
 app.use('/', express.static(process.cwd() + '/web'));
 app.set('views', __dirname + '/web');
 app.set('view engine', 'ejs');
@@ -103,9 +103,9 @@ app.get('/data/:file', function(req, res) {
     })
     
 });
-app.get('/docs/cameras/:file', function(req, res) {
+app.get(['/docs/cameras','/docs/cameras/:file'], function(req, res) {
     s.getCameraData(req.params.file,function(data){
-        res.render('docs/cameras',{config:config,pageData:data,cameraBrands:cameraBrands});
+        res.render('docs/cameras',{config:config,pageData:data,currentBrand:req.params.file,cameraBrands:s.cachedCameras.brands});
     },function(){
         res.sendStatus(500);
     })

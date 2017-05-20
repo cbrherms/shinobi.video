@@ -1,17 +1,22 @@
 <% 
 try{pageData=JSON.parse(pageData);}catch(err){var pageData=''}
 if(pageData){
-    var Title='Connection URLs';
-}else{
-    var Title='IP Cameras';
-}
-%>
-<% include blocks/header.ejs %>
+    var Title=currentBrand+' Connection URLs'; %>
+    <style>
+        #cameraTable tr td:first-child{vertical-align:middle}
+        .table .table{background:none}
+        #legend{width:100%;text-align:center;}
+        #legend a{display:inline-block;text-decoration:none;color:#fff}
+    </style>
+<% }else{
+    var Title='Camera Brands'; %>
 <style>
-    #cameraTable tr td:first-child{vertical-align:middle}
-    .table .table{background:none}
+    #brands > div{display:inline-block;vertical-align:top}
+    #brands > div ul li{padding:0}
 </style>
-<body class="body-green body-dark">
+<% } %>
+<% include blocks/header.ejs %>
+<body class="body-orange body-dark">
     <div class="page-wrapper">
         <!-- ******Header****** -->
         <header id="header" class="header">
@@ -22,40 +27,17 @@ if(pageData){
         <div class="doc-wrapper">
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
-                    <h1 class="doc-title"><span aria-hidden="true" class="fa fa-camera"></span> <%= Title %></h1>
-                    <small>Cameras Compatible with FFMPEG</small>
+                    <h1 class="doc-title"><%= Title %></h1>
                 </div><!--//doc-header-->
                 <div class="doc-body">
                     <div class="content-inner">
                         <section class="doc-section">
+                            <% include blocks/search.ejs %>
                             <% if(pageData){%>
-                                <% include blocks/search.ejs %>
-
-                                <% Object.keys(pageData).forEach(function(v,n){
-                                    var callout_color='warning'
-                                    if(v.indexOf('rtsp')>-1){
-                                        callout_color='info'
-                                    }
-                                %>
-                            <% Object.keys(pageData[v].types).forEach(function(b){
-                                    var block_title=b;
-                                    if(b.indexOf('FFMPEG')>-1){
-                                        block_title='H.264'
-                                    }
-                                %>
-                            <div class="section-block bs-callout bs-callout-<%-callout_color%>">
-                                        <h4><%-block_title%> <small><%-v%></small></h4>
-                                <div class="row">
-                                    <div class="col-md-6"><table class="table"><% pageData[v].types[b].forEach(function(m){%><tr><td><%-m%></td></tr><%}) %></table></div>
-                                    <div class="col-md-6">
-                                        <%- pageData[v].models.join(', ') %>
-                                    </div>
-                                </div>
-                                        
-                                </div>
-                                        <%}) %>
-                                <% }) %>
-                            <% } %>
+                                <% include blocks/cameras/found.ejs %>
+                            <% }else{ %>
+                                <% include blocks/cameras/main.ejs %>
+                          <% } %>
                         </section><!--//content-inner-->
                     </div><!--//doc-content-->
                 </div><!--//doc-body-->              

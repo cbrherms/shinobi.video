@@ -89,7 +89,67 @@
         </blockquote>
     </div>
   </section>
-<section class="bg-primary" id="learn4">
+<section id="learn2" class="bg-primary">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="margin-top-0 text-primary">Performance Comparison</h2>
+                <p>Our effort is reflected in the performance of our work</p>
+                <hr class="primary">
+            </div>
+        </div>
+      <table class="super-table red-center" style="font-size:15pt">
+          <thead>
+              <tr>
+                  <td>&nbsp;</td>
+                  <td>Shinobi</td>
+                  <td>Alternative</td>
+              </tr>
+          </thead>
+          <tbody>
+              <% [
+                  {
+                      label:'x2 Quad Xeon 2.4 GHz (8 Cores), 16GB RAM, Baremetal',
+                      feature:'18 Cameras, ~60% Load',
+                      compare1:'Crashed at 15 Cameras',
+                      description:'Many cameras are currently set to record WebM, thus leaving Shinobi with a high CPU usage.',
+                  },
+                  {
+                      label:'Pentium E5500 2.8GHz (2 Cores), 3GB RAM, Baremetal',
+                      feature:'18 Cameras, 10% Load at most',
+                      compare1:'Crashed at 6 Cameras',
+                      description:'The cameras running on Shinobi are using the <b>copy</b> video encoder for MP4 files. Using this method simply pipes your stream data into a file. No extra processing.',
+                  },
+                  {
+                      label:'Cloud x64/x86 Server (8 Cores), 16GB RAM, Baremetal',
+                      feature:'18 Cameras, ~60% Load',
+                      compare1:'Not Tested',
+                      description:'Many cameras are currently set to record WebM, thus leaving Shinobi with a high CPU usage.',
+                  },
+              ].forEach(function(v,n){
+                  ['feature','compare1'].forEach(function(b){
+                      if(v[b]===1){v[b]='<i class="fa fa-check text-success"></i>'}
+                      if(v[b]===0){v[b]='<i class="fa fa-times text-danger"></i>'}
+                  })
+                  %>
+              <tr>
+                  <td><%-v.label%><div class="description"><small><%-v.description%></small></div></td>
+                  <td><%-v.feature%></td>
+                  <td><%-v.compare1%></td>
+              </tr>
+           <%  }) %>
+          </tbody>
+          <tfoot>
+              <tr>
+                  <td>&nbsp;</td>
+                  <td><a class="btn btn-ghost" href="/features#learn">Features</a></td>
+                  <td><a class="btn btn-ghost btn-white" href="/features#learn">More Info</a></td>
+              </tr>
+          </tfoot>
+      </table>
+     </div>
+  </section>
+<section id="learn4">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 text-center pull-right">
@@ -106,7 +166,7 @@
         </div>
     </div>
 </section>
-<section id="learn5">
+<section class="bg-primary" id="learn5">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 text-center">

@@ -4,15 +4,6 @@
     .super-table tr td:first-child{text-transform:initial;font-weight: 500;}
     header{background-image:url(/libs/assets/backgrounds/1.jpg)}
 </style>
-<style>
-    .super-table tr td:nth-child(2){border-radius:0!important;border-bottom: 1px solid #343434;background:#a94442!important;color:#fff}
-    .super-table tr td:nth-child(2) .fa,.super-table tr td:nth-child(2) a{color:#fff;}
-    .super-table tbody tr:hover td:nth-child(2){background:#803130!important;color:#fff}
-    .super-table tr td:nth-child(2) .btn{border-color:#fff!important;color:#fff!important}
-    .super-table thead tr td:nth-child(2){border-radius:4px 4px 0 0!important}
-    .super-table tfoot tr td:nth-child(2){border-radius:0 0 4px 4px!important}
-    .super-table tfoot tr td:nth-child(2) .circ-img{border-color:#15a515;}
-</style>
 <header id="first">
     <div class="_shade">
     <div class="header-content">
@@ -38,7 +29,7 @@
                 <hr class="primary">
             </div>
         </div>
-      <table class="super-table" style="font-size:15pt">
+      <table class="super-table red-center" style="font-size:15pt">
           <thead>
               <tr>
                   <td>&nbsp;</td>
@@ -277,7 +268,7 @@
                   })
                   %>
               <tr title="<%-v.description%>">
-                  <td><%-v.label%></td>
+                  <td><%-v.label%><div class="description"><small><%-v.description%></small></div></td>
                   <td><%-v.feature%></td>
                   <td><%-v.compare1%></td>
               </tr>
@@ -291,14 +282,14 @@
               </tr>
           </tfoot>
       </table>
-        <blockquote style="margin-top:20px;">
+       <blockquote style="margin-top:20px;">
             <img src="libs/assets/moe.png" style="width:350px" class="pull-right">
-            <p>This is just one of many solutions in the CCTV and NVR sector. Originally the intent was to use the alternative for our purposes but found it wasn't capable of the task.</p>
+            <p>This is the most popular of many solutions in the CCTV and NVR sector. Originally the intent was to use this for our purposes but found it isn't capable of the task.</p>
             <p>Thus Shinobi had to be born.</p>
             <p><small>Moe Alam</small></p>
         </blockquote>
         <p><small>More Information about why Shinobi had to be made can be found <a href="/why">here</a>.</small></p>
     </div>
-  </section>
+</section>
 <% include blocks/getstarted.ejs %>
 <% include blocks/footer.ejs %>

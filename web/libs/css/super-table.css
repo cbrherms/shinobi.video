@@ -19,3 +19,12 @@
 }
     .super-table tfoot tr:last-child td{border:0}
     .super-table tbody tr:hover td{background:#444}
+
+    .red-center.super-table tr td:nth-child(2){border-radius:0!important;border-bottom: 1px solid #343434;background:#a94442!important;color:#fff}
+    .red-center.super-table tr td:nth-child(2) .fa,.red-center.super-table tr td:nth-child(2) a{color:#fff;}
+    .red-center.super-table tbody tr:hover td:nth-child(2){background:#803130!important;color:#fff}
+    .red-center.super-table tr td:nth-child(2) .btn{border-color:#fff!important;color:#fff!important}
+    .red-center.super-table thead tr td:nth-child(2){border-radius:4px 4px 0 0!important}
+    .red-center.super-table tfoot tr td:nth-child(2){border-radius:0 0 4px 4px!important}
+    .red-center.super-table tfoot tr td:nth-child(2) .circ-img{border-color:#15a515;}
+    .super-table .description{letter-spacing:initial;text-transform:none;font-weight:normal}

@@ -55,11 +55,11 @@
               <% [
                   {
                       title:'MJPEG streams : no good',
-                      text:'<ul><li>With MJPEG you are opening a new stream every time you create an image with an MJPEG url. Even if you remove this element it will continue to eat resources from the server and client. Only way to deal with it currently is through an <code>iframe</code>, <code>popup</code>, or <code>hard refresh</code>.</li><li><i>Shinobi addresses this with <code>Websocket</code> streams. As frames are captured by FFMPEG they are base64 encoded and sent to the client. Shinobi can also output HLS (m3u8), MJPEG (in an iframe), and JPEG (on a timer).</i></li><li>MJPEG streams are limited in many browsers. About 6-8 Streams maximum. Unless you turn off this limitation in the browsers settings, but of course mobile doesn\'t normally have this option exposed to users.</li><li><i>In Shinobi you don\'t have to worry about that with Bas64 or JPEG streams you can trick the browser into just letting you do it anyway. Base64 is technically using 1 pipe to the client, the Websocket. While JPEG is just refreshing an image on a timer.</i></li></ul>',
+                      text:'<ul><li>With MJPEG you are opening a new stream every time you create an image with an MJPEG url. Even if you remove this element it will continue to eat resources from the server and client. Only way to deal with it currently is through an <code>iframe</code>, <code>popup</code>, or <code>hard refresh</code>.</li><li><i><small>Shinobi addresses this with <code>Websocket</code> streams. As frames are captured by FFMPEG they are base64 encoded and sent to the client. Shinobi can also output HLS (m3u8), MJPEG (in an iframe), and JPEG (on a timer).</small></i></li><li>MJPEG streams are limited in many browsers. About 6-8 Streams maximum. Unless you turn off this limitation in the browsers settings, but of course mobile doesn\'t normally have this option exposed to users.</li><li><i><small>In Shinobi you don\'t have to worry about that with Bas64 or JPEG streams you can trick the browser into just letting you do it anyway. Base64 is technically using 1 pipe to the client, the Websocket. While JPEG is just refreshing an image on a timer.</small></i></li></ul>',
                   },
                   {
                       title:'JPEG Storage : mildly acceptable',
-                      text:'<ul><li>Saving each frame as a separate file in JPEG format can have a seriously detrimental effect on storage space and the hardware itself. Hardware is more likely to fail under the stress of continuously saving JPEG files to storage.</li><li><i>Shinobi saves to WebM and MP4 files. While MP4 takes a fair amount of space.. its level of CPU usage during encoding for H.264 streams is just amazing.</i></li></ul>',
+                      text:'<ul><li>Saving each frame as a separate file in JPEG format can have a seriously detrimental effect on storage space and the hardware itself. Hardware is more likely to fail under the stress of continuously saving JPEG files to storage.</li><li><small><i>Shinobi saves to WebM and MP4 files. While MP4 takes a fair amount of space.. its level of CPU usage during encoding for H.264 streams is just amazing.</i></small></li><li><small><i><b>UPDATE : </b> After 4 years of attempts the alternative finally got MP4 recording. Simply though, The alternative should have had this feature in the first month of the feature being developed.</i></small></li></ul>',
                   },
                   {
                       title:'Using too many languages',
@@ -67,14 +67,14 @@
                   },
                   {
                       title:'Outdated methods',
-                      text:'<ul><li>While connected to the dashboard will query the database for events every few minutes, continuously getting/counting the same events over and over.</li><li><i>Shinobi uses Websockets to get real-time data about Videos and Events.</i></li><li>For every camera a new process is created every time a viewer opens a stream. 1 Stream = 1 Process.</li><li><i>Shinobi uses 1 process per camera for all viewers.</i></li></ul>',
+                      text:'<ul><li>While connected to the dashboard will query the database for events every few minutes, continuously getting/counting the same events over and over.</li><li><i><small>Shinobi uses Websockets to get real-time data about Videos and Events.</small></i></li><li>For every camera a new process is created every time a viewer opens a stream. 1 Stream = 1 Process.</li><li><i><small>Shinobi uses 1 process per camera for all viewers.</small></i></li></ul>',
                   },
                   {
                       title:'General Issues',
-                      text:'<ul><li>No Audio recording</li><li>No ability to re-stream</li></ul>',
+                      text:'<ul><li><strike>No Audio recording</strike> - <small><i>The alternative now has audio recording. Though this should have been added in the first month of development for MP4 recording.</i></small></li><li>No ability to re-stream</li></ul>',
                   },
               ].forEach(function(v,n){ %>
-              <tr>
+              <tr id="<%-v.title.replace(/ /g,'-').replace(/[^\w\s]/gi, '')%>">
                   <td><%-v.title%></td>
                   <td><%-v.text%></td>
               </tr>
@@ -83,7 +83,7 @@
       </table>
         <blockquote>
             <img src="libs/assets/moe.png" style="width:350px" class="pull-right">
-            <p>I couldn't use the current software solutions that were present.</p>
+            <p>I couldn't use and couldn't wait for the current software solutions that were present.</p>
             <p>So I began Shinobi.</p>
             <p><small>Moe Alam</small></p>
         </blockquote>

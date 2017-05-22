@@ -540,3 +540,8 @@ img::-moz-selection {
 }
 .panel{color:#333}
 .panel li i{float:left;color:#00c311}
+
+.stroke{
+   -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+   -webkit-text-stroke-width: 1px;
+}

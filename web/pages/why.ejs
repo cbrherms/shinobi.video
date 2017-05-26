@@ -59,7 +59,7 @@
                   },
                   {
                       title:'JPEG Storage : mildly acceptable',
-                      text:'<ul><li>Saving each frame as a separate file in JPEG format can have a seriously detrimental effect on storage space and the hardware itself. Hardware is more likely to fail under the stress of continuously saving JPEG files to storage.</li><li><small><i>Shinobi saves to WebM and MP4 files. While MP4 takes a fair amount of space.. its level of CPU usage during encoding for H.264 streams is just amazing.</i></small></li><li><small><i><b>UPDATE : </b> After 4 years of attempts the alternative finally got MP4 recording. Simply though, The alternative should have had this feature in the first month of the feature being developed.</i></small></li></ul>',
+                      text:'<ul><li>Saving each frame as a separate file in JPEG format can have a seriously detrimental effect on storage space and the hardware itself. Hardware is more likely to fail under the stress of continuously saving JPEG files to storage.</li><li><small><i>Shinobi saves to WebM and MP4 files. While MP4 takes a fair amount of space.. its level of CPU usage during encoding for H.264 streams is just amazing.</i></small></li><li><small><i><b>UPDATE : </b> After 4 years of development the alternative now has MP4 recording.</i></small></li></ul>',
                   },
                   {
                       title:'Using too many languages',
@@ -71,7 +71,7 @@
                   },
                   {
                       title:'General Issues',
-                      text:'<ul><li><strike>No Audio recording</strike> - <small><i>The alternative now has audio recording. Though this should have been added in the first month of development for MP4 recording.</i></small></li><li>No ability to re-stream</li></ul>',
+                      text:'<ul><li><strike>No Audio recording</strike> - <small><i>The alternative now has audio recording.</i></small></li><li>No ability to re-stream</li></ul>',
                   },
               ].forEach(function(v,n){ %>
               <tr id="<%-v.title.replace(/ /g,'-').replace(/[^\w\s]/gi, '')%>">
@@ -110,19 +110,19 @@
               <% [
                   {
                       label:'x2 Quad Xeon 2.4 GHz (8 Cores), 16GB RAM, Baremetal',
-                      feature:'18 Cameras, ~60% Load',
+                      feature:'18 Cameras, 3fps, ~60% Load',
                       compare1:'Crashed at 15 Cameras',
                       description:'Many cameras are currently set to record WebM, thus leaving Shinobi with a high CPU usage.',
                   },
                   {
                       label:'Pentium E5500 2.8GHz (2 Cores), 3GB RAM, Baremetal',
-                      feature:'18 Cameras, 10% Load at most',
+                      feature:'16 Cameras, 15fps, 10% Load at most',
                       compare1:'Crashed at 6 Cameras',
                       description:'The cameras running on Shinobi are using the <b>copy</b> video encoder for MP4 files. Using this method simply pipes your stream data into a file. No extra processing.',
                   },
                   {
                       label:'Cloud x64/x86 Server (8 Cores), 16GB RAM, Baremetal',
-                      feature:'18 Cameras, ~60% Load',
+                      feature:'18 Cameras, 3fps, ~60% Load',
                       compare1:'Not Tested',
                       description:'Many cameras are currently set to record WebM, thus leaving Shinobi with a high CPU usage.',
                   },

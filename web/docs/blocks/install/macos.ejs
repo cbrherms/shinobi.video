@@ -24,9 +24,15 @@ sudo n stable</code></pre>
 </code></pre>
 </li>
 <li>
-<p>Import the <code>sql/framework.sql</code> SQL file, it will create a database called <code>ccio</code></p>
+<p>Import the <code>sql/database.sql</code> SQL file, it will create a database called <code>ccio</code></p>
 
-<pre><code>cat sql/framework.sql | mysql -u root -p
+<pre><code>cat sql/database.sql | mysql -u root -p
+</code></pre>
+</li>
+<li>
+<p>Import the <code>sql/tables.sql</code> SQL file, it will create the required tables</p>
+
+<pre><code>cat sql/tables.sql | mysql -u root -p ccio
 </code></pre>
 </li>
 <li>
